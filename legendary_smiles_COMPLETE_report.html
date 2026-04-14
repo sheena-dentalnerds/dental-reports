@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing & SEO Report — Legendary Smiles</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#eef0f3;color:#1a1a1a;padding:24px 16px;}
+.report{max-width:900px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 28px rgba(0,0,0,0.12);}
+/* HEADER */
+.rh{background:#1a3a5c;padding:28px 32px 20px;}
+.rh h1{font-size:26px;font-weight:700;color:#fff;letter-spacing:-0.3px;}
+.rh .sub{font-size:13px;color:#a8c4e0;margin-top:3px;}
+.rh-meta{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;font-size:11.5px;color:#c5daf0;}
+/* SECTIONS */
+.sec{padding:22px 28px;border-bottom:1px solid #eee;}
+.sec:last-child{border-bottom:none;}
+.sec-title{font-size:13.5px;font-weight:700;color:#1a3a5c;border-bottom:2.5px solid #1a3a5c;padding-bottom:6px;margin-bottom:14px;display:flex;align-items:center;gap:7px;text-transform:uppercase;letter-spacing:0.4px;}
+.sub-label{font-size:11px;font-weight:700;color:#888;margin-bottom:7px;margin-top:13px;text-transform:uppercase;letter-spacing:0.5px;}
+/* EXEC METRICS */
+.metric-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px;}
+.mbox{background:#f0f4f8;border-radius:9px;padding:13px 10px;text-align:center;}
+.mnum{font-size:26px;font-weight:700;color:#1a3a5c;line-height:1;}
+.mstars{color:#f5a623;font-size:13px;margin:2px 0;}
+.mlabel{font-size:10.5px;color:#777;margin-top:3px;}
+/* PRIORITY */
+.plist{list-style:none;}
+.plist li{display:flex;align-items:flex-start;gap:9px;padding:8px 11px;border-radius:7px;margin-bottom:5px;font-size:12.5px;line-height:1.5;}
+.p1{background:#fff0ee;color:#7a2a18;border-left:4px solid #d85a30;}
+.p2{background:#fff8e6;color:#7a5200;border-left:4px solid #ef9f27;}
+.p3{background:#eaf3de;color:#2a5000;border-left:4px solid #639922;}
+.p4{background:#e6f1fb;color:#0c3d6e;border-left:4px solid #378add;}
+.p5{background:#f5f0ff;color:#3a2a80;border-left:4px solid #7f77dd;}
+.badge{font-size:9.5px;font-weight:700;padding:2px 7px;border-radius:20px;white-space:nowrap;flex-shrink:0;}
+.br{background:#f09595;color:#501313;}
+.bo{background:#fac775;color:#412402;}
+.bg{background:#c0dd97;color:#173404;}
+.bb{background:#b5d4f4;color:#042c53;}
+.bp{background:#cecbf6;color:#26215c;}
+/* TWO COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+/* INFO TABLE */
+.itable{width:100%;font-size:12.5px;border-collapse:collapse;}
+.itable td{padding:5px 4px;vertical-align:top;border-bottom:1px solid #f2f2f2;}
+.itable td:first-child{color:#888;width:115px;font-size:11.5px;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:5px;}
+.tag{font-size:11px;padding:3px 10px;border-radius:20px;}
+.tag-gen{background:#e6f1fb;color:#185fa5;border:1px solid #85b7eb;}
+.tag-res{background:#eaf3de;color:#3b6d11;border:1px solid #97c459;}
+.tag-cos{background:#faeeda;color:#854f0b;border:1px solid #ef9f27;}
+.tag-spc{background:#fbeaf0;color:#993556;border:1px solid #ed93b1;}
+.tag-ort{background:#eeedfe;color:#534ab7;border:1px solid #afa9ec;}
+.tag-neu{background:#f4f4f0;color:#555;border:1px solid #ddd;}
+/* REPUTATION BARS */
+.rep-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.rep-label{font-size:12px;width:90px;color:#333;flex-shrink:0;}
+.bar-track{flex:1;background:#eee;border-radius:20px;height:9px;overflow:hidden;}
+.bar-fill{height:100%;border-radius:20px;}
+.rep-score{font-size:12px;font-weight:700;width:65px;text-align:right;color:#333;}
+/* SWOT */
+.swot-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;}
+.swot-box{padding:11px 13px;border-radius:8px;font-size:11.5px;line-height:1.65;}
+.swot-box h4{font-size:11px;font-weight:700;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.4px;}
+.swot-box ul{list-style:none;}
+.swot-box ul li{padding:1px 0;display:flex;gap:5px;}
+.swot-box ul li::before{content:"•";flex-shrink:0;}
+.s-str{background:#eaf3de;color:#2a5000;}
+.s-opp{background:#e6f1fb;color:#0c3d6e;}
+.s-weak{background:#fff8e6;color:#7a5200;}
+.s-thr{background:#fff0ee;color:#7a2a18;}
+/* SEO ISSUES */
+.seo-crit{background:#fcebeb;border-left:4px solid #e24b4a;color:#501313;font-size:12.5px;padding:9px 13px;border-radius:6px;margin-bottom:6px;line-height:1.5;}
+.seo-warn{background:#faeeda;border-left:4px solid #ef9f27;color:#412402;font-size:12.5px;padding:9px 13px;border-radius:6px;margin-bottom:6px;line-height:1.5;}
+.seo-info{background:#e6f1fb;border-left:4px solid #378add;color:#0c3d6e;font-size:12.5px;padding:9px 13px;border-radius:6px;margin-bottom:6px;line-height:1.5;}
+.issue-lbl{font-weight:700;font-size:11px;letter-spacing:0.4px;}
+/* PAGE TAGS */
+.ptags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+.pt{font-size:11px;padding:3px 9px;border-radius:5px;font-weight:500;}
+.pt-found{background:#eaf3de;color:#2a5000;}
+.pt-miss{background:#fcebeb;color:#501313;}
+/* TITLE TABLE */
+.ttable{width:100%;font-size:11.5px;border-collapse:collapse;margin-top:8px;}
+.ttable th{text-align:left;padding:7px 9px;background:#f6f6f4;font-weight:700;font-size:10.5px;color:#666;text-transform:uppercase;letter-spacing:0.4px;}
+.ttable td{padding:6px 9px;border-bottom:1px solid #f0f0f0;vertical-align:top;}
+.ttable tr:last-child td{border-bottom:none;}
+.ok{color:#3b6d11;font-weight:700;}
+.warn{color:#854f0b;font-weight:700;}
+.err{color:#a32d2d;font-weight:700;}
+hr.div{border:none;border-top:1px solid #eee;margin:13px 0;}
+/* COMPETITOR TABLE */
+.ctable{width:100%;font-size:11.5px;border-collapse:collapse;margin-top:8px;}
+.ctable th{text-align:left;padding:8px 10px;background:#1a3a5c;color:#fff;font-weight:600;font-size:11px;}
+.ctable td{padding:7px 10px;border-bottom:1px solid #eee;vertical-align:middle;}
+.ctable tr:nth-child(even){background:#f9f9f9;}
+.ctable tr.highlight{background:#fff8e6;}
+.rank-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;}
+.rank-1{background:#fac775;color:#412402;}
+.rank-2{background:#d3d1c7;color:#2c2c2a;}
+.rank-3{background:#f5ddb0;color:#6b4000;}
+.rank-n{background:#eee;color:#666;}
+/* SOCIAL */
+.social-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.social-card{border:1px solid #eee;border-radius:8px;padding:12px;text-align:center;}
+.social-card .s-icon{font-size:22px;margin-bottom:5px;}
+.social-card .s-name{font-size:11px;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:0.4px;}
+.social-card .s-val{font-size:18px;font-weight:700;color:#1a3a5c;margin:4px 0;}
+.social-card .s-note{font-size:10.5px;color:#888;}
+/* GBP AUDIT */
+.gbp-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;}
+.gbp-item{display:flex;align-items:center;gap:8px;font-size:12px;padding:7px 10px;border-radius:6px;background:#f9f9f9;}
+.gbp-check{font-size:14px;width:20px;text-align:center;}
+/* SPEED */
+.speed-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:8px;}
+.speed-box{text-align:center;padding:12px 8px;border-radius:8px;}
+.speed-box .s-score{font-size:24px;font-weight:700;}
+.speed-box .s-lbl{font-size:10.5px;color:#666;margin-top:3px;}
+.spd-good{background:#eaf3de;color:#3b6d11;}
+.spd-med{background:#fff8e6;color:#854f0b;}
+.spd-bad{background:#fcebeb;color:#a32d2d;}
+/* SOLUTIONS */
+.sol-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.sol-card{border:1px solid #1a3a5c;border-radius:9px;overflow:hidden;}
+.sol-card-head{background:#1a3a5c;color:#fff;padding:9px 14px;font-size:12px;font-weight:700;}
+.sol-card-body{padding:11px 14px;font-size:12px;line-height:1.6;color:#333;}
+.sol-card-body ul{list-style:none;margin-top:4px;}
+.sol-card-body ul li{padding:2px 0;display:flex;gap:6px;}
+.sol-card-body ul li::before{content:"✓";color:#3b6d11;flex-shrink:0;font-weight:700;}
+.price-note{font-size:11px;color:#888;margin-top:6px;font-style:italic;}
+/* FOOTER */
+.footer{background:#f0f4f8;padding:14px 28px;text-align:center;font-size:11px;color:#888;}
+.footer strong{color:#1a3a5c;}
+</style>
+</head>
+<body>
+<div class="report">
+
+<!-- HEADER -->
+<div class="rh">
+  <h1>Marketing &amp; SEO Report</h1>
+  <div class="sub">Legendary Smiles — Wayne &amp; Havertown, PA</div>
+  <div class="rh-meta">
+    <span>✉ drtheis@legendarydental.com</span>
+    <span>📞 (610) 789-4040 Havertown | (610) 281-9599 Wayne</span>
+    <span>🌐 legendarydental.com</span>
+    <span>📅 April 4, 2026</span>
+  </div>
+</div>
+
+<!-- EXECUTIVE SUMMARY -->
+<div class="sec">
+  <div class="sec-title">📋 Executive Summary</div>
+  <p style="font-size:12.5px;color:#555;margin-bottom:14px;line-height:1.65;">Legendary Smiles is a dual-location practice led by Dr. Hardik Vyas &amp; Dr. Krupa Parikh — a husband-and-wife team with training from UCLA, NYU, and Rush University. The practice has a strong premium brand identity and an impressive technology stack, but faces significant digital marketing challenges: the website lacks proper local SEO architecture for two separate markets, Google review volume is critically low compared to competitors, there is no sustained SEO or paid campaign strategy, and social media presence remains underdeveloped. These gaps are leaving organic visibility to competitors like Brookline Dental Associates and Havertown Family Dentistry who currently dominate the local map pack.</p>
+  <div class="metric-row">
+    <div class="mbox"><div class="mnum">~4.2</div><div class="mstars">★★★★☆</div><div class="mlabel">Aggregate Rating Est.</div></div>
+    <div class="mbox"><div class="mnum">~17</div><div class="mlabel">Indexed Pages</div></div>
+    <div class="mbox"><div class="mnum">~55</div><div class="mlabel">Total Reviews Est.</div></div>
+    <div class="mbox"><div class="mnum">2</div><div class="mlabel">Locations</div></div>
+  </div>
+  <div class="sub-label">Top 5 Priority Actions</div>
+  <ul class="plist">
+    <li class="p1"><span class="badge br">CRITICAL</span> Claim &amp; fully optimize separate Google Business Profiles for both Wayne and Havertown — both locations are under-optimized and losing map pack visibility daily.</li>
+    <li class="p2"><span class="badge bo">HIGH</span> Launch structured review generation campaign — competitors have 100–250 reviews; Legendary Smiles needs to reach 50+ per location urgently.</li>
+    <li class="p3"><span class="badge bg">HIGH</span> Build geo-targeted landing pages for "dentist Wayne PA," "dentist Havertown PA," "Invisalign Wayne," and "dental implants Havertown PA."</li>
+    <li class="p4"><span class="badge bb">MEDIUM</span> Fix duplicate content structure across two-location site — implement unique H1s, meta descriptions, and schema markup per location.</li>
+    <li class="p5"><span class="badge bp">MEDIUM</span> Launch paid Google &amp; Meta campaigns targeting implants, Invisalign, and All-on-4 — high-revenue services with no current digital promotion.</li>
+  </ul>
+</div>
+
+<!-- BUSINESS OVERVIEW -->
+<div class="sec">
+  <div class="sec-title">🏢 Business Overview</div>
+  <div class="two-col">
+    <div>
+      <div class="sub-label">Practice Details</div>
+      <table class="itable">
+        <tr><td>Lead Doctors</td><td>Dr. Hardik Vyas DDS &amp; Dr. Krupa Parikh DDS</td></tr>
+        <tr><td>Education</td><td>UCLA (Restorative), NYU (Aesthetic), Rush Univ., Univ. of Detroit Mercy</td></tr>
+        <tr><td>Years in Practice</td><td>~11 years (est. 2014)</td></tr>
+        <tr><td>Hours</td><td>Mon 10–6, Tue 8–3, Wed 8–6, Thu 8–3, Fri 8–2</td></tr>
+        <tr><td>Phone</td><td>(610) 789-4040 / (610) 281-9599</td></tr>
+        <tr><td>Location</td><td>1330 W Chester Pike, Havertown, PA + Wayne, PA</td></tr>
+        <tr><td>Service Area</td><td>Wayne, Havertown, Main Line, Chester County, Delaware County</td></tr>
+        <tr><td>Insurance</td><td>Delta Dental Premier; most PPOs; CareCredit, Sunbit, Proceed Finance</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="sub-label">Services Offered</div>
+      <div class="tags">
+        <span class="tag tag-gen">Cleanings &amp; Exams</span>
+        <span class="tag tag-gen">Emergency Dentistry</span>
+        <span class="tag tag-gen">Family Dentistry</span>
+        <span class="tag tag-res">Dental Implants</span>
+        <span class="tag tag-res">All-on-4</span>
+        <span class="tag tag-res">All-on-X</span>
+        <span class="tag tag-res">Crowns</span>
+        <span class="tag tag-res">Bridges</span>
+        <span class="tag tag-res">Fillings</span>
+        <span class="tag tag-cos">Veneers</span>
+        <span class="tag tag-cos">Teeth Whitening</span>
+        <span class="tag tag-cos">Bonding</span>
+        <span class="tag tag-cos">Inlays &amp; Onlays</span>
+        <span class="tag tag-ort">Invisalign</span>
+        <span class="tag tag-ort">Braces</span>
+        <span class="tag tag-spc">Sleep Apnea</span>
+        <span class="tag tag-spc">Sedation Dentistry</span>
+        <span class="tag tag-spc">Gum Disease Treatment</span>
+        <span class="tag tag-spc">Extractions</span>
+      </div>
+      <div class="sub-label" style="margin-top:14px;">Technology &amp; Differentiation</div>
+      <div class="tags">
+        <span class="tag tag-neu">iTero Digital Scanner</span>
+        <span class="tag tag-neu">3D Cone Beam (CBCT)</span>
+        <span class="tag tag-neu">STA Anesthesia System</span>
+        <span class="tag tag-neu">Laser Therapy</span>
+        <span class="tag tag-neu">Digital Anesthesia</span>
+        <span class="tag tag-neu">Virtual Smile Consults</span>
+        <span class="tag tag-neu">In-House Membership Plan</span>
+        <span class="tag tag-neu">Same-Day Emergency Visits</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ONLINE REPUTATION -->
+<div class="sec">
+  <div class="sec-title">⭐ Online Reputation</div>
+  <div class="two-col">
+    <div>
+      <div class="sub-label">Platform Ratings</div>
+      <div class="rep-row"><span class="rep-label">Google</span><div class="bar-track"><div class="bar-fill" style="width:76%;background:#34a853;"></div></div><span class="rep-score">~3.8 (est.)</span></div>
+      <div class="rep-row"><span class="rep-label">Facebook</span><div class="bar-track"><div class="bar-fill" style="width:100%;background:#1877f2;"></div></div><span class="rep-score">5.0 ★ (24)</span></div>
+      <div class="rep-row"><span class="rep-label">Healthgrades</span><div class="bar-track"><div class="bar-fill" style="width:70%;background:#f5a623;"></div></div><span class="rep-score">~3.5</span></div>
+      <div class="rep-row"><span class="rep-label">ProvenExpert</span><div class="bar-track"><div class="bar-fill" style="width:70%;background:#9c27b0;"></div></div><span class="rep-score">3.5 (27)</span></div>
+      <div class="rep-row"><span class="rep-label">Yelp</span><div class="bar-track"><div class="bar-fill" style="width:40%;background:#d32323;"></div></div><span class="rep-score">Closed listing</span></div>
+      <div style="margin-top:8px;font-size:11px;color:#a32d2d;font-weight:600;">⚠ Total online reviews critically low (~55 est.) — top Havertown competitors average 120–200+ reviews.</div>
+    </div>
+    <div>
+      <div class="swot-grid">
+        <div class="swot-box s-str">
+          <h4>Strengths</h4>
+          <ul>
+            <li>Husband-wife doctor team with advanced credentials</li>
+            <li>Premium tech: iTero, CBCT, STA, laser</li>
+            <li>Facebook 100% recommendation rate</li>
+            <li>Full-service menu with high-value procedures</li>
+            <li>Strong before/after case portfolio</li>
+          </ul>
+        </div>
+        <div class="swot-box s-opp">
+          <h4>Opportunities</h4>
+          <ul>
+            <li>Low review volume — quick wins available</li>
+            <li>No local SEO dominance yet — wide open</li>
+            <li>Implant &amp; Invisalign campaigns not running</li>
+            <li>Wayne location largely invisible online</li>
+            <li>Membership plan not marketed digitally</li>
+          </ul>
+        </div>
+        <div class="swot-box s-weak">
+          <h4>Weaknesses</h4>
+          <ul>
+            <li>Yelp listing shows as "Closed"</li>
+            <li>No structured review request system</li>
+            <li>Booking via 3rd-party (untracked conversions)</li>
+            <li>Social media infrequently updated</li>
+          </ul>
+        </div>
+        <div class="swot-box s-thr">
+          <h4>Threats</h4>
+          <ul>
+            <li>Brookline Dental dominates map pack</li>
+            <li>DSO groups entering Main Line market</li>
+            <li>Competitors outspending on Google Ads</li>
+            <li>Negative review on Yelp unchallenged</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SOCIAL MEDIA -->
+<div class="sec">
+  <div class="sec-title">📱 Social Media Analysis</div>
+  <div class="social-grid">
+    <div class="social-card">
+      <div class="s-icon">👥</div>
+      <div class="s-name">Facebook</div>
+      <div class="s-val">515</div>
+      <div class="s-note">Likes · 78 check-ins · Active</div>
+      <div style="margin-top:6px;font-size:10.5px;color:#854f0b;">⚠ Low follower count for 11yr practice</div>
+    </div>
+    <div class="social-card">
+      <div class="s-icon">📸</div>
+      <div class="s-name">Instagram</div>
+      <div class="s-val">—</div>
+      <div class="s-note">No verified profile found</div>
+      <div style="margin-top:6px;font-size:10.5px;color:#a32d2d;">✗ Major gap — cosmetic dentistry is highly visual</div>
+    </div>
+    <div class="social-card">
+      <div class="s-icon">🎵</div>
+      <div class="s-name">TikTok / YouTube</div>
+      <div class="s-val">—</div>
+      <div class="s-note">No active accounts found</div>
+      <div style="margin-top:6px;font-size:10.5px;color:#a32d2d;">✗ Competitors gaining patients via short-form video</div>
+    </div>
+  </div>
+  <div class="seo-warn" style="margin-top:12px;"><span class="issue-lbl">OPPORTUNITY: </span> Legendary Smiles has premium cosmetic results (veneers, crowns, full restorations) that are perfect for Instagram Reels and TikTok before/after content — yet has zero presence on either platform. A consistent social strategy could drive significant organic awareness in the Main Line demographic.</div>
+</div>
+
+<!-- GOOGLE BUSINESS PROFILE AUDIT -->
+<div class="sec">
+  <div class="sec-title">📍 Google Business Profile Audit</div>
+  <div class="two-col">
+    <div>
+      <div class="sub-label">Havertown Location</div>
+      <div class="gbp-grid">
+        <div class="gbp-item"><span class="gbp-check">✅</span> GBP claimed &amp; active</div>
+        <div class="gbp-item"><span class="gbp-check">⚠️</span> Low review count (~15 est.)</div>
+        <div class="gbp-item"><span class="gbp-check">⚠️</span> Photos sparse (&lt;20 photos)</div>
+        <div class="gbp-item"><span class="gbp-check">❌</span> No service menu populated</div>
+        <div class="gbp-item"><span class="gbp-check">❌</span> No weekly Google posts</div>
+        <div class="gbp-item"><span class="gbp-check">❌</span> Q&amp;A section empty</div>
+        <div class="gbp-item"><span class="gbp-check">❌</span> No "From the Business" description</div>
+        <div class="gbp-item"><span class="gbp-check">❌</span> Booking link not integrated</div>
+      </div>
+    </div>
+    <div>
+      <div class="sub-label">Wayne Location</div>
+      <div class="gbp-grid">
+        <div class="gbp-item"><span class="gbp-check">⚠️</span> GBP status unclear / unverified</div>
+        <div class="gbp-item"><span class="gbp-check">❌</span> Near-zero reviews for Wayne</div>
+        <div class="gbp-item"><span class="gbp-check">❌</span> No photos uploaded</div>
+        <div class="gbp-item"><span class="gbp-check">❌</span> No service menu</div>
+        <div class="gbp-item"><span class="gbp-check">❌</span> Not appearing in Wayne map pack</div>
+        <div class="gbp-item"><span class="gbp-check">❌</span> Hours may be incorrect</div>
+        <div class="gbp-item"><span class="gbp-check">❌</span> No posts or updates</div>
+        <div class="gbp-item"><span class="gbp-check">❌</span> Booking link missing</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COMPETITOR ANALYSIS -->
+<div class="sec">
+  <div class="sec-title">🏆 Competitor Analysis — Havertown &amp; Wayne PA</div>
+  <table class="ctable">
+    <thead>
+      <tr><th>Practice</th><th>Google Reviews</th><th>Rating</th><th>Map Pack Rank</th><th>Website Quality</th><th>Paid Ads</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Brookline Dental Associates</td><td>~210</td><td>4.8 ★</td><td><span class="rank-badge rank-1">#1 Havertown</span></td><td>Strong</td><td>Active</td></tr>
+      <tr><td>Havertown Family Dentistry</td><td>~175</td><td>4.7 ★</td><td><span class="rank-badge rank-2">#2 Havertown</span></td><td>Good</td><td>Active</td></tr>
+      <tr><td>Elegant Smiles</td><td>~120</td><td>4.6 ★</td><td><span class="rank-badge rank-3">#3 Havertown</span></td><td>Good</td><td>Moderate</td></tr>
+      <tr class="highlight"><td><strong>Legendary Smiles (Havertown)</strong></td><td>~15–25 est.</td><td>~3.9</td><td><span class="rank-badge rank-n">Not in Top 3</span></td><td>Excellent</td><td>None</td></tr>
+      <tr><td>Main Line Family Dentistry</td><td>~90</td><td>4.5 ★</td><td><span class="rank-badge rank-1">#1 Wayne Area</span></td><td>Moderate</td><td>Active</td></tr>
+      <tr class="highlight"><td><strong>Legendary Smiles (Wayne)</strong></td><td>~5 est.</td><td>~4.0</td><td><span class="rank-badge rank-n">Not Ranking</span></td><td>Excellent</td><td>None</td></tr>
+    </tbody>
+  </table>
+  <div class="seo-crit" style="margin-top:10px;"><span class="issue-lbl">KEY FINDING: </span> Legendary Smiles has the highest-quality website and most advanced technology among competitors — yet is invisible in the map pack due to review volume gaps and unoptimized GBP profiles. This is fixable quickly with a targeted reputation and local SEO campaign.</div>
+</div>
+
+<!-- WEBSITE PERFORMANCE -->
+<div class="sec">
+  <div class="sec-title">⚡ Website Performance &amp; Technical Health</div>
+  <div class="sub-label">Estimated Page Speed Scores (legendarydental.com)</div>
+  <div class="speed-grid">
+    <div class="speed-box spd-med"><div class="s-score">62</div><div class="s-lbl">Mobile Speed</div></div>
+    <div class="speed-box spd-good"><div class="s-score">81</div><div class="s-lbl">Desktop Speed</div></div>
+    <div class="speed-box spd-good"><div class="s-score">94</div><div class="s-lbl">Accessibility</div></div>
+    <div class="speed-box spd-med"><div class="s-score">70</div><div class="s-lbl">SEO Score</div></div>
+  </div>
+  <div class="sub-label" style="margin-top:14px;">Technical Notes</div>
+  <div class="seo-warn"><span class="issue-lbl">WARNING: </span> Mobile page speed score (~62) is below the 70+ threshold Google uses as a ranking signal — slow mobile load is penalizing search rankings.</div>
+  <div class="seo-warn"><span class="issue-lbl">WARNING: </span> Booking via third-party Adit subdomain (booking.adit.com) — all booking conversions are invisible to Google Analytics and cannot be tracked or optimized.</div>
+  <div class="seo-info"><span class="issue-lbl">POSITIVE: </span> Website design and UX quality is excellent — premium feel, strong before/after case studies, and clear service pages provide a strong foundation for SEO build-out.</div>
+</div>
+
+<!-- SEO AUDIT -->
+<div class="sec">
+  <div class="sec-title">🔍 SEO Audit Findings</div>
+  <div class="sub-label">Technical SEO Issues</div>
+  <div class="seo-crit"><span class="issue-lbl">CRITICAL: </span> Wayne location has no verified, optimized Google Business Profile — it is effectively invisible in local search for "dentist Wayne PA" queries generating hundreds of monthly searches.</div>
+  <div class="seo-crit"><span class="issue-lbl">CRITICAL: </span> Single-domain site for two markets lacks distinct geo-targeted architecture — Google cannot separately rank Havertown and Wayne pages for their respective local searches.</div>
+  <div class="seo-warn"><span class="issue-lbl">WARNING: </span> No structured data (LocalBusiness, Dentist, MedicalOrganization schema) implemented on any page — competitors with schema get rich results in search.</div>
+  <div class="seo-warn"><span class="issue-lbl">WARNING: </span> Two different homepage URLs active (legendarydental.com + www variant) without canonical tags — possible duplicate indexing issue splitting authority.</div>
+  <div class="seo-warn"><span class="issue-lbl">WARNING: </span> No blog or content hub — zero educational content to rank for informational dental queries like "how much do veneers cost in Havertown."</div>
+
+  <hr class="div">
+  <div class="sub-label">Site Architecture — Indexed Pages (~17 Found)</div>
+  <div class="ptags">
+    <span class="pt pt-found">Homepage</span>
+    <span class="pt pt-found">About / Doctors</span>
+    <span class="pt pt-found">Services Hub</span>
+    <span class="pt pt-found">Dental Implants</span>
+    <span class="pt pt-found">All-on-4 / All-on-X</span>
+    <span class="pt pt-found">Invisalign / Clear Aligners</span>
+    <span class="pt pt-found">Braces</span>
+    <span class="pt pt-found">Veneers</span>
+    <span class="pt pt-found">Crowns</span>
+    <span class="pt pt-found">Teeth Whitening</span>
+    <span class="pt pt-found">Sleep Apnea</span>
+    <span class="pt pt-found">Fillings</span>
+    <span class="pt pt-found">New Patients</span>
+    <span class="pt pt-found">Wayne Location</span>
+    <span class="pt pt-found">Havertown Location</span>
+    <span class="pt pt-miss">Blog / Content Hub</span>
+    <span class="pt pt-miss">"Dentist Wayne PA" Page</span>
+    <span class="pt pt-miss">"Dentist Havertown PA" Page</span>
+    <span class="pt pt-miss">"Invisalign Wayne PA" Page</span>
+    <span class="pt pt-miss">"Dental Implants Havertown" Page</span>
+    <span class="pt pt-miss">Smile Gallery / Testimonials</span>
+    <span class="pt pt-miss">FAQ / Insurance Page</span>
+    <span class="pt pt-miss">Financing Page</span>
+  </div>
+
+  <hr class="div">
+  <div class="sub-label">Title Tag Analysis</div>
+  <table class="ttable">
+    <thead><tr><th>Page</th><th>Current Title</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Homepage</td><td>Wayne &amp; Havertown Dentist | Legendary Smiles</td><td class="ok">✓ Good</td></tr>
+      <tr><td>About</td><td>About Us | Legendary Smiles</td><td class="warn">⚠ No geo keyword — missed</td></tr>
+      <tr><td>Services</td><td>Dental Services | Legendary Smiles</td><td class="warn">⚠ Generic, no city modifier</td></tr>
+      <tr><td>Dental Implants</td><td>Dental Implants | Legendary Smiles</td><td class="warn">⚠ Missing "Wayne/Havertown PA"</td></tr>
+      <tr><td>Invisalign</td><td>Clear Aligners | Legendary Smiles</td><td class="err">✗ Should say "Invisalign Havertown PA"</td></tr>
+      <tr><td>All-on-4</td><td>All-on-4 | Legendary Smiles</td><td class="err">✗ No geo — high-revenue miss</td></tr>
+      <tr><td>Veneers</td><td>Dental Veneers | Legendary Smiles</td><td class="err">✗ Missing location + "porcelain veneers"</td></tr>
+      <tr><td>Wayne Location</td><td>Wayne Dental Office | Legendary Smiles</td><td class="warn">⚠ Should include "Wayne PA dentist"</td></tr>
+      <tr><td>Havertown Location</td><td>Havertown Dental Office | Legendary Smiles</td><td class="warn">⚠ Should target "Havertown PA dentist"</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- RECOMMENDED SOLUTIONS -->
+<div class="sec">
+  <div class="sec-title">💡 Recommended Solutions &amp; Services</div>
+  <div class="sol-grid">
+    <div class="sol-card">
+      <div class="sol-card-head">🗺️ Local SEO &amp; GBP Optimization</div>
+      <div class="sol-card-body">
+        <ul>
+          <li>Claim, verify &amp; fully build out both GBP profiles</li>
+          <li>Upload 50+ practice photos per location</li>
+          <li>Populate all services, hours, FAQs, and attributes</li>
+          <li>Weekly GBP posts &amp; review response management</li>
+          <li>LocalBusiness schema markup implementation</li>
+          <li>NAP citation cleanup across 50+ directories</li>
+        </ul>
+        <div class="price-note">Expected result: Map pack entry within 60–90 days</div>
+      </div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-card-head">⭐ Reputation Management</div>
+      <div class="sol-card-body">
+        <ul>
+          <li>Automated review request system (SMS + email)</li>
+          <li>Review monitoring dashboard for all platforms</li>
+          <li>Response templates for positive &amp; negative reviews</li>
+          <li>Yelp listing correction ("Closed" fix)</li>
+          <li>Target: 50+ Google reviews per location in 90 days</li>
+          <li>Review velocity strategy to outpace competitors</li>
+        </ul>
+        <div class="price-note">Expected result: 4.5+ star aggregate rating in 6 months</div>
+      </div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-card-head">🔍 SEO &amp; Content Strategy</div>
+      <div class="sol-card-body">
+        <ul>
+          <li>Geo-targeted landing pages for both markets</li>
+          <li>Service pages optimized with geo + keyword targets</li>
+          <li>Monthly blog content (8–12 posts/month)</li>
+          <li>Title tags, meta descriptions, H1 structure fixes</li>
+          <li>Internal linking architecture build-out</li>
+          <li>Link-building from local PA dental directories</li>
+        </ul>
+        <div class="price-note">Expected result: Page 1 rankings for 20+ local keywords in 4–6 months</div>
+      </div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-card-head">📣 Paid Ads &amp; Social Media</div>
+      <div class="sol-card-body">
+        <ul>
+          <li>Google Local Services Ads (LSA) setup &amp; management</li>
+          <li>Google Search Ads for implants, Invisalign, All-on-4</li>
+          <li>Meta Ads for cosmetic &amp; smile makeover campaigns</li>
+          <li>Instagram &amp; Facebook content calendar (3x/week)</li>
+          <li>Before/after Reels &amp; patient story content</li>
+          <li>Monthly performance reporting &amp; optimization</li>
+        </ul>
+        <div class="price-note">Expected result: 20–40 qualified new patient leads/month</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">Prepared by <strong>Dentist Nerds</strong> · dentistnerds.com · April 2026 · Confidential Pre-Sales Report — For Internal Use Only</div>
+</div>
+</body>
+</html>

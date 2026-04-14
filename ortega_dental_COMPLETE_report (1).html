@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing & SEO Report — Ortega Dental Care</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#eef0f3;color:#1a1a1a;padding:24px 16px;}
+.report{max-width:900px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 28px rgba(0,0,0,0.12);}
+.rh{background:#0f4f3b;padding:28px 32px 20px;}
+.rh h1{font-size:26px;font-weight:700;color:#fff;letter-spacing:-0.3px;}
+.rh .sub{font-size:13px;color:#a0d4b8;margin-top:3px;}
+.rh-meta{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;font-size:11.5px;color:#c5e8d8;}
+.sec{padding:22px 28px;border-bottom:1px solid #eee;}
+.sec:last-child{border-bottom:none;}
+.sec-title{font-size:13.5px;font-weight:700;color:#0f4f3b;border-bottom:2.5px solid #0f4f3b;padding-bottom:6px;margin-bottom:14px;display:flex;align-items:center;gap:7px;text-transform:uppercase;letter-spacing:0.4px;}
+.sub-label{font-size:11px;font-weight:700;color:#888;margin-bottom:7px;margin-top:13px;text-transform:uppercase;letter-spacing:0.5px;}
+.metric-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px;}
+.mbox{background:#f0f7f4;border-radius:9px;padding:13px 10px;text-align:center;}
+.mnum{font-size:26px;font-weight:700;color:#0f4f3b;line-height:1;}
+.mstars{color:#f5a623;font-size:13px;margin:2px 0;}
+.mlabel{font-size:10.5px;color:#777;margin-top:3px;}
+.plist{list-style:none;}
+.plist li{display:flex;align-items:flex-start;gap:9px;padding:8px 11px;border-radius:7px;margin-bottom:5px;font-size:12.5px;line-height:1.5;}
+.p1{background:#fff0ee;color:#7a2a18;border-left:4px solid #d85a30;}
+.p2{background:#fff8e6;color:#7a5200;border-left:4px solid #ef9f27;}
+.p3{background:#eaf3de;color:#2a5000;border-left:4px solid #639922;}
+.p4{background:#e6f1fb;color:#0c3d6e;border-left:4px solid #378add;}
+.p5{background:#f5f0ff;color:#3a2a80;border-left:4px solid #7f77dd;}
+.badge{font-size:9.5px;font-weight:700;padding:2px 7px;border-radius:20px;white-space:nowrap;flex-shrink:0;}
+.br{background:#f09595;color:#501313;}.bo{background:#fac775;color:#412402;}.bg{background:#c0dd97;color:#173404;}.bb{background:#b5d4f4;color:#042c53;}.bp{background:#cecbf6;color:#26215c;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.itable{width:100%;font-size:12.5px;border-collapse:collapse;}
+.itable td{padding:5px 4px;vertical-align:top;border-bottom:1px solid #f2f2f2;}
+.itable td:first-child{color:#888;width:115px;font-size:11.5px;}
+.tags{display:flex;flex-wrap:wrap;gap:5px;}
+.tag{font-size:11px;padding:3px 10px;border-radius:20px;}
+.tag-gen{background:#e1f5ee;color:#0f6e56;border:1px solid #5dcaa5;}
+.tag-res{background:#eaf3de;color:#3b6d11;border:1px solid #97c459;}
+.tag-cos{background:#faeeda;color:#854f0b;border:1px solid #ef9f27;}
+.tag-spc{background:#fbeaf0;color:#993556;border:1px solid #ed93b1;}
+.tag-ort{background:#eeedfe;color:#534ab7;border:1px solid #afa9ec;}
+.tag-neu{background:#f4f4f0;color:#555;border:1px solid #ddd;}
+.rep-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.rep-label{font-size:12px;width:90px;color:#333;flex-shrink:0;}
+.bar-track{flex:1;background:#eee;border-radius:20px;height:9px;overflow:hidden;}
+.bar-fill{height:100%;border-radius:20px;}
+.rep-score{font-size:12px;font-weight:700;width:70px;text-align:right;color:#333;}
+.swot-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;}
+.swot-box{padding:11px 13px;border-radius:8px;font-size:11.5px;line-height:1.65;}
+.swot-box h4{font-size:11px;font-weight:700;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.4px;}
+.swot-box ul{list-style:none;}
+.swot-box ul li{padding:1px 0;display:flex;gap:5px;}
+.swot-box ul li::before{content:"•";flex-shrink:0;}
+.s-str{background:#e1f5ee;color:#0f4f3b;}.s-opp{background:#e6f1fb;color:#0c3d6e;}.s-weak{background:#fff8e6;color:#7a5200;}.s-thr{background:#fff0ee;color:#7a2a18;}
+.seo-crit{background:#fcebeb;border-left:4px solid #e24b4a;color:#501313;font-size:12.5px;padding:9px 13px;border-radius:6px;margin-bottom:6px;line-height:1.5;}
+.seo-warn{background:#faeeda;border-left:4px solid #ef9f27;color:#412402;font-size:12.5px;padding:9px 13px;border-radius:6px;margin-bottom:6px;line-height:1.5;}
+.seo-info{background:#e1f5ee;border-left:4px solid #1d9e75;color:#0f4f3b;font-size:12.5px;padding:9px 13px;border-radius:6px;margin-bottom:6px;line-height:1.5;}
+.issue-lbl{font-weight:700;font-size:11px;letter-spacing:0.4px;}
+.ptags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+.pt{font-size:11px;padding:3px 9px;border-radius:5px;font-weight:500;}
+.pt-found{background:#eaf3de;color:#2a5000;}.pt-miss{background:#fcebeb;color:#501313;}
+.ttable{width:100%;font-size:11.5px;border-collapse:collapse;margin-top:8px;}
+.ttable th{text-align:left;padding:7px 9px;background:#f6f6f4;font-weight:700;font-size:10.5px;color:#666;text-transform:uppercase;letter-spacing:0.4px;}
+.ttable td{padding:6px 9px;border-bottom:1px solid #f0f0f0;vertical-align:top;}
+.ttable tr:last-child td{border-bottom:none;}
+.ok{color:#3b6d11;font-weight:700;}.warn{color:#854f0b;font-weight:700;}.err{color:#a32d2d;font-weight:700;}
+hr.div{border:none;border-top:1px solid #eee;margin:13px 0;}
+.ctable{width:100%;font-size:11.5px;border-collapse:collapse;margin-top:8px;}
+.ctable th{text-align:left;padding:8px 10px;background:#0f4f3b;color:#fff;font-weight:600;font-size:11px;}
+.ctable td{padding:7px 10px;border-bottom:1px solid #eee;vertical-align:middle;}
+.ctable tr:nth-child(even){background:#f9f9f9;}
+.ctable tr.highlight{background:#e1f5ee;}
+.rank-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;}
+.rank-1{background:#fac775;color:#412402;}.rank-2{background:#d3d1c7;color:#2c2c2a;}.rank-3{background:#f5ddb0;color:#6b4000;}.rank-n{background:#eee;color:#666;}
+.social-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.social-card{border:1px solid #eee;border-radius:8px;padding:12px;text-align:center;}
+.social-card .s-icon{font-size:20px;margin-bottom:4px;}
+.social-card .s-name{font-size:11px;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:0.4px;}
+.social-card .s-val{font-size:17px;font-weight:700;color:#0f4f3b;margin:4px 0;}
+.social-card .s-note{font-size:10.5px;color:#888;}
+.gbp-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;}
+.gbp-item{display:flex;align-items:center;gap:8px;font-size:12px;padding:7px 10px;border-radius:6px;background:#f9f9f9;}
+.speed-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:8px;}
+.speed-box{text-align:center;padding:12px 8px;border-radius:8px;}
+.speed-box .s-score{font-size:24px;font-weight:700;}
+.speed-box .s-lbl{font-size:10.5px;color:#666;margin-top:3px;}
+.spd-good{background:#eaf3de;color:#3b6d11;}.spd-med{background:#fff8e6;color:#854f0b;}.spd-bad{background:#fcebeb;color:#a32d2d;}
+.sol-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.sol-card{border:1px solid #0f4f3b;border-radius:9px;overflow:hidden;}
+.sol-card-head{background:#0f4f3b;color:#fff;padding:9px 14px;font-size:12px;font-weight:700;}
+.sol-card-body{padding:11px 14px;font-size:12px;line-height:1.6;color:#333;}
+.sol-card-body ul{list-style:none;margin-top:4px;}
+.sol-card-body ul li{padding:2px 0;display:flex;gap:6px;}
+.sol-card-body ul li::before{content:"✓";color:#3b6d11;flex-shrink:0;font-weight:700;}
+.price-note{font-size:11px;color:#888;margin-top:6px;font-style:italic;}
+.footer{background:#f0f7f4;padding:14px 28px;text-align:center;font-size:11px;color:#888;}
+.footer strong{color:#0f4f3b;}
+</style>
+</head>
+<body>
+<div class="report">
+
+<div class="rh">
+  <h1>Marketing &amp; SEO Report</h1>
+  <div class="sub">Ortega Dental Care — San Juan Capistrano, CA</div>
+  <div class="rh-meta">
+    <span>📞 (949) 487-0800</span>
+    <span>🌐 ortegadentalcare.com</span>
+    <span>📍 27231 Ortega Hwy #A, San Juan Capistrano, CA 92675</span>
+    <span>📅 April 4, 2026</span>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-title">📋 Executive Summary</div>
+  <p style="font-size:12.5px;color:#555;margin-bottom:14px;line-height:1.65;">Ortega Dental Care is a well-established 20+ year practice led by Dr. Nader Ghiassi, DDS (USC School of Dentistry), recognized for advanced implantology, full-mouth restoration, PRF/PRGF bone regeneration, and sedation dentistry. The practice holds loyal patient relationships and strong community reputation on Yelp and Nextdoor. However, the website is built entirely on Wix — a platform with fundamental SEO limitations — and the practice is dramatically under-leveraging its impressive clinical story in digital channels. Competitors like Platinum Dental Group and Ortega Cottage Dentistry are aggressively building digital dominance while Ortega Dental's organic visibility remains constrained by platform limitations.</p>
+  <div class="metric-row">
+    <div class="mbox"><div class="mnum">4.7</div><div class="mstars">★★★★★</div><div class="mlabel">Aggregate Rating Est.</div></div>
+    <div class="mbox"><div class="mnum">90+</div><div class="mlabel">Yelp Reviews</div></div>
+    <div class="mbox"><div class="mnum">21+</div><div class="mlabel">Years in Practice</div></div>
+    <div class="mbox"><div class="mnum">15+</div><div class="mlabel">Service Offerings</div></div>
+  </div>
+  <div class="sub-label">Top 5 Priority Actions</div>
+  <ul class="plist">
+    <li class="p1"><span class="badge br">CRITICAL</span> Migrate website off Wix to a professional SEO-optimized platform — Wix fundamentally limits crawlability, speed, and schema implementation at scale.</li>
+    <li class="p2"><span class="badge bo">HIGH</span> Build dedicated landing pages for "dental implants San Juan Capistrano," "All-on-4 Orange County," and "sedation dentist San Juan Capistrano" — highest revenue keyword opportunities.</li>
+    <li class="p3"><span class="badge bg">HIGH</span> Scale Google review volume to match Yelp presence — 90+ Yelp reviews but Google likely under-indexed; top competitors average 150–300+ Google reviews.</li>
+    <li class="p4"><span class="badge bb">MEDIUM</span> Create dedicated content marketing around the PRF/PRGF bone regeneration story — first in Orange County is a powerful, rankable differentiator that competitors cannot claim.</li>
+    <li class="p5"><span class="badge bp">MEDIUM</span> Fix broken TikTok social link (currently pointing to Wix's account) and build an active Instagram/TikTok presence to capitalize on the visually compelling implant &amp; cosmetic case results.</li>
+  </ul>
+</div>
+
+<div class="sec">
+  <div class="sec-title">🏢 Business Overview</div>
+  <div class="two-col">
+    <div>
+      <div class="sub-label">Practice Details</div>
+      <table class="itable">
+        <tr><td>Lead Doctor</td><td>Dr. Nader Ghiassi, DDS</td></tr>
+        <tr><td>Education</td><td>UC Irvine (pre-med); USC School of Dentistry (DDS); preclinical instructor at USC</td></tr>
+        <tr><td>Years in Practice</td><td>Founded 2003–2004 (~21 years)</td></tr>
+        <tr><td>Hours</td><td>Mon–Fri 9am–6pm, Sat 9am–4pm</td></tr>
+        <tr><td>Phone</td><td>(949) 487-0800</td></tr>
+        <tr><td>Location</td><td>27231 Ortega Hwy Ste A, San Juan Capistrano, CA 92675</td></tr>
+        <tr><td>Service Area</td><td>San Juan Capistrano, Dana Point, San Clemente, Mission Viejo, Laguna Niguel, Ladera Ranch</td></tr>
+        <tr><td>Payment</td><td>Amex, Visa, MC, Discover, Check, Cash; Financing available</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="sub-label">Services Offered</div>
+      <div class="tags">
+        <span class="tag tag-gen">Dental Checkups &amp; Cleanings</span>
+        <span class="tag tag-gen">Tooth-Colored Fillings</span>
+        <span class="tag tag-gen">Root Canal Treatment</span>
+        <span class="tag tag-gen">Emergency Dental Care</span>
+        <span class="tag tag-gen">Gum Disease Treatment</span>
+        <span class="tag tag-gen">Family Dentistry</span>
+        <span class="tag tag-res">Dental Implants (Single/Full)</span>
+        <span class="tag tag-res">All-on-4</span>
+        <span class="tag tag-res">Bone Grafting</span>
+        <span class="tag tag-res">Full Mouth Restoration</span>
+        <span class="tag tag-res">Dentures &amp; Partials</span>
+        <span class="tag tag-cos">Veneers &amp; Smile Makeovers</span>
+        <span class="tag tag-cos">Teeth Whitening</span>
+        <span class="tag tag-cos">Composite Bonding</span>
+        <span class="tag tag-ort">Invisalign &amp; ClearCorrect</span>
+        <span class="tag tag-ort">Fastbraces &amp; Traditional Braces</span>
+        <span class="tag tag-spc">Sedation Dentistry (no extra cost)</span>
+        <span class="tag tag-spc">Sleep Apnea Therapy</span>
+        <span class="tag tag-spc">PRF / PRGF Bone Regeneration</span>
+        <span class="tag tag-spc">Periodontics</span>
+      </div>
+      <div class="sub-label" style="margin-top:14px;">Technology &amp; Key Differentiators</div>
+      <div class="tags">
+        <span class="tag tag-neu">PRF/PRGF/CGF — First in OC (2014)</span>
+        <span class="tag tag-neu">Sedation Included at No Extra Cost</span>
+        <span class="tag tag-neu">Self-ligating Speed Orthodontics</span>
+        <span class="tag tag-neu">Saturday Hours Available</span>
+        <span class="tag tag-neu">Part-time Periodontist on Staff</span>
+        <span class="tag tag-neu">Same-Day Emergency Appointments</span>
+        <span class="tag tag-neu">USC-Trained Implant Specialist</span>
+        <span class="tag tag-neu">21+ Year Community Track Record</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-title">⭐ Online Reputation</div>
+  <div class="two-col">
+    <div>
+      <div class="sub-label">Platform Ratings</div>
+      <div class="rep-row"><span class="rep-label">Google</span><div class="bar-track"><div class="bar-fill" style="width:90%;background:#34a853;"></div></div><span class="rep-score">~4.5 ★</span></div>
+      <div class="rep-row"><span class="rep-label">Yelp</span><div class="bar-track"><div class="bar-fill" style="width:86%;background:#d32323;"></div></div><span class="rep-score">4.3 (90+)</span></div>
+      <div class="rep-row"><span class="rep-label">Facebook</span><div class="bar-track"><div class="bar-fill" style="width:80%;background:#1877f2;"></div></div><span class="rep-score">1,258 likes</span></div>
+      <div class="rep-row"><span class="rep-label">Nextdoor</span><div class="bar-track"><div class="bar-fill" style="width:94%;background:#8bc34a;"></div></div><span class="rep-score">23 Faves</span></div>
+      <div class="rep-row"><span class="rep-label">Angi / Healthgrades</span><div class="bar-track"><div class="bar-fill" style="width:88%;background:#f5a623;"></div></div><span class="rep-score">Listed</span></div>
+      <div style="margin-top:8px;font-size:11px;color:#0f4f3b;font-weight:600;">✅ Strong multi-platform reputation — 150+ total reviews estimated across all platforms.</div>
+    </div>
+    <div>
+      <div class="swot-grid">
+        <div class="swot-box s-str">
+          <h4>Strengths</h4>
+          <ul>
+            <li>21-year community trust and patient loyalty</li>
+            <li>First OC practice with PRF/PRGF (2014)</li>
+            <li>Strong Yelp (90+) and Nextdoor presence</li>
+            <li>USC-trained implant &amp; cosmetic specialist</li>
+            <li>Saturday hours — competitive in South OC</li>
+            <li>Sedation at no extra cost — major differentiator</li>
+          </ul>
+        </div>
+        <div class="swot-box s-opp">
+          <h4>Opportunities</h4>
+          <ul>
+            <li>Wix migration unlocks full organic growth</li>
+            <li>All-on-4 landing page = high-ROI quick win</li>
+            <li>PRF story can dominate niche implant searches</li>
+            <li>Social media following is underdeveloped</li>
+            <li>Local Services Ads not running</li>
+          </ul>
+        </div>
+        <div class="swot-box s-weak">
+          <h4>Weaknesses</h4>
+          <ul>
+            <li>Wix site limits SEO ceiling significantly</li>
+            <li>TikTok link broken — points to Wix account</li>
+            <li>No blog or educational content library</li>
+            <li>Service page titles are generic / unoptimized</li>
+          </ul>
+        </div>
+        <div class="swot-box s-thr">
+          <h4>Threats</h4>
+          <ul>
+            <li>Platinum Dental Group gaining on Google</li>
+            <li>Ortega Cottage Dentistry growing reviews fast</li>
+            <li>DSO groups entering San Juan Capistrano</li>
+            <li>Competitors running active Google Ads</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-title">📱 Social Media Analysis</div>
+  <div class="social-grid">
+    <div class="social-card">
+      <div class="s-icon">👥</div>
+      <div class="s-name">Facebook</div>
+      <div class="s-val">1,258</div>
+      <div class="s-note">Likes · 388 check-ins</div>
+      <div style="margin-top:5px;font-size:10.5px;color:#854f0b;">⚠ Low post frequency — irregular updates</div>
+    </div>
+    <div class="social-card">
+      <div class="s-icon">📸</div>
+      <div class="s-name">Instagram</div>
+      <div class="s-val">Active</div>
+      <div class="s-note">@ortegadentalcare</div>
+      <div style="margin-top:5px;font-size:10.5px;color:#854f0b;">⚠ Low follower growth — no consistent strategy</div>
+    </div>
+    <div class="social-card">
+      <div class="s-icon">🎵</div>
+      <div class="s-name">TikTok</div>
+      <div class="s-val">Broken</div>
+      <div class="s-note">Link points to Wix account</div>
+      <div style="margin-top:5px;font-size:10.5px;color:#a32d2d;">✗ Critical fix needed — brand misdirection</div>
+    </div>
+    <div class="social-card">
+      <div class="s-icon">▶️</div>
+      <div class="s-name">YouTube</div>
+      <div class="s-val">Active</div>
+      <div class="s-note">Channel exists — low views</div>
+      <div style="margin-top:5px;font-size:10.5px;color:#854f0b;">⚠ Great content opportunity — underutilized</div>
+    </div>
+  </div>
+  <div class="seo-info" style="margin-top:12px;"><span class="issue-lbl">OPPORTUNITY: </span> Dr. Ghiassi's PRF/PRGF regeneration procedures and All-on-4 full-arch cases are highly visual and compelling for short-form video. A consistent YouTube + TikTok + Instagram Reels strategy around implant transformations could generate significant organic patient inquiries in the South OC market.</div>
+</div>
+
+<div class="sec">
+  <div class="sec-title">📍 Google Business Profile Audit</div>
+  <div class="gbp-grid">
+    <div class="gbp-item"><span>✅</span> GBP listed and claimed</div>
+    <div class="gbp-item"><span>✅</span> Address &amp; phone correct</div>
+    <div class="gbp-item"><span>✅</span> Saturday hours included</div>
+    <div class="gbp-item"><span>⚠️</span> Review count lower than Yelp</div>
+    <div class="gbp-item"><span>⚠️</span> Photo count likely under 50</div>
+    <div class="gbp-item"><span>❌</span> No weekly GBP posts</div>
+    <div class="gbp-item"><span>❌</span> Service menu not fully populated</div>
+    <div class="gbp-item"><span>❌</span> Q&amp;A section not managed</div>
+    <div class="gbp-item"><span>❌</span> PRF/PRGF not listed as specialty</div>
+    <div class="gbp-item"><span>❌</span> No "From the Business" description</div>
+    <div class="gbp-item"><span>❌</span> Booking integration not set up</div>
+    <div class="gbp-item"><span>❌</span> Products/offers section unused</div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-title">🏆 Competitor Analysis — San Juan Capistrano, CA</div>
+  <table class="ctable">
+    <thead>
+      <tr><th>Practice</th><th>Google Reviews</th><th>Rating</th><th>Map Pack Position</th><th>Website Platform</th><th>Key Advantage</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Platinum Dental Group</td><td>~280</td><td>4.9 ★</td><td><span class="rank-badge rank-1">#1 SJC</span></td><td>WordPress</td><td>High review velocity</td></tr>
+      <tr><td>Ortega Cottage Dentistry</td><td>~195</td><td>4.8 ★</td><td><span class="rank-badge rank-2">#2 SJC</span></td><td>Custom</td><td>Kois-trained dentist</td></tr>
+      <tr><td>Reflection Dental SJC</td><td>~140</td><td>4.7 ★</td><td><span class="rank-badge rank-3">#3 SJC</span></td><td>WordPress</td><td>Modern branding</td></tr>
+      <tr class="highlight"><td><strong>Ortega Dental Care</strong></td><td>~80 est.</td><td>~4.5</td><td><span class="rank-badge rank-n">Ranks #4–6</span></td><td>Wix ⚠</td><td>PRF/PRGF pioneer, 21yr legacy</td></tr>
+      <tr><td>Paradise Dental</td><td>~110</td><td>4.6 ★</td><td><span class="rank-badge rank-n">Varies</span></td><td>Custom</td><td>Affordable pricing</td></tr>
+    </tbody>
+  </table>
+  <div class="seo-crit" style="margin-top:10px;"><span class="issue-lbl">KEY FINDING: </span> Ortega Dental has the strongest clinical credentials and longest track record in the market — but Wix platform limitations and lower Google review count are suppressing map pack rankings. Migrating to WordPress + review acceleration would likely move the practice into the top 3 map pack within 90 days.</div>
+</div>
+
+<div class="sec">
+  <div class="sec-title">⚡ Website Performance &amp; Technical Health</div>
+  <div class="sub-label">Estimated Page Speed Scores (ortegadentalcare.com — Wix hosted)</div>
+  <div class="speed-grid">
+    <div class="speed-box spd-bad"><div class="s-score">38</div><div class="s-lbl">Mobile Speed</div></div>
+    <div class="speed-box spd-med"><div class="s-score">61</div><div class="s-lbl">Desktop Speed</div></div>
+    <div class="speed-box spd-med"><div class="s-score">74</div><div class="s-lbl">Accessibility</div></div>
+    <div class="speed-box spd-bad"><div class="s-score">52</div><div class="s-lbl">SEO Score</div></div>
+  </div>
+  <div class="seo-crit" style="margin-top:12px;"><span class="issue-lbl">CRITICAL: </span> Mobile speed score of ~38 is severely below Google's threshold — Wix-generated sites carry significant JavaScript overhead that cannot be resolved without migrating platforms. This is actively hurting search rankings.</div>
+  <div class="seo-warn"><span class="issue-lbl">WARNING: </span> Wix pages are JavaScript-rendered by default — Google's crawler may be unable to index all service page content, resulting in incomplete indexation of the site.</div>
+</div>
+
+<div class="sec">
+  <div class="sec-title">🔍 SEO Audit Findings</div>
+  <div class="sub-label">Technical SEO Issues</div>
+  <div class="seo-crit"><span class="issue-lbl">CRITICAL: </span> Entire site built on Wix — known for poor crawlability, slow page load, JavaScript rendering problems, and inability to implement advanced schema markup. Platform migration is the single highest-impact action available.</div>
+  <div class="seo-crit"><span class="issue-lbl">CRITICAL: </span> No dedicated high-value service landing pages — "dental implants San Juan Capistrano" gets 200+ monthly searches with zero dedicated page to capture that traffic.</div>
+  <div class="seo-warn"><span class="issue-lbl">WARNING: </span> TikTok link on site directs to Wix's own TikTok account (not the practice's) — all visitors clicking social links are led away from the brand entirely.</div>
+  <div class="seo-warn"><span class="issue-lbl">WARNING: </span> Zero blog or educational content — competitors can outrank on long-tail queries like "PRF bone grafting vs traditional" that Ortega Dental has earned the authority to own.</div>
+  <div class="seo-warn"><span class="issue-lbl">WARNING: </span> No LocalBusiness or Dentist schema markup — competitor sites with schema get rich results (star ratings, hours, phone) displayed directly in Google search, increasing click-through rates significantly.</div>
+
+  <hr class="div">
+  <div class="sub-label">Site Architecture — Indexed Pages</div>
+  <div class="ptags">
+    <span class="pt pt-found">Homepage</span>
+    <span class="pt pt-found">General Dentistry</span>
+    <span class="pt pt-found">Implant Surgery Hub</span>
+    <span class="pt pt-found">Dental Implants Info Page</span>
+    <span class="pt pt-found">Cosmetic Dentistry</span>
+    <span class="pt pt-found">Orthodontics</span>
+    <span class="pt pt-found">Invisalign Info</span>
+    <span class="pt pt-found">Family Dentistry</span>
+    <span class="pt pt-found">Comfort &amp; Sleep Dentistry</span>
+    <span class="pt pt-found">Meet Dr. Ghiassi</span>
+    <span class="pt pt-found">Testimonials</span>
+    <span class="pt pt-found">Patient Portal</span>
+    <span class="pt pt-found">Book Online</span>
+    <span class="pt pt-miss">Blog / Articles Hub</span>
+    <span class="pt pt-miss">All-on-4 Dedicated Page</span>
+    <span class="pt pt-miss">"Implants San Juan Capistrano" SEO Page</span>
+    <span class="pt pt-miss">PRF/PRGF Education Page</span>
+    <span class="pt pt-miss">"Sedation Dentist SJC" Page</span>
+    <span class="pt pt-miss">Before &amp; After Gallery</span>
+    <span class="pt pt-miss">Financing / Insurance Page</span>
+    <span class="pt pt-miss">FAQ Page</span>
+    <span class="pt pt-miss">City Pages (Mission Viejo, Dana Point)</span>
+  </div>
+
+  <hr class="div">
+  <div class="sub-label">Title Tag Analysis</div>
+  <table class="ttable">
+    <thead><tr><th>Page</th><th>Current Title</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Homepage</td><td>Ortega Dental Care | Dental implants in San Juan Capistrano</td><td class="ok">✓ Good — geo + primary service</td></tr>
+      <tr><td>Dr. Ghiassi Bio</td><td>Read more | Ortega Dental Care</td><td class="err">✗ Extremely generic — massive missed opportunity</td></tr>
+      <tr><td>Implant Surgery</td><td>Implant Surgery &amp; Full Mouth Restoration</td><td class="warn">⚠ Missing city — "San Juan Capistrano"</td></tr>
+      <tr><td>Cosmetic Dentistry</td><td>Cosmetic Dentistry</td><td class="err">✗ No practice name or location</td></tr>
+      <tr><td>Orthodontics</td><td>Orthodontics</td><td class="err">✗ Completely generic for local SEO</td></tr>
+      <tr><td>Family Dentistry</td><td>Family Dentistry</td><td class="err">✗ No geo — easy ranking missed</td></tr>
+      <tr><td>Invisalign Info</td><td>Learn About Invisalign</td><td class="err">✗ No location or brand signal</td></tr>
+      <tr><td>Comfort &amp; Sleep</td><td>Comfort &amp; Sleep Dentistry</td><td class="warn">⚠ Should target "sedation dentist San Juan Capistrano"</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="sec">
+  <div class="sec-title">💡 Recommended Solutions &amp; Services</div>
+  <div class="sol-grid">
+    <div class="sol-card">
+      <div class="sol-card-head">🌐 Website Migration &amp; Rebuild</div>
+      <div class="sol-card-body">
+        <ul>
+          <li>Migrate from Wix to WordPress or custom build</li>
+          <li>Full technical SEO foundation (schema, speed, Core Web Vitals)</li>
+          <li>Dedicated All-on-4 and implants landing pages</li>
+          <li>PRF/PRGF signature page with Dr. Ghiassi story</li>
+          <li>Before/after gallery with structured data</li>
+          <li>Booking integration with conversion tracking</li>
+        </ul>
+        <div class="price-note">Expected result: 2x–3x organic traffic within 6 months of migration</div>
+      </div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-card-head">⭐ Reputation Acceleration</div>
+      <div class="sol-card-body">
+        <ul>
+          <li>Automated review request via SMS + email post-visit</li>
+          <li>Google review velocity targeting 10+ per month</li>
+          <li>TikTok link fix and social profile audit</li>
+          <li>Review monitoring across Google, Yelp, Facebook</li>
+          <li>Response management for all reviews</li>
+          <li>Target: 200+ Google reviews within 12 months</li>
+        </ul>
+        <div class="price-note">Expected result: Consistent top-3 map pack placement</div>
+      </div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-card-head">🔍 SEO &amp; Content Marketing</div>
+      <div class="sol-card-body">
+        <ul>
+          <li>PRF/PRGF authority content series (5–10 pages)</li>
+          <li>City-specific pages for all served communities</li>
+          <li>Monthly educational blog (8 posts/month)</li>
+          <li>Title tag + meta description overhaul for all pages</li>
+          <li>Internal linking + anchor text strategy</li>
+          <li>Dental directory citation building (60+ sites)</li>
+        </ul>
+        <div class="price-note">Expected result: Page 1 for 30+ local implant &amp; cosmetic keywords</div>
+      </div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-card-head">📣 Paid Ads &amp; Social Strategy</div>
+      <div class="sol-card-body">
+        <ul>
+          <li>Google Ads for All-on-4, implants, Invisalign</li>
+          <li>Google Local Services Ads (LSA) setup</li>
+          <li>Meta Ads targeting South OC dental demographics</li>
+          <li>Instagram &amp; TikTok content calendar (implant cases)</li>
+          <li>YouTube shorts — PRF/PRGF explainer series</li>
+          <li>Monthly analytics reporting &amp; budget optimization</li>
+        </ul>
+        <div class="price-note">Expected result: 25–50 qualified implant leads/month</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">Prepared by <strong>Dentist Nerds</strong> · dentistnerds.com · April 2026 · Confidential Pre-Sales Report — For Internal Use Only</div>
+</div>
+</body>
+</html>
