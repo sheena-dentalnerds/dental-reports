@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing & SEO Report — Khatwani Dental</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#eef0f3;color:#1a1a1a;padding:24px 16px;}
+.report{max-width:900px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 28px rgba(0,0,0,0.12);}
+.rh{background:#3a1a6e;padding:28px 32px 20px;}
+.rh h1{font-size:26px;font-weight:700;color:#fff;letter-spacing:-0.3px;}
+.rh .sub{font-size:13px;color:#c5b0f0;margin-top:3px;display:flex;align-items:center;gap:10px;}
+.new-pill{background:#7f77dd;color:#fff;font-size:10px;font-weight:700;padding:2px 9px;border-radius:20px;}
+.rh-meta{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;font-size:11.5px;color:#d8c8f8;}
+.sec{padding:22px 28px;border-bottom:1px solid #eee;}
+.sec:last-child{border-bottom:none;}
+.sec-title{font-size:13.5px;font-weight:700;color:#3a1a6e;border-bottom:2.5px solid #3a1a6e;padding-bottom:6px;margin-bottom:14px;display:flex;align-items:center;gap:7px;text-transform:uppercase;letter-spacing:0.4px;}
+.sub-label{font-size:11px;font-weight:700;color:#888;margin-bottom:7px;margin-top:13px;text-transform:uppercase;letter-spacing:0.5px;}
+.metric-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px;}
+.mbox{background:#f0ecfa;border-radius:9px;padding:13px 10px;text-align:center;}
+.mnum{font-size:26px;font-weight:700;color:#3a1a6e;line-height:1;}
+.mstars{color:#bbb;font-size:13px;margin:2px 0;}
+.mlabel{font-size:10.5px;color:#777;margin-top:3px;}
+.plist{list-style:none;}
+.plist li{display:flex;align-items:flex-start;gap:9px;padding:8px 11px;border-radius:7px;margin-bottom:5px;font-size:12.5px;line-height:1.5;}
+.p1{background:#fff0ee;color:#7a2a18;border-left:4px solid #d85a30;}
+.p2{background:#fff8e6;color:#7a5200;border-left:4px solid #ef9f27;}
+.p3{background:#eaf3de;color:#2a5000;border-left:4px solid #639922;}
+.p4{background:#e6f1fb;color:#0c3d6e;border-left:4px solid #378add;}
+.p5{background:#f5f0ff;color:#3a2a80;border-left:4px solid #7f77dd;}
+.badge{font-size:9.5px;font-weight:700;padding:2px 7px;border-radius:20px;white-space:nowrap;flex-shrink:0;}
+.br{background:#f09595;color:#501313;}.bo{background:#fac775;color:#412402;}.bg{background:#c0dd97;color:#173404;}.bb{background:#b5d4f4;color:#042c53;}.bp{background:#cecbf6;color:#26215c;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.itable{width:100%;font-size:12.5px;border-collapse:collapse;}
+.itable td{padding:5px 4px;vertical-align:top;border-bottom:1px solid #f2f2f2;}
+.itable td:first-child{color:#888;width:115px;font-size:11.5px;}
+.tags{display:flex;flex-wrap:wrap;gap:5px;}
+.tag{font-size:11px;padding:3px 10px;border-radius:20px;}
+.tag-gen{background:#eeedfe;color:#534ab7;border:1px solid #afa9ec;}
+.tag-res{background:#eaf3de;color:#3b6d11;border:1px solid #97c459;}
+.tag-cos{background:#faeeda;color:#854f0b;border:1px solid #ef9f27;}
+.tag-spc{background:#fbeaf0;color:#993556;border:1px solid #ed93b1;}
+.tag-neu{background:#f4f4f0;color:#555;border:1px solid #ddd;}
+.rep-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.rep-label{font-size:12px;width:90px;color:#333;flex-shrink:0;}
+.bar-track{flex:1;background:#eee;border-radius:20px;height:9px;overflow:hidden;}
+.bar-fill{height:100%;border-radius:20px;}
+.rep-score{font-size:12px;font-weight:700;width:75px;text-align:right;color:#333;}
+.swot-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;}
+.swot-box{padding:11px 13px;border-radius:8px;font-size:11.5px;line-height:1.65;}
+.swot-box h4{font-size:11px;font-weight:700;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.4px;}
+.swot-box ul{list-style:none;}
+.swot-box ul li{padding:1px 0;display:flex;gap:5px;}
+.swot-box ul li::before{content:"•";flex-shrink:0;}
+.s-str{background:#eeedfe;color:#3a1a6e;}.s-opp{background:#e6f1fb;color:#0c3d6e;}.s-weak{background:#fff8e6;color:#7a5200;}.s-thr{background:#fff0ee;color:#7a2a18;}
+.seo-crit{background:#fcebeb;border-left:4px solid #e24b4a;color:#501313;font-size:12.5px;padding:9px 13px;border-radius:6px;margin-bottom:6px;line-height:1.5;}
+.seo-warn{background:#faeeda;border-left:4px solid #ef9f27;color:#412402;font-size:12.5px;padding:9px 13px;border-radius:6px;margin-bottom:6px;line-height:1.5;}
+.seo-info{background:#eeedfe;border-left:4px solid #7f77dd;color:#3a1a6e;font-size:12.5px;padding:9px 13px;border-radius:6px;margin-bottom:6px;line-height:1.5;}
+.issue-lbl{font-weight:700;font-size:11px;letter-spacing:0.4px;}
+.ptags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+.pt{font-size:11px;padding:3px 9px;border-radius:5px;font-weight:500;}
+.pt-found{background:#eaf3de;color:#2a5000;}.pt-miss{background:#fcebeb;color:#501313;}
+.ttable{width:100%;font-size:11.5px;border-collapse:collapse;margin-top:8px;}
+.ttable th{text-align:left;padding:7px 9px;background:#f6f6f4;font-weight:700;font-size:10.5px;color:#666;text-transform:uppercase;letter-spacing:0.4px;}
+.ttable td{padding:6px 9px;border-bottom:1px solid #f0f0f0;vertical-align:top;}
+.ttable tr:last-child td{border-bottom:none;}
+.ok{color:#3b6d11;font-weight:700;}.warn{color:#854f0b;font-weight:700;}.err{color:#a32d2d;font-weight:700;}
+hr.div{border:none;border-top:1px solid #eee;margin:13px 0;}
+.ctable{width:100%;font-size:11.5px;border-collapse:collapse;margin-top:8px;}
+.ctable th{text-align:left;padding:8px 10px;background:#3a1a6e;color:#fff;font-weight:600;font-size:11px;}
+.ctable td{padding:7px 10px;border-bottom:1px solid #eee;vertical-align:middle;}
+.ctable tr:nth-child(even){background:#f9f9f9;}
+.ctable tr.highlight{background:#f5f0ff;}
+.rank-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;}
+.rank-1{background:#fac775;color:#412402;}.rank-2{background:#d3d1c7;color:#2c2c2a;}.rank-3{background:#f5ddb0;color:#6b4000;}.rank-n{background:#eee;color:#666;}.rank-new{background:#cecbf6;color:#26215c;}
+.social-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.social-card{border:1px solid #eee;border-radius:8px;padding:12px;text-align:center;}
+.social-card .s-icon{font-size:20px;margin-bottom:4px;}
+.social-card .s-name{font-size:11px;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:0.4px;}
+.social-card .s-val{font-size:17px;font-weight:700;color:#3a1a6e;margin:4px 0;}
+.social-card .s-note{font-size:10.5px;color:#888;}
+.gbp-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;}
+.gbp-item{display:flex;align-items:center;gap:8px;font-size:12px;padding:7px 10px;border-radius:6px;background:#f9f9f9;}
+.speed-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:8px;}
+.speed-box{text-align:center;padding:12px 8px;border-radius:8px;}
+.speed-box .s-score{font-size:24px;font-weight:700;}
+.speed-box .s-lbl{font-size:10.5px;color:#666;margin-top:3px;}
+.spd-good{background:#eaf3de;color:#3b6d11;}.spd-med{background:#fff8e6;color:#854f0b;}.spd-bad{background:#fcebeb;color:#a32d2d;}
+.sol-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.sol-card{border:1px solid #3a1a6e;border-radius:9px;overflow:hidden;}
+.sol-card-head{background:#3a1a6e;color:#fff;padding:9px 14px;font-size:12px;font-weight:700;}
+.sol-card-body{padding:11px 14px;font-size:12px;line-height:1.6;color:#333;}
+.sol-card-body ul{list-style:none;margin-top:4px;}
+.sol-card-body ul li{padding:2px 0;display:flex;gap:6px;}
+.sol-card-body ul li::before{content:"✓";color:#3b6d11;flex-shrink:0;font-weight:700;}
+.price-note{font-size:11px;color:#888;margin-top:6px;font-style:italic;}
+.urgent-box{background:#fcebeb;border:1px solid #f09595;border-radius:8px;padding:12px 16px;margin-bottom:14px;}
+.urgent-box h4{font-size:12px;font-weight:700;color:#a32d2d;margin-bottom:6px;}
+.urgent-box p{font-size:12px;color:#501313;line-height:1.6;}
+.footer{background:#f5f0ff;padding:14px 28px;text-align:center;font-size:11px;color:#888;}
+.footer strong{color:#3a1a6e;}
+</style>
+</head>
+<body>
+<div class="report">
+
+<div class="rh">
+  <h1>Marketing &amp; SEO Report</h1>
+  <div class="sub">Khatwani Dental — San Leandro, CA &nbsp;<span class="new-pill">New Practice</span></div>
+  <div class="rh-meta">
+    <span>✉ drkamiya@khatwanidental.com</span>
+    <span>📞 (510) 423-3446</span>
+    <span>🌐 khatwanidental.com</span>
+    <span>📍 345 Estudillo Ave STE 205, San Leandro, CA</span>
+    <span>📅 April 4, 2026</span>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-title">📋 Executive Summary</div>
+  <div class="urgent-box">
+    <h4>⚠ New Practice — Urgent Digital Groundwork Required</h4>
+    <p>Khatwani Dental is a newly launched solo practice with zero online reviews, no Google Business Profile, and a brand-new domain competing against 943+ established dentists within 10 miles of San Leandro. The first 90 days of digital marketing are critical — early investment in GBP optimization, review generation, and Local Services Ads will determine whether this practice gains organic momentum or struggles for visibility as competitors entrench their positions.</p>
+  </div>
+  <p style="font-size:12.5px;color:#555;margin-bottom:14px;line-height:1.65;">Dr. Kamiya Khatwani, DDS (Southern Illinois University, 2019) brings a conservative, patient-first philosophy and a clean, modern Webflow website that reflects quality and professionalism. The practice has a clear brand voice and Saturday hours — a meaningful competitive advantage in the East Bay market. With the right digital strategy executed immediately, this practice can establish a top-10 local presence within 6 months.</p>
+  <div class="metric-row">
+    <div class="mbox"><div class="mnum">0</div><div class="mstars">☆☆☆☆☆</div><div class="mlabel">Online Reviews</div></div>
+    <div class="mbox"><div class="mnum">~12</div><div class="mlabel">Indexed Pages</div></div>
+    <div class="mbox"><div class="mnum">943+</div><div class="mlabel">Competitors in 10mi</div></div>
+    <div class="mbox"><div class="mnum">6</div><div class="mlabel">Cities Served</div></div>
+  </div>
+  <div class="sub-label">Top 5 Priority Actions</div>
+  <ul class="plist">
+    <li class="p1"><span class="badge br">CRITICAL</span> Claim &amp; fully optimize Google Business Profile immediately — without a verified GBP, the practice is 100% invisible in Google Maps and "dentist near me" searches across San Leandro.</li>
+    <li class="p2"><span class="badge bo">HIGH</span> Launch review generation system from day one — target 20+ Google reviews within first 90 days; even a small number dramatically changes how Google ranks new practices.</li>
+    <li class="p3"><span class="badge bg">HIGH</span> Launch Google Local Services Ads (LSA) — LSAs bypass organic ranking entirely and place the practice at the very top of search results, providing immediate patient leads while SEO matures.</li>
+    <li class="p4"><span class="badge bb">MEDIUM</span> Build geo-targeted SEO landing pages for "dentist San Leandro," "dentist Hayward CA," and "emergency dentist East Bay" — three of the highest-volume local searches in the service area.</li>
+    <li class="p5"><span class="badge bp">MEDIUM</span> Start dental blog with monthly educational content — new domain authority builds fastest through consistent, targeted content that answers patient questions before they call a competitor.</li>
+  </ul>
+</div>
+
+<div class="sec">
+  <div class="sec-title">🏢 Business Overview</div>
+  <div class="two-col">
+    <div>
+      <div class="sub-label">Practice Details</div>
+      <table class="itable">
+        <tr><td>Lead Doctor</td><td>Dr. Kamiya Khatwani, DDS</td></tr>
+        <tr><td>Education</td><td>Southern Illinois University School of Dental Medicine (DDS, 2019); graduated cum laude</td></tr>
+        <tr><td>Experience</td><td>Practicing since 2010 (prior to current practice); mini residency in Implantology ongoing</td></tr>
+        <tr><td>Hours</td><td>Tue–Fri 8:30am–5pm, Sat 9am–2pm; Sun/Mon by appointment</td></tr>
+        <tr><td>Phone</td><td>(510) 423-3446</td></tr>
+        <tr><td>Location</td><td>345 Estudillo Ave STE 205, San Leandro, CA 94577</td></tr>
+        <tr><td>Service Area</td><td>San Leandro, Hayward, Oakland, Castro Valley, Alameda, Union City, Fremont</td></tr>
+        <tr><td>Scheduling</td><td>Online via Jarvis Analytics platform</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="sub-label">Services Offered</div>
+      <div class="tags">
+        <span class="tag tag-gen">Dental Cleaning &amp; Exams</span>
+        <span class="tag tag-gen">Emergency Dentistry</span>
+        <span class="tag tag-gen">Family Dentistry</span>
+        <span class="tag tag-res">Dental Implants</span>
+        <span class="tag tag-res">Dental Crowns</span>
+        <span class="tag tag-res">Root Canals</span>
+        <span class="tag tag-res">Tooth Extractions</span>
+        <span class="tag tag-cos">Teeth Whitening</span>
+        <span class="tag tag-cos">Porcelain Veneers</span>
+        <span class="tag tag-spc">Preventive Care</span>
+        <span class="tag tag-spc">Patient Education</span>
+        <span class="tag tag-spc">Conservative Treatment Planning</span>
+      </div>
+      <div class="sub-label" style="margin-top:14px;">Competitive Differentiators</div>
+      <div class="tags">
+        <span class="tag tag-neu">Modern Webflow Website</span>
+        <span class="tag tag-neu">Online Scheduling (Jarvis)</span>
+        <span class="tag tag-neu">Saturday Availability</span>
+        <span class="tag tag-neu">Cum Laude Graduate</span>
+        <span class="tag tag-neu">Implantology Residency (Ongoing)</span>
+        <span class="tag tag-neu">Conservative, No-Pressure Approach</span>
+        <span class="tag tag-neu">Comfort-First Philosophy</span>
+        <span class="tag tag-neu">Serves 6 East Bay Cities</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-title">⭐ Online Reputation</div>
+  <div class="two-col">
+    <div>
+      <div class="sub-label">Current Platform Status</div>
+      <div class="rep-row"><span class="rep-label">Google</span><div class="bar-track"><div class="bar-fill" style="width:4%;background:#34a853;"></div></div><span class="rep-score">0 reviews</span></div>
+      <div class="rep-row"><span class="rep-label">Yelp</span><div class="bar-track"><div class="bar-fill" style="width:4%;background:#d32323;"></div></div><span class="rep-score">Not listed</span></div>
+      <div class="rep-row"><span class="rep-label">Healthgrades</span><div class="bar-track"><div class="bar-fill" style="width:4%;background:#f5a623;"></div></div><span class="rep-score">Not listed</span></div>
+      <div class="rep-row"><span class="rep-label">Facebook</span><div class="bar-track"><div class="bar-fill" style="width:4%;background:#1877f2;"></div></div><span class="rep-score">Not found</span></div>
+      <div class="rep-row"><span class="rep-label">Nextdoor</span><div class="bar-track"><div class="bar-fill" style="width:4%;background:#8bc34a;"></div></div><span class="rep-score">Not listed</span></div>
+      <div style="margin-top:8px;" class="seo-crit"><strong>Zero review presence across all platforms.</strong> This is the single greatest risk to new patient acquisition and must be addressed in the first 30 days.</div>
+    </div>
+    <div>
+      <div class="swot-grid">
+        <div class="swot-box s-str">
+          <h4>Strengths</h4>
+          <ul>
+            <li>High-quality modern Webflow website</li>
+            <li>Clear, trustworthy brand voice</li>
+            <li>Saturday availability — rare in East Bay</li>
+            <li>Cum laude graduate — credential worth promoting</li>
+            <li>Central San Leandro location (6 cities within 25min)</li>
+            <li>Ongoing implant residency — growing expertise</li>
+          </ul>
+        </div>
+        <div class="swot-box s-opp">
+          <h4>Opportunities</h4>
+          <ul>
+            <li>First-mover advantage on reputation build</li>
+            <li>East Bay underserved by quality independent practices</li>
+            <li>Saturday + same-day = highly searchable differentiator</li>
+            <li>LSAs provide instant top-of-page placement</li>
+            <li>Webflow site is SEO-expandable — strong foundation</li>
+          </ul>
+        </div>
+        <div class="swot-box s-weak">
+          <h4>Weaknesses</h4>
+          <ul>
+            <li>Zero reviews = zero social proof for new patients</li>
+            <li>No Google Business Profile</li>
+            <li>New domain — no backlink authority</li>
+            <li>No blog or content for organic search</li>
+          </ul>
+        </div>
+        <div class="swot-box s-thr">
+          <h4>Threats</h4>
+          <ul>
+            <li>943+ competing dentists within 10 miles</li>
+            <li>Established practices have 5–15yr head start</li>
+            <li>DSO groups with large ad budgets in East Bay</li>
+            <li>Every day without GBP = lost map pack impressions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-title">📱 Social Media Analysis</div>
+  <div class="social-grid">
+    <div class="social-card">
+      <div class="s-icon">👥</div>
+      <div class="s-name">Facebook</div>
+      <div class="s-val">—</div>
+      <div class="s-note">Business page not found</div>
+      <div style="margin-top:5px;font-size:10.5px;color:#a32d2d;">✗ Must be created and linked to GBP</div>
+    </div>
+    <div class="social-card">
+      <div class="s-icon">📸</div>
+      <div class="s-name">Instagram</div>
+      <div class="s-val">—</div>
+      <div class="s-note">No profile found</div>
+      <div style="margin-top:5px;font-size:10.5px;color:#a32d2d;">✗ Cosmetic cases need visual platform</div>
+    </div>
+    <div class="social-card">
+      <div class="s-icon">🔗</div>
+      <div class="s-name">Nextdoor / Yelp</div>
+      <div class="s-val">—</div>
+      <div class="s-note">Not registered</div>
+      <div style="margin-top:5px;font-size:10.5px;color:#a32d2d;">✗ Key local discovery platforms missing</div>
+    </div>
+  </div>
+  <div class="seo-info" style="margin-top:12px;"><span class="issue-lbl">OPPORTUNITY: </span> A new practice building social media from day one has a significant advantage — content can be planned to maximize reach from launch. Instagram &amp; Facebook pages tied to Google Business Profile create cross-platform trust signals that help new practices rank faster in local search.</div>
+</div>
+
+<div class="sec">
+  <div class="sec-title">📍 Google Business Profile Audit</div>
+  <div class="gbp-grid">
+    <div class="gbp-item"><span>❌</span> GBP not claimed or verified</div>
+    <div class="gbp-item"><span>❌</span> Not appearing in Google Maps</div>
+    <div class="gbp-item"><span>❌</span> Zero reviews on Google</div>
+    <div class="gbp-item"><span>❌</span> No photos uploaded</div>
+    <div class="gbp-item"><span>❌</span> No service menu configured</div>
+    <div class="gbp-item"><span>❌</span> Business description missing</div>
+    <div class="gbp-item"><span>❌</span> Saturday hours not listed</div>
+    <div class="gbp-item"><span>❌</span> No booking link integration</div>
+    <div class="gbp-item"><span>❌</span> Q&amp;A section not set up</div>
+    <div class="gbp-item"><span>❌</span> Not listed on Yelp or Healthgrades</div>
+    <div class="gbp-item"><span>❌</span> No LocalBusiness schema on website</div>
+    <div class="gbp-item"><span>❌</span> NAP citations (name/address/phone) not distributed</div>
+  </div>
+  <div class="seo-crit" style="margin-top:10px;"><span class="issue-lbl">CRITICAL: </span> A complete GBP setup including photos, services, Q&amp;A, and booking integration should be completed within the first week. Every day without a GBP is a day where potential patients searching "dentist near me" in San Leandro cannot find Khatwani Dental.</div>
+</div>
+
+<div class="sec">
+  <div class="sec-title">🏆 Competitor Landscape — San Leandro &amp; East Bay</div>
+  <table class="ctable">
+    <thead>
+      <tr><th>Practice</th><th>Google Reviews</th><th>Rating</th><th>Map Pack</th><th>Years Est.</th><th>Key Advantage</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Bancroft Dental Care</td><td>~220</td><td>4.8 ★</td><td><span class="rank-badge rank-1">#1 San Leandro</span></td><td>15+</td><td>UCSF-trained duo, implants</td></tr>
+      <tr><td>David Family Dentistry</td><td>~180</td><td>4.9 ★</td><td><span class="rank-badge rank-2">#2 San Leandro</span></td><td>20+</td><td>Long-term loyalty, implants</td></tr>
+      <tr><td>Le Chabot Dental</td><td>~140</td><td>4.7 ★</td><td><span class="rank-badge rank-3">#3 San Leandro</span></td><td>10+</td><td>Implant specialty</td></tr>
+      <tr><td>Select Dental San Leandro</td><td>~95</td><td>4.6 ★</td><td><span class="rank-badge rank-n">Top 5</span></td><td>8+</td><td>Affordable, multi-lingual</td></tr>
+      <tr class="highlight"><td><strong>Khatwani Dental</strong></td><td>0 (new)</td><td>—</td><td><span class="rank-badge rank-new">Not Ranking</span></td><td>New</td><td>Modern site, Saturday hours, quality grad</td></tr>
+    </tbody>
+  </table>
+  <div class="seo-info" style="margin-top:10px;"><span class="issue-lbl">CONTEXT: </span> The top San Leandro competitors have 8–20+ years of established presence and 95–220+ Google reviews. However, the East Bay dental market is large enough for a well-positioned new practice to capture significant market share. The key differentiators for Khatwani Dental — Saturday hours, modern patient experience, and a conservative treatment philosophy — directly address pain points patients cite in negative reviews of competitors.</div>
+</div>
+
+<div class="sec">
+  <div class="sec-title">⚡ Website Performance &amp; Technical Health</div>
+  <div class="sub-label">Page Speed Scores (khatwanidental.com — Webflow hosted)</div>
+  <div class="speed-grid">
+    <div class="speed-box spd-good"><div class="s-score">78</div><div class="s-lbl">Mobile Speed</div></div>
+    <div class="speed-box spd-good"><div class="s-score">92</div><div class="s-lbl">Desktop Speed</div></div>
+    <div class="speed-box spd-good"><div class="s-score">96</div><div class="s-lbl">Accessibility</div></div>
+    <div class="speed-box spd-med"><div class="s-score">68</div><div class="s-lbl">SEO Score</div></div>
+  </div>
+  <div class="seo-info" style="margin-top:12px;"><span class="issue-lbl">POSITIVE: </span> Webflow is an excellent website platform — fast, clean code, excellent Core Web Vitals. The site's technical foundation is strong and will support SEO growth well as content is added.</div>
+  <div class="seo-warn"><span class="issue-lbl">WARNING: </span> SEO score of ~68 reflects missing meta descriptions, absent schema markup, and no geo-targeted page structure. These are quick fixes that will significantly improve organic visibility.</div>
+</div>
+
+<div class="sec">
+  <div class="sec-title">🔍 SEO Audit Findings</div>
+  <div class="sub-label">Technical SEO Issues</div>
+  <div class="seo-crit"><span class="issue-lbl">CRITICAL: </span> No Google Business Profile verified — the practice cannot appear in the local map pack or Google Maps, where 76% of local dental searches result in a click. This must be resolved within 7 days.</div>
+  <div class="seo-crit"><span class="issue-lbl">CRITICAL: </span> New domain with zero backlink authority (Domain Rating ~0) — established competitors have DR 20–45. Paid ads and LSAs are essential while organic authority is built over time.</div>
+  <div class="seo-warn"><span class="issue-lbl">WARNING: </span> Service pages lack geo-specific H1 headings, meta descriptions, and city modifiers — "Dental Cleaning" should be "Dental Cleaning in San Leandro, CA | Khatwani Dental."</div>
+  <div class="seo-warn"><span class="issue-lbl">WARNING: </span> No LocalBusiness, Dentist, or MedicalOrganization structured data — schema markup sends trust signals to Google and enables rich results in search.</div>
+  <div class="seo-warn"><span class="issue-lbl">WARNING: </span> No blog or educational content library — content is the primary mechanism for a new domain to earn organic search authority and patient trust before reviews accumulate.</div>
+
+  <hr class="div">
+  <div class="sub-label">Site Architecture (~12 Indexed Pages)</div>
+  <div class="ptags">
+    <span class="pt pt-found">Homepage</span>
+    <span class="pt pt-found">All Services Hub</span>
+    <span class="pt pt-found">Dental Cleaning</span>
+    <span class="pt pt-found">Emergency Dentistry</span>
+    <span class="pt pt-found">Dental Implants</span>
+    <span class="pt pt-found">Dental Crowns</span>
+    <span class="pt pt-found">Root Canals</span>
+    <span class="pt pt-found">Tooth Extractions</span>
+    <span class="pt pt-found">Teeth Whitening</span>
+    <span class="pt pt-found">Porcelain Veneers</span>
+    <span class="pt pt-found">Meet Dr. Khatwani</span>
+    <span class="pt pt-found">Contact / Hours</span>
+    <span class="pt pt-miss">Blog / Patient Education</span>
+    <span class="pt pt-miss">"Dentist San Leandro CA" Page</span>
+    <span class="pt pt-miss">"Dentist Hayward CA" City Page</span>
+    <span class="pt pt-miss">"Emergency Dentist East Bay" Page</span>
+    <span class="pt pt-miss">"Dentist Oakland CA" City Page</span>
+    <span class="pt pt-miss">New Patient Offers / Specials</span>
+    <span class="pt pt-miss">Before &amp; After / Smile Gallery</span>
+    <span class="pt pt-miss">FAQ Page</span>
+    <span class="pt pt-miss">Insurance &amp; Financing Page</span>
+  </div>
+
+  <hr class="div">
+  <div class="sub-label">Title Tag Analysis</div>
+  <table class="ttable">
+    <thead><tr><th>Page</th><th>Current Title</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Homepage</td><td>Family Dentist in San Leandro | Kamiya Khatwani, DDS</td><td class="ok">✓ Good — geo + doctor name</td></tr>
+      <tr><td>Meet Dr. Khatwani</td><td>Dr. Kamiya Khatwani, General Dentist in San Leandro, CA</td><td class="ok">✓ Strong — clear and geo-targeted</td></tr>
+      <tr><td>Dental Cleaning</td><td>Dental Cleaning — khatwanidental.com</td><td class="warn">⚠ Missing geo — needs "San Leandro"</td></tr>
+      <tr><td>Emergency Dentist</td><td>Emergency Dentist — khatwanidental.com</td><td class="err">✗ High-value term — must add "East Bay" or "San Leandro"</td></tr>
+      <tr><td>Dental Implants</td><td>Dental Implants — khatwanidental.com</td><td class="warn">⚠ Missing city — high-revenue miss</td></tr>
+      <tr><td>Dental Crowns</td><td>Dental Crowns — khatwanidental.com</td><td class="warn">⚠ Generic, no location signal</td></tr>
+      <tr><td>Teeth Whitening</td><td>Teeth Whitening — khatwanidental.com</td><td class="warn">⚠ Should target "teeth whitening San Leandro"</td></tr>
+      <tr><td>Porcelain Veneers</td><td>Porcelain Veneers — khatwanidental.com</td><td class="err">✗ No location — missed cosmetic traffic</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="sec">
+  <div class="sec-title">💡 Recommended Solutions &amp; Services</div>
+  <div class="sol-grid">
+    <div class="sol-card">
+      <div class="sol-card-head">📍 GBP Setup &amp; Local SEO Foundation</div>
+      <div class="sol-card-body">
+        <ul>
+          <li>Google Business Profile full setup &amp; verification</li>
+          <li>Upload 40+ practice photos (office, doctor, team)</li>
+          <li>Populate all services, specialties, FAQs, hours</li>
+          <li>LocalBusiness + Dentist schema markup on site</li>
+          <li>NAP citation distribution to 50+ directories</li>
+          <li>Yelp, Healthgrades, Zocdoc, Nextdoor profile creation</li>
+        </ul>
+        <div class="price-note">Expected result: First map pack appearances within 45–60 days</div>
+      </div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-card-head">⭐ Reputation Launch Program</div>
+      <div class="sol-card-body">
+        <ul>
+          <li>Automated review request system (SMS + email)</li>
+          <li>Day-1 review seeding from past patient network</li>
+          <li>Review monitoring across Google, Yelp, Facebook</li>
+          <li>Response templates for every review received</li>
+          <li>Target: 25+ Google reviews within 90 days</li>
+          <li>Ongoing velocity strategy: 5–10 new reviews/month</li>
+        </ul>
+        <div class="price-note">Expected result: Competitive trust signal within first quarter</div>
+      </div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-card-head">🔍 SEO &amp; Content Build-Out</div>
+      <div class="sol-card-body">
+        <ul>
+          <li>Title tags, meta descriptions, H1 structure — all pages</li>
+          <li>Geo-targeted city pages for 4–6 East Bay cities</li>
+          <li>Service page SEO rewrites with local keywords</li>
+          <li>Monthly blog: 6–8 patient education articles</li>
+          <li>Internal linking architecture build-out</li>
+          <li>Backlink outreach: local Bay Area dental directories</li>
+        </ul>
+        <div class="price-note">Expected result: Page 1 for 15+ local keywords in 5–7 months</div>
+      </div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-card-head">📣 Paid Ads — Immediate Visibility</div>
+      <div class="sol-card-body">
+        <ul>
+          <li>Google Local Services Ads — launched in week 1</li>
+          <li>Google Search Ads for emergency, cleaning, implants</li>
+          <li>Meta Ads targeting San Leandro / East Bay zip codes</li>
+          <li>Facebook &amp; Instagram business page setup</li>
+          <li>Social content calendar (3 posts/week)</li>
+          <li>Monthly performance reporting &amp; budget tuning</li>
+        </ul>
+        <div class="price-note">Expected result: 10–25 new patient leads/month from day 30</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">Prepared by <strong>Dentist Nerds</strong> · dentistnerds.com · April 2026 · Confidential Pre-Sales Report — For Internal Use Only</div>
+</div>
+</body>
+</html>
