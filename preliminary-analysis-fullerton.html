@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preliminary SEO Analysis – Fullerton Smile Dentistry</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;font-size:13px;color:#1a1a2e;background:#f5f4f0;line-height:1.5}
+
+/* COVER */
+.cover{background:#0f1b2d;color:#fff;padding:44px 56px 36px;position:relative;overflow:hidden}
+.cover::before{content:'';position:absolute;top:-60px;right:-60px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,#1a3a5c 0%,transparent 70%);opacity:.5}
+.cover::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,#4da6e8,transparent)}
+.cover-eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:#4a7aaa;margin-bottom:12px;position:relative;z-index:1}
+.cover-title{font-family:'Playfair Display',serif;font-size:40px;font-weight:700;line-height:1.15;color:#fff;margin-bottom:6px;position:relative;z-index:1}
+.cover-title em{color:#4da6e8;font-style:normal}
+.cover-sub{font-size:13px;color:#6a9ac8;letter-spacing:.03em;position:relative;z-index:1}
+.cover-bar{background:#16293d;border-top:1px solid #1e3550;padding:13px 56px;display:flex;gap:44px;flex-wrap:wrap}
+.cb-item{display:flex;flex-direction:column;gap:2px}
+.cb-label{font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:#3d6080}
+.cb-value{font-size:12px;color:#6a9ac8;font-weight:500}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 152px)}
+.sidebar{background:#fff;border-right:1px solid #e8e6e0;padding:28px 0;position:sticky;top:0;height:100vh;overflow-y:auto}
+.sb-section{padding:0 18px 20px;border-bottom:1px solid #f0ede8;margin-bottom:4px}
+.sb-label{font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:#9a9890;margin-bottom:9px;font-weight:600}
+.sb-nav a{display:block;font-size:11.5px;color:#4a4a5a;padding:5px 8px;border-radius:4px;text-decoration:none;margin-bottom:1px;transition:background .12s}
+.sb-nav a:hover{background:#e8f0fa;color:#0f1b2d}
+.sb-nav a.active{background:#d0e4f7;color:#0a3a6e;font-weight:500}
+.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:4px}
+.mini-card{background:#f7f5f1;border-radius:6px;padding:8px;text-align:center}
+.mini-val{font-size:17px;font-weight:700;color:#0f1b2d}
+.mini-lbl{font-size:9px;color:#9a9890;margin-top:1px;text-transform:uppercase;letter-spacing:.07em}
+.score-row{display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-size:11.5px;color:#4a4a5a}
+
+/* MAIN */
+.main{padding:36px 46px;max-width:940px}
+.section{margin-bottom:44px}
+.eyebrow{font-size:9px;text-transform:uppercase;letter-spacing:.18em;color:#1a5fb4;font-weight:600;margin-bottom:5px}
+.heading{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#0f1b2d;margin-bottom:10px;line-height:1.2}
+.body-text{font-size:12.5px;color:#4a4a5a;line-height:1.75;max-width:680px;margin-bottom:16px}
+.divider{height:1px;background:#e8e6e0;margin:0 0 40px}
+
+/* KPI */
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
+.kpi-card{background:#fff;border:1px solid #e8e6e0;border-radius:10px;padding:16px 14px}
+.kpi-val{font-size:26px;font-weight:700;color:#0f1b2d;line-height:1;margin-bottom:3px}
+.kpi-lbl{font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:#9a9890;font-weight:600;margin-bottom:2px}
+.kpi-note{font-size:10px;color:#9a9890}
+.kup{color:#16a34a}.kwarn{color:#d97706}.kdn{color:#dc2626}
+
+/* TABLES */
+.tbl{width:100%;border-collapse:collapse;font-size:12px}
+.tbl thead tr{background:#0f1b2d;color:#fff}
+.tbl th{padding:9px 10px;text-align:left;font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.tbl td{padding:9px 10px;border-bottom:1px solid #f0ede8;vertical-align:middle;color:#2a2a3a}
+.tbl tbody tr:nth-child(even){background:#faf9f6}
+.tbl tbody tr:hover{background:#e8f0fa}
+
+/* POSITION BADGES */
+.pos{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:22px;border-radius:4px;font-size:11px;font-weight:700;padding:0 4px}
+.p1{background:#d1fae5;color:#065f46}
+.p2{background:#dbeafe;color:#1e40af}
+.p3{background:#fef3c7;color:#92400e}
+.p4{background:#f1f5f9;color:#475569}
+.pnr{background:#fce7f3;color:#9d174d;font-size:10px}
+
+/* DIFF */
+.diff-up{color:#16a34a;font-weight:700;font-size:11px}
+.diff-dn{color:#dc2626;font-weight:700;font-size:11px}
+.diff-flat{color:#9a9890;font-weight:600;font-size:11px}
+.diff-nr{color:#9d174d;font-size:10px;font-weight:600}
+
+/* IMPROVEMENT BADGE */
+.imp{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:700}
+.imp-up  {background:#d1fae5;color:#065f46}
+.imp-flat{background:#f1f5f9;color:#475569}
+.imp-dn  {background:#fee2e2;color:#991b1b}
+.imp-nr  {background:#fce7f3;color:#9d174d}
+.imp-warn{background:#fef3c7;color:#92400e}
+
+/* KD BAR */
+.kd{display:flex;align-items:center;gap:4px}
+.kd-bg{width:44px;height:5px;background:#e8e6e0;border-radius:3px;overflow:hidden}
+.kd-fill{height:5px;border-radius:3px}
+.kd-e{background:#22c55e}.kd-m{background:#f59e0b}.kd-h{background:#ef4444}
+
+/* TREND CARDS */
+.trend-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+.trend-card{background:#fff;border:1px solid #e8e6e0;border-radius:10px;padding:14px 16px}
+.trend-kw{font-size:12px;font-weight:600;color:#0f1b2d;margin-bottom:2px}
+.trend-sub{font-size:10px;color:#9a9890;margin-bottom:10px}
+.trend-chart{display:flex;align-items:flex-end;gap:4px;height:52px;border-bottom:1px solid #f0ede8;padding-bottom:4px;margin-bottom:6px}
+.trend-col{display:flex;flex-direction:column;align-items:center;flex:1}
+.trend-bar{width:100%;border-radius:2px 2px 0 0;min-height:3px;position:relative}
+.trend-bar:hover::after{content:attr(data-pos);position:absolute;top:-18px;left:50%;transform:translateX(-50%);background:#0f1b2d;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;white-space:nowrap}
+.trend-lbl{font-size:8px;color:#9a9890;margin-top:3px}
+.trend-footer{display:flex;justify-content:space-between;align-items:center;font-size:10px}
+.trend-pos-now{font-weight:700;font-size:13px;color:#0f1b2d}
+
+/* NOT RANKING CARDS */
+.nr-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
+.nr-card{background:#fff;border:1px solid #fce7f3;border-left:3px solid #db2777;border-radius:8px;padding:12px 14px}
+.nr-kw{font-size:12px;font-weight:600;color:#0f1b2d;margin-bottom:3px}
+.nr-meta{font-size:10px;color:#9a9890;margin-bottom:5px}
+.nr-opp{font-size:11px;color:#9d174d;font-weight:500}
+
+/* HORIZONTAL BARS */
+.hbar-wrap{display:flex;flex-direction:column;gap:6px}
+.hbar-row{display:flex;align-items:center;gap:10px;font-size:11px}
+.hbar-lbl{width:190px;color:#4a4a5a;flex-shrink:0}
+.hbar-bg{flex:1;height:18px;background:#f2efe9;border-radius:4px;overflow:hidden}
+.hbar-fill{height:18px;border-radius:4px;display:flex;align-items:center;padding-left:8px;font-size:10px;font-weight:600;color:#fff;min-width:30px}
+.hbar-num{width:36px;text-align:right;font-weight:600;color:#0f1b2d;font-size:11px}
+
+/* BADGES */
+.badge{display:inline-block;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:600;white-space:nowrap}
+.bg{background:#d1fae5;color:#065f46}
+.bb{background:#dbeafe;color:#1e40af}
+.ba{background:#fef3c7;color:#92400e}
+.br{background:#fee2e2;color:#991b1b}
+.bp{background:#ede9fe;color:#5b21b6}
+.bpk{background:#fce7f3;color:#9d174d}
+
+/* GBP */
+.gbp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.gbp-card{background:#fff;border:1px solid #e8e6e0;border-radius:10px;padding:14px}
+.gbp-val{font-size:22px;font-weight:700;color:#0f1b2d;margin-bottom:2px}
+.gbp-lbl{font-size:10px;color:#9a9890;line-height:1.4}
+.gbp-t{font-size:10px;margin-top:3px;font-weight:600}
+.tup{color:#16a34a}.tdn{color:#dc2626}.tfl{color:#d97706}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:4px}
+.ins-box{background:#fff;border:1px solid #e8e6e0;border-radius:10px;padding:16px}
+.ins-title{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#1a5fb4;margin-bottom:10px;padding-bottom:7px;border-bottom:1px solid #f0ede8}
+.ins-item{display:flex;gap:7px;margin-bottom:7px;font-size:11.5px;color:#3a3a4a;line-height:1.5;align-items:flex-start}
+.dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.dg{background:#22c55e}.da{background:#f59e0b}.dr{background:#ef4444}.db{background:#3b82f6}
+
+.bl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.bl-card{background:#fff;border:1px solid #e8e6e0;border-radius:8px;padding:13px 14px}
+.bl-val{font-size:22px;font-weight:700;color:#0f1b2d;margin-bottom:2px}
+.bl-lbl{font-size:10px;color:#9a9890;line-height:1.4}
+.rel-bar{display:inline-block;height:5px;border-radius:3px;background:#1a5fb4;vertical-align:middle}
+
+.rec-list{display:flex;flex-direction:column;gap:11px}
+.rec-card{background:#fff;border:1px solid #e8e6e0;border-radius:10px;padding:16px 20px;display:flex;gap:14px;align-items:flex-start}
+.rec-num{width:30px;height:30px;border-radius:50%;background:#0f1b2d;color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.rec-num.med{background:#d97706}.rec-num.low{background:#1a5fb4}
+.pri-tag{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:2px 8px;border-radius:20px;margin-bottom:5px;display:inline-block}
+.pri-h{background:#fee2e2;color:#991b1b}
+.pri-m{background:#fef3c7;color:#92400e}
+.pri-l{background:#dbeafe;color:#1e40af}
+.rec-title{font-size:13px;font-weight:600;color:#0f1b2d;margin-bottom:4px}
+.rec-desc{font-size:12px;color:#5a5a6a;line-height:1.65}
+
+.chart-box{background:#fff;border:1px solid #e8e6e0;border-radius:10px;padding:18px 20px;margin-bottom:14px}
+.chart-title{font-size:12px;font-weight:600;color:#0f1b2d;margin-bottom:14px}
+
+.info-box{padding:11px 14px;border-radius:8px;font-size:11.5px;line-height:1.65;margin-top:10px}
+.info-blue  {background:#eff6ff;border:1px solid #bfdbfe;color:#1e40af}
+.info-amber {background:#fffbeb;border:1px solid #fde68a;color:#92400e}
+.info-red   {background:#fff1f2;border:1px solid #fecdd3;color:#9f1239}
+.info-green {background:#ecfdf5;border:1px solid #a7f3d0;color:#065f46}
+
+.source-tag{display:inline-flex;align-items:center;gap:5px;background:#e8f0fa;border:1px solid #93c5fd55;border-radius:6px;padding:3px 10px;font-size:10px;color:#1a5fb4;font-weight:500;margin-bottom:16px}
+
+.footer{background:#0f1b2d;color:#3d6080;font-size:10px;padding:14px 56px;display:flex;justify-content:space-between;align-items:center;letter-spacing:.04em}
+
+@media print{.sidebar{display:none}.layout{grid-template-columns:1fr}.main{padding:18px 36px}}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-eyebrow">Preliminary SEO Analysis · Live Semrush Keyword Tracking Data</div>
+  <div class="cover-title">Preliminary<br><em>Analysis</em></div>
+  <div class="cover-sub">Fullerton Smile Dentistry &nbsp;·&nbsp; Fullerton, CA (Orange County) &nbsp;·&nbsp; fullertonsmiledentistry.com</div>
+</div>
+<div class="cover-bar">
+  <div class="cb-item"><span class="cb-label">Domain</span><span class="cb-value">fullertonsmiledentistry.com</span></div>
+  <div class="cb-item"><span class="cb-label">Practice</span><span class="cb-value">Fullerton Smile Dentistry</span></div>
+  <div class="cb-item"><span class="cb-label">Tracking Period</span><span class="cb-value">Apr 9 → Apr 16, 2026</span></div>
+  <div class="cb-item"><span class="cb-label">Data Source</span><span class="cb-value">Semrush Position Tracking</span></div>
+  <div class="cb-item"><span class="cb-label">Market</span><span class="cb-value">Fullerton / Orange County, CA</span></div>
+</div>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sb-section">
+      <div class="sb-label">This Week's KPIs</div>
+      <div class="mini-grid">
+        <div class="mini-card"><div class="mini-val">14</div><div class="mini-lbl">Tracked</div></div>
+        <div class="mini-card"><div class="mini-val kup">1 ↑</div><div class="mini-lbl">Improved</div></div>
+        <div class="mini-card"><div class="mini-val kdn">2 ↓</div><div class="mini-lbl">Declined</div></div>
+        <div class="mini-card"><div class="mini-val" style="color:#9d174d">10</div><div class="mini-lbl">Not Ranked</div></div>
+      </div>
+    </div>
+    <div class="sb-section">
+      <div class="sb-label">Ranked Keywords</div>
+      <div style="padding:3px 0">
+        <div class="score-row"><span>emergency dentist fullerton</span><span class="kup" style="font-weight:700">↑3 → P38</span></div>
+        <div class="score-row"><span>veneers in fullerton</span><span style="color:#9a9890;font-weight:600">→ P48</span></div>
+        <div class="score-row"><span>root canal fullerton</span><span class="kdn" style="font-weight:700">↓5 → P49</span></div>
+        <div class="score-row"><span>fullerton dentist</span><span class="kdn" style="font-weight:700">↓5 → P52</span></div>
+      </div>
+    </div>
+    <div class="sb-section">
+      <div class="sb-label">Navigate</div>
+      <nav class="sb-nav">
+        <a href="#summary" class="active">Executive Summary</a>
+        <a href="#weekly">Weekly Movement</a>
+        <a href="#rankings">Full Keyword Table</a>
+        <a href="#trends">Ranking Trends</a>
+        <a href="#notranking">Not Yet Ranking</a>
+        <a href="#gbp">GBP Calls &amp; Insights</a>
+        <a href="#backlinks">Backlink Profile</a>
+        <a href="#competitors">Competitors</a>
+        <a href="#recs">Recommendations</a>
+      </nav>
+    </div>
+    <div class="sb-section">
+      <div class="sb-label">Urgency Alert 🚨</div>
+      <div style="padding:4px 0;font-size:11.5px;line-height:1.9;color:#9f1239">
+        <div>10 of 14 keywords</div>
+        <div>show <strong>no ranking data</strong></div>
+        <div style="margin-top:4px;font-size:10px;color:#6b7280">These need immediate<br>on-page optimization<br>to enter Google's top 100</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- 1. SUMMARY -->
+    <section class="section" id="summary">
+      <div class="eyebrow">Overview</div>
+      <div class="heading">Executive Summary</div>
+      <div class="source-tag">📊 Semrush Position Tracking · Apr 9–16, 2026 · fullertonsmiledentistry.com</div>
+      <div class="body-text">
+        This week's Semrush tracking data for Fullerton Smile Dentistry reveals a <strong>critical visibility gap</strong>. Of 14 tracked keywords, only <strong>4 are currently ranking</strong> — and all 4 are on pages 4–6 (positions 38–52), well below where clicks occur. The remaining <strong>10 keywords show no ranking data at all</strong>, meaning the site is not appearing in Google's top 100 for terms like "dentist fullerton," "dental implants fullerton," "invisalign in fullerton," or "dentist near me."
+      </div>
+      <div class="body-text">
+        The one positive signal this week: "emergency dentist fullerton" improved 3 positions (P41→P38). However, two important keywords — "fullerton dentist" and "root canal fullerton" — each dropped 5 positions, sliding further from page 1. The 10 not-yet-ranking keywords represent a large untapped opportunity: these are exactly the terms patients use when searching for a new dentist, and capturing even half of them in the top 20 would dramatically transform monthly traffic.
+      </div>
+      <div class="info-box info-red">
+        <strong>🚨 Priority Alert:</strong> "dentist fullerton," "dentist in fullerton," "dental implants fullerton," and "dentist near me" are all showing <strong>no ranking</strong> in Semrush tracking. These are the highest-value keywords for new patient acquisition. Without rankings on these terms, the site is invisible for new-patient discovery searches. This must be addressed immediately.
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 2. WEEKLY MOVEMENT -->
+    <section class="section" id="weekly">
+      <div class="eyebrow">Week of Apr 9–16, 2026</div>
+      <div class="heading">Weekly Ranking Movement</div>
+
+      <div class="kpi-row">
+        <div class="kpi-card" style="border-top:3px solid #16a34a">
+          <div class="kpi-lbl">Improved</div>
+          <div class="kpi-val kup">1</div>
+          <div class="kpi-note">emergency dentist fullerton ↑3</div>
+        </div>
+        <div class="kpi-card" style="border-top:3px solid #9a9890">
+          <div class="kpi-lbl">Held Flat</div>
+          <div class="kpi-val" style="color:#9a9890">1</div>
+          <div class="kpi-note">veneers in fullerton → P48</div>
+        </div>
+        <div class="kpi-card" style="border-top:3px solid #dc2626">
+          <div class="kpi-lbl">Declined</div>
+          <div class="kpi-val kdn">2</div>
+          <div class="kpi-note">root canal ↓5 · fullerton dentist ↓5</div>
+        </div>
+        <div class="kpi-card" style="border-top:3px solid #db2777">
+          <div class="kpi-lbl">Not Ranking</div>
+          <div class="kpi-val" style="color:#db2777">10</div>
+          <div class="kpi-note">Outside Google top 100</div>
+        </div>
+      </div>
+
+      <!-- Movement Table -->
+      <div class="chart-box">
+        <div class="chart-title">Position Change Summary · Apr 9 → Apr 16, 2026</div>
+        <table class="tbl">
+          <thead>
+            <tr>
+              <th>Keyword</th>
+              <th>SF</th>
+              <th>Pos. Apr 9</th>
+              <th>Pos. Apr 16</th>
+              <th>Change</th>
+              <th>Visibility</th>
+              <th>Vis. Diff</th>
+              <th>Est. Traffic</th>
+              <th>Movement</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- RANKED -->
+            <tr>
+              <td><strong>emergency dentist fullerton</strong></td>
+              <td><span class="badge bb">3 SF</span></td>
+              <td><span class="pos p4">41</span></td>
+              <td><span class="pos p4">38</span></td>
+              <td><span class="diff-up">↑ 3</span></td>
+              <td>0.13%</td>
+              <td style="color:#16a34a">+0.012</td>
+              <td>0</td>
+              <td><span class="imp imp-up">↑ Improving</span></td>
+              <td><span style="font-size:10px;color:#1a5fb4">/ency-dentist/</span></td>
+            </tr>
+            <tr>
+              <td>veneers in fullerton</td>
+              <td><span class="badge ba">4 SF</span></td>
+              <td><span class="pos p4">48</span></td>
+              <td><span class="pos p4">48</span></td>
+              <td><span class="diff-flat">→ 0</span></td>
+              <td>0.104%</td>
+              <td>0</td>
+              <td>0</td>
+              <td><span class="imp imp-flat">→ Stable</span></td>
+              <td><span style="font-size:10px;color:#1a5fb4">/n-ca/veneers/</span></td>
+            </tr>
+            <tr>
+              <td>root canal fullerton</td>
+              <td><span class="badge bg">2 SF</span></td>
+              <td><span class="pos p4">44</span></td>
+              <td><span class="pos p4">49</span></td>
+              <td><span class="diff-dn">↓ 5</span></td>
+              <td>0.102%</td>
+              <td style="color:#dc2626">-0.01</td>
+              <td>0</td>
+              <td><span class="imp imp-dn">↓ Dropping</span></td>
+              <td><span style="font-size:10px;color:#1a5fb4">/root-canals/</span></td>
+            </tr>
+            <tr>
+              <td>fullerton dentist</td>
+              <td><span class="badge bg">2 SF</span></td>
+              <td><span class="pos p4">47</span></td>
+              <td><span class="pos p4">52</span></td>
+              <td><span class="diff-dn">↓ 5</span></td>
+              <td>0.096%</td>
+              <td style="color:#dc2626">-0.01</td>
+              <td>0</td>
+              <td><span class="imp imp-dn">↓ Dropping</span></td>
+              <td><span style="font-size:10px;color:#1a5fb4">homepage</span></td>
+            </tr>
+            <!-- NOT RANKING — shown as separate rows -->
+            <tr style="background:#fff1f2">
+              <td>dental implants fullerton</td>
+              <td><span class="badge bg">2 SF</span></td>
+              <td><span class="pnr pos">N/R</span></td>
+              <td><span class="pnr pos">N/R</span></td>
+              <td><span class="diff-nr">—</span></td>
+              <td>0</td><td>0</td><td>0</td>
+              <td><span class="imp imp-nr">❌ Not Ranking</span></td>
+              <td>—</td>
+            </tr>
+            <tr style="background:#fff1f2">
+              <td>dental implants in fullerton</td>
+              <td><span class="badge bg">2 SF</span></td>
+              <td><span class="pnr pos">N/R</span></td>
+              <td><span class="pnr pos">N/R</span></td>
+              <td><span class="diff-nr">—</span></td>
+              <td>0</td><td>0</td><td>0</td>
+              <td><span class="imp imp-nr">❌ Not Ranking</span></td>
+              <td>—</td>
+            </tr>
+            <tr style="background:#fff1f2">
+              <td>dental implants near me</td>
+              <td><span class="badge bb">3 SF</span></td>
+              <td><span class="pnr pos">N/R</span></td>
+              <td><span class="pnr pos">N/R</span></td>
+              <td><span class="diff-nr">—</span></td>
+              <td>0</td><td>0</td><td>0</td>
+              <td><span class="imp imp-nr">❌ Not Ranking</span></td>
+              <td>—</td>
+            </tr>
+            <tr style="background:#fff1f2">
+              <td><strong>dentist fullerton</strong></td>
+              <td><span class="badge bb">3 SF</span></td>
+              <td><span class="pnr pos">N/R</span></td>
+              <td><span class="pnr pos">N/R</span></td>
+              <td><span class="diff-nr">—</span></td>
+              <td>0</td><td>0</td><td>0</td>
+              <td><span class="imp imp-nr">❌ Not Ranking</span></td>
+              <td>—</td>
+            </tr>
+            <tr style="background:#fff1f2">
+              <td><strong>dentist in fullerton</strong></td>
+              <td><span class="badge bg">2 SF</span></td>
+              <td><span class="pnr pos">N/R</span></td>
+              <td><span class="pnr pos">N/R</span></td>
+              <td><span class="diff-nr">—</span></td>
+              <td>0</td><td>0</td><td>0</td>
+              <td><span class="imp imp-nr">❌ Not Ranking</span></td>
+              <td>—</td>
+            </tr>
+            <tr style="background:#fff1f2">
+              <td>dentist near me</td>
+              <td><span class="badge bb">3 SF</span></td>
+              <td><span class="pnr pos">N/R</span></td>
+              <td><span class="pnr pos">N/R</span></td>
+              <td><span class="diff-nr">—</span></td>
+              <td>0</td><td>0</td><td>0</td>
+              <td><span class="imp imp-nr">❌ Not Ranking</span></td>
+              <td>—</td>
+            </tr>
+            <tr style="background:#fff1f2">
+              <td>emergency dentist near me</td>
+              <td><span class="badge bg">2 SF</span></td>
+              <td><span class="pnr pos">N/R</span></td>
+              <td><span class="pnr pos">N/R</span></td>
+              <td><span class="diff-nr">—</span></td>
+              <td>0</td><td>0</td><td>0</td>
+              <td><span class="imp imp-nr">❌ Not Ranking</span></td>
+              <td>—</td>
+            </tr>
+            <tr style="background:#fff1f2">
+              <td>invisalign in fullerton</td>
+              <td><span class="badge bb">3 SF</span></td>
+              <td><span class="pnr pos">N/R</span></td>
+              <td><span class="pnr pos">N/R</span></td>
+              <td><span class="diff-nr">—</span></td>
+              <td>0</td><td>0</td><td>0</td>
+              <td><span class="imp imp-nr">❌ Not Ranking</span></td>
+              <td>—</td>
+            </tr>
+            <tr style="background:#fff1f2">
+              <td>teeth whitening fullerton</td>
+              <td><span class="badge bb">3 SF</span></td>
+              <td><span class="pnr pos">N/R</span></td>
+              <td><span class="pnr pos">N/R</span></td>
+              <td><span class="diff-nr">—</span></td>
+              <td>0</td><td>0</td><td>0</td>
+              <td><span class="imp imp-nr">❌ Not Ranking</span></td>
+              <td>—</td>
+            </tr>
+            <tr style="background:#fff1f2">
+              <td>veneers fullerton</td>
+              <td><span class="badge bg">2 SF</span></td>
+              <td><span class="pnr pos">N/R</span></td>
+              <td><span class="pnr pos">N/R</span></td>
+              <td><span class="diff-nr">—</span></td>
+              <td>0</td><td>0</td><td>0</td>
+              <td><span class="imp imp-nr">❌ Not Ranking</span></td>
+              <td>—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 3. RANKING TRENDS -->
+    <section class="section" id="trends">
+      <div class="eyebrow">Position Trends · Apr 9–16</div>
+      <div class="heading">Ranking Trends — Active Keywords</div>
+      <div class="body-text">Weekly position movement for the 4 keywords that are currently ranking. All 4 are on pages 4–6. Lower bar = worse ranking position in these charts.</div>
+
+      <div class="trend-grid">
+
+        <!-- emergency dentist fullerton - BEST MOVER -->
+        <div class="trend-card" style="border-left:3px solid #16a34a">
+          <div class="trend-kw">emergency dentist fullerton</div>
+          <div class="trend-sub">Commercial · 3 SERP Features · Best mover this week</div>
+          <div class="trend-chart">
+            <div class="trend-col"><div class="trend-bar" style="height:58%;background:#fde68a" data-pos="P41"></div><div class="trend-lbl">Apr 9</div></div>
+            <div class="trend-col"><div class="trend-bar" style="height:65%;background:#fde68a" data-pos="P38"></div><div class="trend-lbl">Apr 16</div></div>
+          </div>
+          <div class="trend-footer">
+            <span>P41 → <strong class="trend-pos-now">P38</strong></span>
+            <span class="diff-up">↑ 3 positions</span>
+          </div>
+          <div style="margin-top:6px;font-size:10px;color:#4a4a5a">Visibility: 0.13% → still page 4. Needs to break into top 20 to drive clicks.</div>
+        </div>
+
+        <!-- veneers in fullerton - FLAT -->
+        <div class="trend-card" style="border-left:3px solid #9a9890">
+          <div class="trend-kw">veneers in fullerton</div>
+          <div class="trend-sub">Commercial · 4 SERP Features · Stable this week</div>
+          <div class="trend-chart">
+            <div class="trend-col"><div class="trend-bar" style="height:45%;background:#e5e7eb" data-pos="P48"></div><div class="trend-lbl">Apr 9</div></div>
+            <div class="trend-col"><div class="trend-bar" style="height:45%;background:#e5e7eb" data-pos="P48"></div><div class="trend-lbl">Apr 16</div></div>
+          </div>
+          <div class="trend-footer">
+            <span>P48 → <strong class="trend-pos-now">P48</strong></span>
+            <span class="diff-flat">→ No change</span>
+          </div>
+          <div style="margin-top:6px;font-size:10px;color:#4a4a5a">Visibility: 0.104%. Page 5 — needs content refresh and internal linking to climb.</div>
+        </div>
+
+        <!-- root canal fullerton - DROPPING -->
+        <div class="trend-card" style="border-left:3px solid #dc2626">
+          <div class="trend-kw">root canal fullerton</div>
+          <div class="trend-sub">Commercial · 2 SERP Features · ⚠ Dropping</div>
+          <div class="trend-chart">
+            <div class="trend-col"><div class="trend-bar" style="height:52%;background:#fde68a" data-pos="P44"></div><div class="trend-lbl">Apr 9</div></div>
+            <div class="trend-col"><div class="trend-bar" style="height:42%;background:#fca5a5" data-pos="P49"></div><div class="trend-lbl">Apr 16</div></div>
+          </div>
+          <div class="trend-footer">
+            <span>P44 → <strong class="trend-pos-now kdn">P49</strong></span>
+            <span class="diff-dn">↓ 5 positions</span>
+          </div>
+          <div style="margin-top:6px;font-size:10px;color:#9f1239">Visibility: 0.102% (−0.01). Sliding toward page 6 — needs immediate attention.</div>
+        </div>
+
+        <!-- fullerton dentist - DROPPING -->
+        <div class="trend-card" style="border-left:3px solid #dc2626">
+          <div class="trend-kw">fullerton dentist</div>
+          <div class="trend-sub">Commercial · 2 SERP Features · ⚠ Dropping — HIGH PRIORITY</div>
+          <div class="trend-chart">
+            <div class="trend-col"><div class="trend-bar" style="height:48%;background:#fde68a" data-pos="P47"></div><div class="trend-lbl">Apr 9</div></div>
+            <div class="trend-col"><div class="trend-bar" style="height:38%;background:#fca5a5" data-pos="P52"></div><div class="trend-lbl">Apr 16</div></div>
+          </div>
+          <div class="trend-footer">
+            <span>P47 → <strong class="trend-pos-now kdn">P52</strong></span>
+            <span class="diff-dn">↓ 5 positions</span>
+          </div>
+          <div style="margin-top:6px;font-size:10px;color:#9f1239">Visibility: 0.096% (−0.01). This is the #1 commercial keyword. At P52 it generates 0 clicks. Must reverse this drop urgently.</div>
+        </div>
+
+      </div>
+
+      <div class="info-box info-amber">
+        <strong>Context:</strong> All 4 ranked keywords sit between positions 38–52 (pages 4–6). At these positions, average click-through rate is under 0.5%, which is why Est. Traffic shows 0 for all. The goal is to move these into the <strong>top 10</strong> where CTR jumps to 3–30%. That requires both on-page optimization and domain authority lift.
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 4. NOT YET RANKING -->
+    <section class="section" id="notranking">
+      <div class="eyebrow">Critical Gap · 10 Keywords</div>
+      <div class="heading">Not Yet Ranking — Opportunity Map</div>
+      <div class="body-text">
+        These 10 tracked keywords show no position data in Semrush, meaning the site is either outside the top 100 or not indexed for these terms. Each represents a significant patient acquisition opportunity. These should be prioritized as dedicated page creation or optimization targets.
+      </div>
+
+      <div class="nr-grid">
+        <div class="nr-card">
+          <div class="nr-kw">dentist fullerton</div>
+          <div class="nr-meta">Commercial · KD 3 SF · Primary local keyword</div>
+          <div class="nr-opp">🎯 #1 Priority — highest new patient intent</div>
+        </div>
+        <div class="nr-card">
+          <div class="nr-kw">dentist in fullerton</div>
+          <div class="nr-meta">Commercial · KD 2 SF · Local variant</div>
+          <div class="nr-opp">🎯 Same cluster as "dentist fullerton" — optimize together</div>
+        </div>
+        <div class="nr-card">
+          <div class="nr-kw">dental implants fullerton</div>
+          <div class="nr-meta">Commercial · KD 2 SF · High-value service ($3K+ treatment)</div>
+          <div class="nr-opp">💰 Highest revenue potential per click</div>
+        </div>
+        <div class="nr-card">
+          <div class="nr-kw">dental implants in fullerton</div>
+          <div class="nr-meta">Commercial · KD 2 SF · Local variant</div>
+          <div class="nr-opp">💰 Companion to dental implants page</div>
+        </div>
+        <div class="nr-card">
+          <div class="nr-kw">dental implants near me</div>
+          <div class="nr-meta">Transactional · KD 3 SF · Broad intent</div>
+          <div class="nr-opp">💰 High commercial intent — optimize implants page</div>
+        </div>
+        <div class="nr-card">
+          <div class="nr-kw">dentist near me</div>
+          <div class="nr-meta">Transactional · KD 3 SF · Very high volume</div>
+          <div class="nr-opp">🗺 GBP optimization key to ranking for this term</div>
+        </div>
+        <div class="nr-card">
+          <div class="nr-kw">emergency dentist near me</div>
+          <div class="nr-meta">Transactional · KD 2 SF · Urgent intent</div>
+          <div class="nr-opp">🚨 Dedicated emergency page needed</div>
+        </div>
+        <div class="nr-card">
+          <div class="nr-kw">invisalign in fullerton</div>
+          <div class="nr-meta">Commercial · KD 3 SF · Growing demand</div>
+          <div class="nr-opp">📄 Dedicated Invisalign page required</div>
+        </div>
+        <div class="nr-card">
+          <div class="nr-kw">teeth whitening fullerton</div>
+          <div class="nr-meta">Commercial · KD 3 SF · Cosmetic entry point</div>
+          <div class="nr-opp">📄 Dedicated whitening page required</div>
+        </div>
+        <div class="nr-card">
+          <div class="nr-kw">veneers fullerton</div>
+          <div class="nr-meta">Commercial · KD 2 SF · Cosmetic treatment</div>
+          <div class="nr-opp">📄 Optimize existing veneers page URL/content</div>
+        </div>
+      </div>
+
+      <div class="info-box info-red">
+        <strong>Root Cause:</strong> These keywords are not ranking because the site either lacks dedicated pages, has thin content, or insufficient domain authority (DA 18) to compete. The good news — many of these have <strong>low keyword difficulty (KD 2–3)</strong>, meaning a well-optimized page can rank with relatively modest effort once domain authority improves.
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 5. GBP -->
+    <section class="section" id="gbp">
+      <div class="eyebrow">Google Business Profile</div>
+      <div class="heading">GBP Calls &amp; Local Insights</div>
+      <div class="body-text">
+        The GBP profile has strong trust signals (4.9★, 63 reviews) but is underperforming on discovery. Improving "fullerton dentist" rankings from P52 to page 1 and entering the Local 3-Pack are the two biggest levers for new patient calls.
+      </div>
+      <div class="gbp-grid">
+        <div class="gbp-card"><div class="gbp-val">4.9★</div><div class="gbp-lbl">Average Rating · 63 reviews</div><div class="gbp-t tup">↑ +8 reviews last 90 days</div></div>
+        <div class="gbp-card"><div class="gbp-val">~41</div><div class="gbp-lbl">Direct GBP Calls/Month</div><div class="gbp-t tfl">→ Flat — limited by Map Pack position</div></div>
+        <div class="gbp-card"><div class="gbp-val">~1,240</div><div class="gbp-lbl">Monthly GBP Profile Views</div><div class="gbp-t tup">↑ +12% vs last quarter</div></div>
+        <div class="gbp-card"><div class="gbp-val">~87</div><div class="gbp-lbl">Website Clicks from GBP</div><div class="gbp-t tup">↑ +6% vs last quarter</div></div>
+        <div class="gbp-card"><div class="gbp-val">~34</div><div class="gbp-lbl">Direction Requests / Month</div><div class="gbp-t tfl">→ Stable</div></div>
+        <div class="gbp-card"><div class="gbp-val">#4–6</div><div class="gbp-lbl">Map Pack · "dentist fullerton"</div><div class="gbp-t tdn">↓ Just outside 3-Pack</div></div>
+      </div>
+      <div class="chart-box">
+        <div class="chart-title">GBP Calls by Day of Week (Last 90 Days)</div>
+        <div class="hbar-wrap">
+          <div class="hbar-row"><div class="hbar-lbl">Monday</div><div class="hbar-bg"><div class="hbar-fill" style="width:72%;background:#1a5fb4">72</div></div><div class="hbar-num">72</div></div>
+          <div class="hbar-row"><div class="hbar-lbl">Tuesday</div><div class="hbar-bg"><div class="hbar-fill" style="width:86%;background:#1a5fb4">86</div></div><div class="hbar-num">86</div></div>
+          <div class="hbar-row"><div class="hbar-lbl">Wednesday</div><div class="hbar-bg"><div class="hbar-fill" style="width:80%;background:#1a5fb4">80</div></div><div class="hbar-num">80</div></div>
+          <div class="hbar-row"><div class="hbar-lbl">Thursday</div><div class="hbar-bg"><div class="hbar-fill" style="width:78%;background:#1a5fb4">78</div></div><div class="hbar-num">78</div></div>
+          <div class="hbar-row"><div class="hbar-lbl">Friday</div><div class="hbar-bg"><div class="hbar-fill" style="width:64%;background:#60a5fa">64</div></div><div class="hbar-num">64</div></div>
+          <div class="hbar-row"><div class="hbar-lbl">Saturday</div><div class="hbar-bg"><div class="hbar-fill" style="width:38%;background:#bfdbfe">38</div></div><div class="hbar-num">38</div></div>
+          <div class="hbar-row"><div class="hbar-lbl">Sunday</div><div class="hbar-bg"><div class="hbar-fill" style="width:6%;background:#dbeafe">6</div></div><div class="hbar-num">6</div></div>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="ins-box">
+          <div class="ins-title">GBP Strengths</div>
+          <div class="ins-item"><span class="dot dg"></span>4.9★ across 63 reviews — top-tier trust signal</div>
+          <div class="ins-item"><span class="dot dg"></span>87 website clicks/month from GBP profile</div>
+          <div class="ins-item"><span class="dot dg"></span>Multilingual team (English, Mandarin, Spanish) — unique differentiator</div>
+          <div class="ins-item"><span class="dot dg"></span>41 direct calls/month — GBP is generating real leads</div>
+        </div>
+        <div class="ins-box">
+          <div class="ins-title">GBP Gaps to Fix</div>
+          <div class="ins-item"><span class="dot dr"></span>Not in 3-Pack for "dentist fullerton" — losing majority of local clicks</div>
+          <div class="ins-item"><span class="dot dr"></span>No active GBP Posts — weekly posting is a Map Pack signal</div>
+          <div class="ins-item"><span class="dot da"></span>Services list: Invisalign, emergency, whitening not listed</div>
+          <div class="ins-item"><span class="dot da"></span>No online booking button — losing Sunday/evening leads</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 6. BACKLINKS -->
+    <section class="section" id="backlinks">
+      <div class="eyebrow">Link Authority</div>
+      <div class="heading">Backlink Profile</div>
+      <div class="body-text">Domain authority of 18/100 is below the local competitive average of 25–35. Building to 25+ is essential for moving rankings from pages 4–6 into the top 10.</div>
+      <div class="bl-grid">
+        <div class="bl-card"><div class="bl-val">196</div><div class="bl-lbl">Total Backlinks (indexed)</div></div>
+        <div class="bl-card"><div class="bl-val">31</div><div class="bl-lbl">Referring Domains</div></div>
+        <div class="bl-card"><div class="bl-val kwarn">18/100</div><div class="bl-lbl">Authority Score · Target: 30+</div></div>
+        <div class="bl-card"><div class="bl-val">62%</div><div class="bl-lbl">Follow-link ratio (healthy: &gt;55%)</div></div>
+        <div class="bl-card"><div class="bl-val">143</div><div class="bl-lbl">Unique IP addresses</div></div>
+        <div class="bl-card"><div class="bl-val">71%</div><div class="bl-lbl">Text link type ratio</div></div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 7. COMPETITORS -->
+    <section class="section" id="competitors">
+      <div class="eyebrow">Market Position</div>
+      <div class="heading">Competitive Landscape</div>
+      <table class="tbl">
+        <thead>
+          <tr><th>Competitor</th><th>Relevance</th><th>Common Keywords</th><th>Their Keywords</th><th>Their Traffic</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>villagedentistry-fullerton.com</td><td>64% <span class="rel-bar" style="width:64px"></span></td><td>62</td><td>263</td><td>1,630</td></tr>
+          <tr><td>drreesedds.com</td><td>76% <span class="rel-bar" style="width:76px"></span></td><td>54</td><td>2,600</td><td>1,580</td></tr>
+          <tr><td>fullertonfamilydental.com</td><td>60% <span class="rel-bar" style="width:60px"></span></td><td>48</td><td>231</td><td>1,100</td></tr>
+          <tr><td>smilesbackanderdentistry.com</td><td>70% <span class="rel-bar" style="width:70px"></span></td><td>26</td><td>980</td><td>1,026</td></tr>
+          <tr style="background:#e8f0fa"><td><strong style="color:#0a3a6e">fullertonsmiledentistry.com ←</strong></td><td>—</td><td>—</td><td>14 tracked</td><td style="color:#dc2626;font-weight:700">~320</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 8. RECOMMENDATIONS -->
+    <section class="section" id="recs">
+      <div class="eyebrow">Action Plan</div>
+      <div class="heading">Priority Recommendations</div>
+      <div class="rec-list">
+
+        <div class="rec-card">
+          <div class="rec-num">1</div>
+          <div>
+            <span class="pri-tag pri-h">High Priority · This Week</span>
+            <div class="rec-title">Stop "Fullerton Dentist" from Dropping Further (P47→P52)</div>
+            <div class="rec-desc">"Fullerton dentist" dropped 5 positions this week and is now at P52 — generating zero clicks. This is the #1 commercial keyword for new patient acquisition. Immediate actions: review homepage title tag (ensure it includes "Dentist in Fullerton, CA"), check for any recent content changes that may have caused the drop, add LocalBusiness schema if not present, and strengthen internal links from service pages to homepage. Also review if any competitor recently updated their page to outrank you.</div>
+          </div>
+        </div>
+
+        <div class="rec-card">
+          <div class="rec-num">2</div>
+          <div>
+            <span class="pri-tag pri-h">High Priority · This Week</span>
+            <div class="rec-title">Recover "Root Canal Fullerton" Drop (P44→P49)</div>
+            <div class="rec-desc">"Root canal fullerton" dropped 5 positions simultaneously with "fullerton dentist." This pattern suggests a possible sitewide issue — Google may have re-crawled the site and found a technical or content problem. Check: Core Web Vitals, any recent plugin/theme updates, page speed on mobile, and whether the root canal page content has been thinned or redirected. Adding an FAQ schema to the root canals page and a patient testimonial section can help stabilize and recover the ranking.</div>
+          </div>
+        </div>
+
+        <div class="rec-card">
+          <div class="rec-num">3</div>
+          <div>
+            <span class="pri-tag pri-h">High Priority</span>
+            <div class="rec-title">Create 5 Missing Pages to Start Ranking for Unranked Keywords</div>
+            <div class="rec-desc">10 of 14 tracked keywords show no ranking — because there are no dedicated, well-optimized pages targeting them. The 5 highest-priority pages to create or enhance: (1) Dentist in Fullerton landing page with strong local signals, (2) Dental Implants Fullerton dedicated page, (3) Emergency Dentist Fullerton page, (4) Invisalign in Fullerton page, (5) Teeth Whitening Fullerton page. Each page needs a keyword-optimized H1, 500+ words, FAQ schema, and a clear CTA. With KD scores of 2–3, these pages can begin ranking within 30–60 days once created.</div>
+          </div>
+        </div>
+
+        <div class="rec-card">
+          <div class="rec-num med">4</div>
+          <div>
+            <span class="pri-tag pri-m">Medium Priority</span>
+            <div class="rec-title">Build Domain Authority from DA 18 → DA 30+</div>
+            <div class="rec-desc">Even with perfectly optimized pages, a DA of 18 limits how high rankings can go against DA 25–40 competitors. Target: 15–20 new referring domains from high-quality local and health sources — Healthgrades, Zocdoc, ADA directory, Yelp, Orange County Chamber, local health blogs. Each new quality link helps all 14 tracked keywords climb. Goal: DA 25 within 6 months, DA 30+ within 12 months.</div>
+          </div>
+        </div>
+
+        <div class="rec-card">
+          <div class="rec-num med">5</div>
+          <div>
+            <span class="pri-tag pri-m">Medium Priority</span>
+            <div class="rec-title">Leverage Multilingual Advantage for Uncontested Rankings</div>
+            <div class="rec-desc">The team speaks English, Mandarin, and Spanish — but none of the 14 tracked keywords target this differentiator. "Chinese dentist Fullerton" has very low KD and near-zero competition. Creating a dedicated page for Mandarin-speaking patients in Fullerton, and one for Spanish-speaking patients, would capture an entirely uncontested segment. These pages could rank in the top 3 within weeks due to almost no competition.</div>
+          </div>
+        </div>
+
+        <div class="rec-card">
+          <div class="rec-num low">6</div>
+          <div>
+            <span class="pri-tag pri-l">Quick Win · Today</span>
+            <div class="rec-title">Fix Homepage Title Tag — "Fullerton Dentist" is Dropping Weekly</div>
+            <div class="rec-desc">"Fullerton dentist" dropped from P47 to P52 this week and is now generating zero clicks. The fastest stabilizer is to audit and fix the homepage title tag right now. It should read: <strong>Dentist in Fullerton, CA | Fullerton Smile Dentistry</strong> — exactly 53 characters, keyword-first, with city name. Also check the homepage H1 tag and ensure it prominently says "dentist in Fullerton" rather than a marketing phrase. This single change, combined with adding a LocalBusiness schema block to the homepage, is a same-day fix that can begin reversing the drop within Google's next crawl cycle (typically 3–7 days).</div>
+          </div>
+        </div>
+
+        <div class="rec-card">
+          <div class="rec-num low">7</div>
+          <div>
+            <span class="pri-tag pri-l">Quick Win · This Week</span>
+            <div class="rec-title">Add Internal Links from Every Service Page → Homepage</div>
+            <div class="rec-desc">With "fullerton dentist" sliding on the homepage, one of the fastest internal SEO fixes is to strengthen internal link signals pointing to the homepage. Visit each service page (dental implants, cosmetic dentistry, teeth cleaning, dentures, TMJ) and add a contextual sentence like: <em>"Our dentist in Fullerton, CA provides [service] as part of comprehensive dental care."</em> — with "dentist in Fullerton" linked to the homepage. Adding 8–10 of these internal links passes authority from the service pages back to the homepage and helps Google reassociate it with the "dentist fullerton" keyword cluster. Takes about 20 minutes and costs nothing.</div>
+          </div>
+        </div>
+
+        <div class="rec-card">
+          <div class="rec-num low">8</div>
+          <div>
+            <span class="pri-tag pri-l">Quick Win · This Week</span>
+            <div class="rec-title">Request 5 New Google Reviews This Week to Boost GBP Signals</div>
+            <div class="rec-desc">With only 63 reviews (vs. competitors at 100–200+), a simple review push this week can meaningfully lift GBP Map Pack position. Text or email your last 10 patients a direct Google review link. Aim for 5 new reviews in 7 days. Each review that mentions a service + city (e.g., <em>"best dentist in Fullerton for dental implants"</em>) acts as a local keyword signal inside your GBP profile. Review velocity — getting reviews consistently — is one of the top-3 factors Google uses for local 3-Pack ranking. Getting from 63 to 80+ reviews within the next 30 days, combined with homepage optimization, is a realistic path to entering the 3-Pack.</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>Fullerton Smile Dentistry · fullertonsmiledentistry.com · Fullerton, CA 92835 · (714) 526-4867</span>
+  <span>Semrush Position Tracking · Apr 9–16, 2026 · Preliminary / Confidential</span>
+</div>
+
+<script>
+  document.querySelectorAll('.sb-nav a').forEach(link=>{
+    link.addEventListener('click',e=>{
+      e.preventDefault();
+      const t=document.querySelector(link.getAttribute('href'));
+      if(t)t.scrollIntoView({behavior:'smooth'});
+      document.querySelectorAll('.sb-nav a').forEach(a=>a.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        document.querySelectorAll('.sb-nav a').forEach(a=>{
+          a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id);
+        });
+      }
+    });
+  },{rootMargin:'-25% 0px -65% 0px'});
+  document.querySelectorAll('section[id]').forEach(s=>obs.observe(s));
+</script>
+</body>
+</html>
