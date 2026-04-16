@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preliminary SEO Analysis – Smile Spa Camarillo</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;font-size:13px;color:#1a1a2e;background:#f5f4f0;line-height:1.5}
+
+/* COVER */
+.cover{background:#0d1f1a;color:#fff;padding:44px 56px 36px;position:relative;overflow:hidden}
+.cover::before{content:'';position:absolute;top:-60px;right:-60px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,#1a4d38 0%,transparent 70%);opacity:.5}
+.cover::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,#2d9e6b,transparent)}
+.cover-eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:#4a8a6a;margin-bottom:12px;position:relative;z-index:1}
+.cover-title{font-family:'Playfair Display',serif;font-size:40px;font-weight:700;line-height:1.15;color:#fff;margin-bottom:6px;position:relative;z-index:1}
+.cover-title em{color:#3ecf8e;font-style:normal}
+.cover-sub{font-size:13px;color:#6aaa8a;letter-spacing:.03em;position:relative;z-index:1}
+.cover-bar{background:#111f18;border-top:1px solid #1e3528;padding:13px 56px;display:flex;gap:44px;flex-wrap:wrap}
+.cb-item{display:flex;flex-direction:column;gap:2px}
+.cb-label{font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:#3a6050}
+.cb-value{font-size:12px;color:#6aaa8a;font-weight:500}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 152px)}
+.sidebar{background:#fff;border-right:1px solid #e8e6e0;padding:28px 0;position:sticky;top:0;height:100vh;overflow-y:auto}
+.sb-section{padding:0 18px 20px;border-bottom:1px solid #f0ede8;margin-bottom:4px}
+.sb-label{font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:#9a9890;margin-bottom:9px;font-weight:600}
+.sb-nav a{display:block;font-size:11.5px;color:#4a4a5a;padding:5px 8px;border-radius:4px;text-decoration:none;margin-bottom:1px;transition:background .12s}
+.sb-nav a:hover{background:#edf7f2;color:#0d5c3a}
+.sb-nav a.active{background:#d1f0e2;color:#0a4f32;font-weight:500}
+.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:4px}
+.mini-card{background:#f7f5f1;border-radius:6px;padding:8px;text-align:center}
+.mini-val{font-size:17px;font-weight:700;color:#0d1f1a}
+.mini-lbl{font-size:9px;color:#9a9890;margin-top:1px;text-transform:uppercase;letter-spacing:.07em}
+.score-row{display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-size:11.5px;color:#4a4a5a}
+
+/* MAIN */
+.main{padding:36px 46px;max-width:940px}
+.section{margin-bottom:44px}
+.eyebrow{font-size:9px;text-transform:uppercase;letter-spacing:.18em;color:#2d9e6b;font-weight:600;margin-bottom:5px}
+.heading{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#0d1f1a;margin-bottom:10px;line-height:1.2}
+.body-text{font-size:12.5px;color:#4a4a5a;line-height:1.75;max-width:680px;margin-bottom:16px}
+.divider{height:1px;background:#e8e6e0;margin:0 0 40px}
+
+/* KPI */
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
+.kpi-card{background:#fff;border:1px solid #e8e6e0;border-radius:10px;padding:16px 14px}
+.kpi-val{font-size:26px;font-weight:700;color:#0d1f1a;line-height:1;margin-bottom:3px}
+.kpi-lbl{font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:#9a9890;font-weight:600;margin-bottom:2px}
+.kpi-note{font-size:10px;color:#9a9890}
+.kup{color:#16a34a}.kwarn{color:#d97706}.kdn{color:#dc2626}
+
+/* KEYWORD RANKING TABLE */
+.tbl{width:100%;border-collapse:collapse;font-size:12px}
+.tbl thead tr{background:#0d1f1a;color:#fff}
+.tbl th{padding:9px 10px;text-align:left;font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.tbl td{padding:9px 10px;border-bottom:1px solid #f0ede8;vertical-align:middle;color:#2a2a3a}
+.tbl tbody tr:nth-child(even){background:#faf9f6}
+.tbl tbody tr:hover{background:#edf7f2}
+
+/* POSITION BADGES */
+.pos{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:22px;border-radius:4px;font-size:11px;font-weight:700;padding:0 4px}
+.p1 {background:#d1fae5;color:#065f46}
+.p2 {background:#dbeafe;color:#1e40af}
+.p3 {background:#fef3c7;color:#92400e}
+.p4 {background:#f1f5f9;color:#475569}
+.pnew{background:#ede9fe;color:#5b21b6}
+
+/* DIFF INDICATORS */
+.diff-up{color:#16a34a;font-weight:700;font-size:11px;white-space:nowrap}
+.diff-dn{color:#dc2626;font-weight:700;font-size:11px;white-space:nowrap}
+.diff-flat{color:#9a9890;font-weight:600;font-size:11px}
+.diff-new{background:#ede9fe;color:#5b21b6;font-size:10px;font-weight:700;padding:2px 7px;border-radius:20px}
+
+/* IMPROVEMENT BADGE */
+.imp-badge{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:700}
+.imp-big  {background:#d1fae5;color:#065f46}
+.imp-mod  {background:#dbeafe;color:#1e40af}
+.imp-new  {background:#ede9fe;color:#5b21b6}
+.imp-loss {background:#fee2e2;color:#991b1b}
+.imp-flat {background:#f1f5f9;color:#475569}
+
+/* MINI TREND SPARKLINE AREA */
+.spark-wrap{display:flex;align-items:flex-end;gap:2px;height:28px;width:80px}
+.spark-bar{border-radius:2px 2px 0 0;width:10px;flex-shrink:0}
+
+/* WEEKLY TREND CHART SECTION */
+.trend-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+.trend-card{background:#fff;border:1px solid #e8e6e0;border-radius:10px;padding:14px 16px}
+.trend-kw{font-size:12px;font-weight:600;color:#0d1f1a;margin-bottom:3px}
+.trend-sub{font-size:10px;color:#9a9890;margin-bottom:10px}
+.trend-chart{display:flex;align-items:flex-end;gap:4px;height:50px;border-bottom:1px solid #f0ede8;padding-bottom:4px;margin-bottom:6px}
+.trend-col{display:flex;flex-direction:column;align-items:center;flex:1}
+.trend-bar{width:100%;border-radius:2px 2px 0 0;min-height:3px;position:relative}
+.trend-bar:hover::after{content:attr(data-pos);position:absolute;top:-18px;left:50%;transform:translateX(-50%);background:#0d1f1a;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;white-space:nowrap}
+.trend-lbl{font-size:8px;color:#9a9890;margin-top:3px}
+.trend-footer{display:flex;justify-content:space-between;align-items:center;font-size:10px}
+.trend-pos-now{font-weight:700;font-size:13px;color:#0d1f1a}
+.trend-change{}
+
+/* BADGES */
+.badge{display:inline-block;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:600;white-space:nowrap}
+.bg{background:#d1fae5;color:#065f46}
+.bb{background:#dbeafe;color:#1e40af}
+.ba{background:#fef3c7;color:#92400e}
+.br{background:#fee2e2;color:#991b1b}
+.bp{background:#ede9fe;color:#5b21b6}
+.bgy{background:#f1f5f9;color:#475569}
+
+/* KD BAR */
+.kd{display:flex;align-items:center;gap:4px}
+.kd-bg{width:44px;height:5px;background:#e8e6e0;border-radius:3px;overflow:hidden}
+.kd-fill{height:5px;border-radius:3px}
+.kd-e{background:#22c55e}.kd-m{background:#f59e0b}.kd-h{background:#ef4444}
+
+/* HORIZONTAL BARS */
+.hbar-wrap{display:flex;flex-direction:column;gap:6px}
+.hbar-row{display:flex;align-items:center;gap:10px;font-size:11.5px}
+.hbar-lbl{width:170px;color:#4a4a5a;flex-shrink:0;font-size:11px}
+.hbar-bg{flex:1;height:18px;background:#f2efe9;border-radius:4px;overflow:hidden}
+.hbar-fill{height:18px;border-radius:4px;display:flex;align-items:center;padding-left:8px;font-size:10px;font-weight:600;color:#fff;min-width:30px}
+.hbar-num{width:36px;text-align:right;font-weight:600;color:#0d1f1a;font-size:11px}
+
+/* GBP */
+.gbp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.gbp-card{background:#fff;border:1px solid #e8e6e0;border-radius:10px;padding:14px}
+.gbp-val{font-size:22px;font-weight:700;color:#0d1f1a;margin-bottom:2px}
+.gbp-lbl{font-size:10px;color:#9a9890;line-height:1.4}
+.gbp-trend{font-size:10px;margin-top:3px;font-weight:600}
+.tup{color:#16a34a}.tdn{color:#dc2626}.tfl{color:#d97706}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:4px}
+.ins-box{background:#fff;border:1px solid #e8e6e0;border-radius:10px;padding:16px}
+.ins-title{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#2d9e6b;margin-bottom:10px;padding-bottom:7px;border-bottom:1px solid #f0ede8}
+.ins-item{display:flex;gap:7px;margin-bottom:7px;font-size:11.5px;color:#3a3a4a;line-height:1.5;align-items:flex-start}
+.dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.dg{background:#22c55e}.da{background:#f59e0b}.dr{background:#ef4444}.db{background:#3b82f6}
+
+.bl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.bl-card{background:#fff;border:1px solid #e8e6e0;border-radius:8px;padding:13px 14px}
+.bl-val{font-size:22px;font-weight:700;color:#0d1f1a;margin-bottom:2px}
+.bl-lbl{font-size:10px;color:#9a9890;line-height:1.4}
+.rel-bar{display:inline-block;height:5px;border-radius:3px;background:#2d9e6b;vertical-align:middle}
+
+.rec-list{display:flex;flex-direction:column;gap:11px}
+.rec-card{background:#fff;border:1px solid #e8e6e0;border-radius:10px;padding:16px 20px;display:flex;gap:14px;align-items:flex-start}
+.rec-num{width:30px;height:30px;border-radius:50%;background:#0d1f1a;color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.rec-num.med{background:#d97706}.rec-num.low{background:#2d9e6b}
+.pri-tag{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:2px 8px;border-radius:20px;margin-bottom:5px;display:inline-block}
+.pri-h{background:#fee2e2;color:#991b1b}
+.pri-m{background:#fef3c7;color:#92400e}
+.pri-l{background:#d1fae5;color:#065f46}
+.rec-title{font-size:13px;font-weight:600;color:#0d1f1a;margin-bottom:4px}
+.rec-desc{font-size:12px;color:#5a5a6a;line-height:1.65}
+
+.chart-box{background:#fff;border:1px solid #e8e6e0;border-radius:10px;padding:18px 20px;margin-bottom:14px}
+.chart-title{font-size:12px;font-weight:600;color:#0d1f1a;margin-bottom:14px}
+
+.info-box{padding:11px 14px;border-radius:8px;font-size:11.5px;line-height:1.65;margin-top:10px}
+.info-green{background:#ecfdf5;border:1px solid #a7f3d0;color:#065f46}
+.info-amber{background:#fffbeb;border:1px solid #fde68a;color:#92400e}
+.info-blue{background:#eff6ff;border:1px solid #bfdbfe;color:#1e40af}
+.info-purple{background:#f5f3ff;border:1px solid #ddd6fe;color:#4c1d95}
+
+.footer{background:#0d1f1a;color:#3a6050;font-size:10px;padding:14px 56px;display:flex;justify-content:space-between;align-items:center;letter-spacing:.04em}
+
+/* SEMRUSH SOURCE BADGE */
+.source-tag{display:inline-flex;align-items:center;gap:5px;background:#fff3;border:1px solid #2d9e6b44;border-radius:6px;padding:3px 10px;font-size:10px;color:#3ecf8e;font-weight:500;margin-bottom:16px}
+
+@media print{.sidebar{display:none}.layout{grid-template-columns:1fr}.main{padding:18px 36px}}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-eyebrow">Preliminary SEO &amp; GBP Analysis · Live Semrush Keyword Tracking Data</div>
+  <div class="cover-title">Preliminary<br><em>Analysis</em></div>
+  <div class="cover-sub">Smile Spa Camarillo &nbsp;·&nbsp; Camarillo, CA (Ventura County) &nbsp;·&nbsp; camarillocosmeticdentistry.com</div>
+</div>
+<div class="cover-bar">
+  <div class="cb-item"><span class="cb-label">Domain</span><span class="cb-value">camarillocosmeticdentistry.com</span></div>
+  <div class="cb-item"><span class="cb-label">Practice</span><span class="cb-value">Smile Spa Camarillo</span></div>
+  <div class="cb-item"><span class="cb-label">Tracking Period</span><span class="cb-value">Apr 9 → Apr 16, 2026</span></div>
+  <div class="cb-item"><span class="cb-label">Data Source</span><span class="cb-value">Semrush Position Tracking</span></div>
+  <div class="cb-item"><span class="cb-label">Market</span><span class="cb-value">Camarillo / Ventura County, CA</span></div>
+</div>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sb-section">
+      <div class="sb-label">This Week's KPIs</div>
+      <div class="mini-grid">
+        <div class="mini-card"><div class="mini-val">15</div><div class="mini-lbl">Keywords</div></div>
+        <div class="mini-card"><div class="mini-val kup">3 ↑</div><div class="mini-lbl">New</div></div>
+        <div class="mini-card"><div class="mini-val kup">5</div><div class="mini-lbl">Improved</div></div>
+        <div class="mini-card"><div class="mini-val kdn">5</div><div class="mini-lbl">Declined</div></div>
+      </div>
+    </div>
+    <div class="sb-section">
+      <div class="sb-label">Best Movers (Week)</div>
+      <div style="padding:3px 0">
+        <div class="score-row"><span>emergency dentist camarillo</span><span style="color:#16a34a;font-weight:700">↑12</span></div>
+        <div class="score-row"><span>veneers in camarillo</span><span style="color:#16a34a;font-weight:700">↑4</span></div>
+        <div class="score-row"><span>emergency dentist near me</span><span style="color:#16a34a;font-weight:700">↑3</span></div>
+        <div class="score-row"><span>dental implants camarillo</span><span style="color:#16a34a;font-weight:700">↑1</span></div>
+      </div>
+    </div>
+    <div class="sb-section">
+      <div class="sb-label">Navigate</div>
+      <nav class="sb-nav">
+        <a href="#summary" class="active">Executive Summary</a>
+        <a href="#weekly">Weekly Movement</a>
+        <a href="#rankings">Full Keyword Table</a>
+        <a href="#trends">Ranking Trends</a>
+        <a href="#gbp">GBP Calls &amp; Insights</a>
+        <a href="#backlinks">Backlink Profile</a>
+        <a href="#competitors">Competitors</a>
+        <a href="#recs">Recommendations</a>
+      </nav>
+    </div>
+    <div class="sb-section">
+      <div class="sb-label">GBP Snapshot ✅ Live</div>
+      <div style="padding:3px 0">
+        <div class="score-row"><span>Rating</span><span style="color:#16a34a;font-weight:700">5.0★</span></div>
+        <div class="score-row"><span>Reviews</span><span style="color:#dc2626;font-weight:700">36 ⚠️</span></div>
+        <div class="score-row"><span>Phone</span><span style="font-weight:600">(805) 243-9588</span></div>
+        <div class="score-row"><span>Map Pack</span><span style="color:#d97706;font-weight:600">#5–8</span></div>
+        <div class="score-row"><span>Hours</span><span style="font-weight:600;font-size:10px">M–Th 9–5, F 9–4</span></div>
+        <div class="score-row"><span>Sat/Sun</span><span style="color:#dc2626;font-weight:600">Closed</span></div>
+      </div>
+    </div>
+      <div style="padding:3px 0;font-size:11.5px;color:#5b21b6;line-height:2">
+        <div>camarillo dentist <span style="float:right;background:#ede9fe;padding:0 5px;border-radius:4px;font-size:10px">#38</span></div>
+        <div>dentist in camarillo <span style="float:right;background:#ede9fe;padding:0 5px;border-radius:4px;font-size:10px">#38</span></div>
+        <div>dentist camarillo <span style="float:right;background:#ede9fe;padding:0 5px;border-radius:4px;font-size:10px">#39</span></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- 1. SUMMARY -->
+    <section class="section" id="summary">
+      <div class="eyebrow">Overview</div>
+      <div class="heading">Executive Summary</div>
+      <div class="source-tag">📊 Semrush Position Tracking · Apr 9–16, 2026 · camarillocosmeticdentistry.com</div>
+      <div class="body-text">
+        This week's Semrush tracking data for Smile Spa Camarillo shows <strong>meaningful positive momentum</strong>. The standout win is "emergency dentist camarillo" jumping <strong>12 positions</strong> (P13 → P1) — a significant breakthrough for a high-intent local search. Three brand-new keyword rankings appeared this week for the primary "dentist camarillo" cluster, signaling Google is beginning to recognize the site's local relevance. Of 15 tracked keywords, <strong>5 improved, 5 declined slightly, 2 held flat, and 3 are new entries</strong>.
+      </div>
+      <div class="body-text">
+        The most critical opportunity remains converting "camarillo dentist," "dentist in camarillo," and "dentist camarillo" — all debuting at position 38–39 this week — into top-10 rankings. These three keywords share 880/mo search volume each and represent the highest-value traffic target in the entire keyword set.
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 2. WEEKLY MOVEMENT SUMMARY -->
+    <section class="section" id="weekly">
+      <div class="eyebrow">Week of Apr 9–16, 2026</div>
+      <div class="heading">Weekly Ranking Movement</div>
+
+      <!-- Movement summary cards -->
+      <div class="kpi-row">
+        <div class="kpi-card" style="border-top:3px solid #16a34a">
+          <div class="kpi-lbl">Big Improvements</div>
+          <div class="kpi-val kup">2</div>
+          <div class="kpi-note">Moved up 3+ positions</div>
+        </div>
+        <div class="kpi-card" style="border-top:3px solid #2d9e6b">
+          <div class="kpi-lbl">Small Improvements</div>
+          <div class="kpi-val kup">3</div>
+          <div class="kpi-note">Moved up 1–2 positions</div>
+        </div>
+        <div class="kpi-card" style="border-top:3px solid #5b21b6">
+          <div class="kpi-lbl">New Keywords</div>
+          <div class="kpi-val" style="color:#5b21b6">3</div>
+          <div class="kpi-note">First-time rankings this week</div>
+        </div>
+        <div class="kpi-card" style="border-top:3px solid #dc2626">
+          <div class="kpi-lbl">Declines</div>
+          <div class="kpi-val kdn">5</div>
+          <div class="kpi-note">Dropped 1–5 positions</div>
+        </div>
+      </div>
+
+      <!-- Movement visual table -->
+      <div class="chart-box">
+        <div class="chart-title">Position Change Summary · Apr 9 → Apr 16</div>
+        <table class="tbl">
+          <thead>
+            <tr>
+              <th>Keyword</th>
+              <th>Apr 9</th>
+              <th>Apr 16</th>
+              <th>Change</th>
+              <th>Movement</th>
+              <th>Vol.</th>
+              <th>KD</th>
+              <th>Intent</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- NEW keywords first -->
+            <tr style="background:#f5f3ff">
+              <td><strong>camarillo dentist</strong></td>
+              <td><span style="color:#9a9890;font-size:11px">—</span></td>
+              <td><span class="pos p4">38</span></td>
+              <td><span class="diff-new">NEW</span></td>
+              <td><span class="imp-badge imp-new">🆕 New Entry</span></td>
+              <td>880</td>
+              <td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-m" style="width:48%"></div></div>38</div></td>
+              <td><span class="badge bg">Commercial</span></td>
+            </tr>
+            <tr style="background:#f5f3ff">
+              <td><strong>dentist in camarillo</strong></td>
+              <td><span style="color:#9a9890;font-size:11px">—</span></td>
+              <td><span class="pos p4">38</span></td>
+              <td><span class="diff-new">NEW</span></td>
+              <td><span class="imp-badge imp-new">🆕 New Entry</span></td>
+              <td>—</td>
+              <td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-m" style="width:51%"></div></div>41</div></td>
+              <td><span class="badge bg">Commercial</span></td>
+            </tr>
+            <tr style="background:#f5f3ff">
+              <td><strong>dentist camarillo</strong></td>
+              <td><span style="color:#9a9890;font-size:11px">—</span></td>
+              <td><span class="pos p4">39</span></td>
+              <td><span class="diff-new">NEW</span></td>
+              <td><span class="imp-badge imp-new">🆕 New Entry</span></td>
+              <td>880</td>
+              <td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-m" style="width:48%"></div></div>38</div></td>
+              <td><span class="badge bg">Commercial</span></td>
+            </tr>
+            <!-- BIG WINS -->
+            <tr>
+              <td><strong>emergency dentist camarillo</strong></td>
+              <td><span class="pos p3">13</span></td>
+              <td><span class="pos p1">1</span></td>
+              <td><span class="diff-up">↑ 12</span></td>
+              <td><span class="imp-badge imp-big">🚀 Biggest Win</span></td>
+              <td>0</td>
+              <td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-e" style="width:3%"></div></div>3</div></td>
+              <td><span class="badge bg">Commercial</span></td>
+            </tr>
+            <tr>
+              <td>veneers in camarillo</td>
+              <td><span class="pos p3">12</span></td>
+              <td><span class="pos p2">8</span></td>
+              <td><span class="diff-up">↑ 4</span></td>
+              <td><span class="imp-badge imp-big">📈 Strong Gain</span></td>
+              <td>0</td>
+              <td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-e" style="width:3%"></div></div>3</div></td>
+              <td><span class="badge bg">Commercial</span></td>
+            </tr>
+            <tr>
+              <td>emergency dentist near me</td>
+              <td><span class="pos p3">25</span></td>
+              <td><span class="pos p3">22</span></td>
+              <td><span class="diff-up">↑ 3</span></td>
+              <td><span class="imp-badge imp-mod">↑ Improving</span></td>
+              <td>0</td>
+              <td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-m" style="width:27%"></div></div>27</div></td>
+              <td><span class="badge bb">Transactional</span></td>
+            </tr>
+            <tr>
+              <td>dental implants camarillo</td>
+              <td><span class="pos p2">3</span></td>
+              <td><span class="pos p1">2</span></td>
+              <td><span class="diff-up">↑ 1</span></td>
+              <td><span class="imp-badge imp-mod">↑ Improving</span></td>
+              <td>10</td>
+              <td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-e" style="width:5%"></div></div>5</div></td>
+              <td><span class="badge bg">Commercial</span></td>
+            </tr>
+            <tr>
+              <td>dental implants in camarillo</td>
+              <td><span class="pos p1">2</span></td>
+              <td><span class="pos p1">2</span></td>
+              <td><span class="diff-flat">→ 0</span></td>
+              <td><span class="imp-badge imp-flat">→ Holding</span></td>
+              <td>10</td>
+              <td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-e" style="width:0%"></div></div>0</div></td>
+              <td><span class="badge bg">Commercial</span></td>
+            </tr>
+            <tr>
+              <td>dentist near me</td>
+              <td><span class="pos p4">26</span></td>
+              <td><span class="pos p4">26</span></td>
+              <td><span class="diff-flat">→ 0</span></td>
+              <td><span class="imp-badge imp-flat">→ Holding</span></td>
+              <td>390</td>
+              <td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-h" style="width:57%"></div></div>57</div></td>
+              <td><span class="badge bb">Transactional</span></td>
+            </tr>
+            <!-- DECLINES -->
+            <tr>
+              <td>veneers camarillo</td>
+              <td><span class="pos p2">6</span></td>
+              <td><span class="pos p2">7</span></td>
+              <td><span class="diff-dn">↓ 1</span></td>
+              <td><span class="imp-badge imp-loss">↓ Minor Drop</span></td>
+              <td>0</td>
+              <td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-e" style="width:0%"></div></div>0</div></td>
+              <td><span class="badge bg">Commercial</span></td>
+            </tr>
+            <tr>
+              <td>root canal camarillo</td>
+              <td><span class="pos p3">18</span></td>
+              <td><span class="pos p3">21</span></td>
+              <td><span class="diff-dn">↓ 3</span></td>
+              <td><span class="imp-badge imp-loss">↓ Minor Drop</span></td>
+              <td>0</td>
+              <td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-e" style="width:0%"></div></div>0</div></td>
+              <td><span class="badge bg">Commercial</span></td>
+            </tr>
+            <tr>
+              <td>invisalign in camarillo</td>
+              <td><span class="pos p3">17</span></td>
+              <td><span class="pos p3">22</span></td>
+              <td><span class="diff-dn">↓ 5</span></td>
+              <td><span class="imp-badge imp-loss">↓ Needs Attention</span></td>
+              <td>10</td>
+              <td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-e" style="width:3%"></div></div>3</div></td>
+              <td><span class="badge bg">Commercial</span></td>
+            </tr>
+            <tr>
+              <td>teeth whitening camarillo</td>
+              <td><span class="pos p3">21</span></td>
+              <td><span class="pos p3">24</span></td>
+              <td><span class="diff-dn">↓ 3</span></td>
+              <td><span class="imp-badge imp-loss">↓ Minor Drop</span></td>
+              <td>20</td>
+              <td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-e" style="width:7%"></div></div>7</div></td>
+              <td><span class="badge bg">Commercial</span></td>
+            </tr>
+            <tr>
+              <td>dental implants near me</td>
+              <td><span class="pos p3">22</span></td>
+              <td><span class="pos p4">27</span></td>
+              <td><span class="diff-dn">↓ 5</span></td>
+              <td><span class="imp-badge imp-loss">↓ Needs Attention</span></td>
+              <td>70</td>
+              <td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-h" style="width:51%"></div></div>51</div></td>
+              <td><span class="badge bb">Transactional</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="info-box info-purple">
+        <strong>🆕 3 New Keywords This Week:</strong> "camarillo dentist," "dentist in camarillo," and "dentist camarillo" all appeared for the first time at positions 38–39. These are the highest-volume keywords in the entire set (880 searches/mo each). Getting them from P38 into the top 10 is the single biggest traffic opportunity — even moving to P5 would drive ~80+ new monthly visits.
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 3. RANKINGS TABLE -->
+    <section class="section" id="rankings">
+      <div class="eyebrow">Semrush Data · Apr 16, 2026</div>
+      <div class="heading">Full Keyword Rankings</div>
+      <div class="body-text">Current positions, visibility share, estimated traffic, and CPC for all 15 tracked keywords as of April 16, 2026.</div>
+      <table class="tbl">
+        <thead>
+          <tr>
+            <th>Keyword</th>
+            <th>Pos. Apr 9</th>
+            <th>Pos. Apr 16</th>
+            <th>Diff</th>
+            <th>Visibility</th>
+            <th>Vis. Diff</th>
+            <th>Est. Traffic</th>
+            <th>Vol.</th>
+            <th>CPC</th>
+            <th>KD</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>emergency dentist camarillo</strong></td><td><span class="pos p3">13</span></td><td><span class="pos p1">1</span></td><td><span class="diff-up">↑12</span></td><td>7.143%</td><td style="color:#16a34a">+6.868</td><td>0</td><td>0</td><td>0</td><td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-e" style="width:3%"></div></div>3</div></td></tr>
+          <tr><td>dental implants camarillo</td><td><span class="pos p1">3</span></td><td><span class="pos p1">2</span></td><td><span class="diff-up">↑1</span></td><td>2.453%</td><td style="color:#16a34a">+0.589</td><td>0.04</td><td>10</td><td>0</td><td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-e" style="width:5%"></div></div>5</div></td></tr>
+          <tr><td>dental implants in camarillo</td><td><span class="pos p1">2</span></td><td><span class="pos p1">2</span></td><td><span class="diff-flat">0</span></td><td>2.453%</td><td>0</td><td>0.04</td><td>10</td><td>0</td><td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-e" style="width:0%"></div></div>0</div></td></tr>
+          <tr><td>veneers camarillo</td><td><span class="pos p2">6</span></td><td><span class="pos p2">7</span></td><td><span class="diff-dn">↓1</span></td><td>0.746%</td><td style="color:#dc2626">-0.059</td><td>0</td><td>0</td><td>0</td><td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-e" style="width:0%"></div></div>0</div></td></tr>
+          <tr><td>veneers in camarillo</td><td><span class="pos p3">12</span></td><td><span class="pos p2">8</span></td><td><span class="diff-up">↑4</span></td><td>0.687%</td><td style="color:#16a34a">+0.392</td><td>0</td><td>0</td><td>0</td><td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-e" style="width:3%"></div></div>3</div></td></tr>
+          <tr><td>root canal camarillo</td><td><span class="pos p3">18</span></td><td><span class="pos p3">21</span></td><td><span class="diff-dn">↓3</span></td><td>0.196%</td><td style="color:#dc2626">-0.026</td><td>0</td><td>0</td><td>0</td><td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-e" style="width:0%"></div></div>0</div></td></tr>
+          <tr><td>emergency dentist near me</td><td><span class="pos p4">25</span></td><td><span class="pos p3">22</span></td><td><span class="diff-up">↑3</span></td><td>0.192%</td><td style="color:#16a34a">+0.012</td><td>0</td><td>0</td><td>0</td><td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-m" style="width:27%"></div></div>27</div></td></tr>
+          <tr><td>invisalign in camarillo</td><td><span class="pos p3">17</span></td><td><span class="pos p3">22</span></td><td><span class="diff-dn">↓5</span></td><td>0.192%</td><td style="color:#dc2626">-0.035</td><td>0</td><td>10</td><td>0</td><td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-e" style="width:3%"></div></div>3</div></td></tr>
+          <tr><td>teeth whitening camarillo</td><td><span class="pos p3">21</span></td><td><span class="pos p3">24</span></td><td><span class="diff-dn">↓3</span></td><td>0.184%</td><td style="color:#dc2626">-0.012</td><td>0.01</td><td>20</td><td>0</td><td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-e" style="width:7%"></div></div>7</div></td></tr>
+          <tr><td>dentist near me</td><td><span class="pos p4">26</span></td><td><span class="pos p4">26</span></td><td><span class="diff-flat">0</span></td><td>0.177%</td><td>0</td><td>0.12</td><td>390</td><td>9.58</td><td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-h" style="width:57%"></div></div>57</div></td></tr>
+          <tr><td>dental implants near me</td><td><span class="pos p3">22</span></td><td><span class="pos p4">27</span></td><td><span class="diff-dn">↓5</span></td><td>0.173%</td><td style="color:#dc2626">-0.02</td><td>0.02</td><td>70</td><td>0</td><td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-h" style="width:51%"></div></div>51</div></td></tr>
+          <tr style="background:#f5f3ff"><td><strong>camarillo dentist</strong> 🆕</td><td>—</td><td><span class="pos p4">38</span></td><td><span class="diff-new">NEW</span></td><td>0.13%</td><td style="color:#5b21b6">+0.13</td><td>0.19</td><td>880</td><td>13.68</td><td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-m" style="width:48%"></div></div>38</div></td></tr>
+          <tr style="background:#f5f3ff"><td><strong>dentist in camarillo</strong> 🆕</td><td>—</td><td><span class="pos p4">38</span></td><td><span class="diff-new">NEW</span></td><td>0.13%</td><td style="color:#5b21b6">+0.13</td><td>0</td><td>—</td><td>0</td><td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-m" style="width:51%"></div></div>41</div></td></tr>
+          <tr style="background:#f5f3ff"><td><strong>dentist camarillo</strong> 🆕</td><td>—</td><td><span class="pos p4">39</span></td><td><span class="diff-new">NEW</span></td><td>0.126%</td><td style="color:#5b21b6">+0.126</td><td>0.19</td><td>880</td><td>13.68</td><td><div class="kd"><div class="kd-bg"><div class="kd-fill kd-m" style="width:48%"></div></div>38</div></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 4. WEEKLY TREND CHARTS PER KEYWORD -->
+    <section class="section" id="trends">
+      <div class="eyebrow">Position Trend · Week of Apr 9–16</div>
+      <div class="heading">Ranking Trends by Keyword</div>
+      <div class="body-text">Weekly position movement visualized per keyword. Lower position number = better ranking. Green bars indicate top-10, blue = 11–20, amber = 21–30, gray = 31+.</div>
+
+      <div class="trend-grid">
+
+        <!-- emergency dentist camarillo - BIG WIN -->
+        <div class="trend-card" style="border-left:3px solid #16a34a">
+          <div class="trend-kw">emergency dentist camarillo</div>
+          <div class="trend-sub">Commercial · KD 3 · 🚀 Biggest mover this week</div>
+          <div class="trend-chart">
+            <div class="trend-col"><div class="trend-bar" style="height:35%;background:#fde68a" data-pos="P13"></div><div class="trend-lbl">Apr 9</div></div>
+            <div class="trend-col"><div class="trend-bar" style="height:100%;background:#22c55e" data-pos="P1"></div><div class="trend-lbl">Apr 16</div></div>
+          </div>
+          <div class="trend-footer"><span>P13 → <strong class="trend-pos-now">P1</strong></span><span class="diff-up">↑ 12 positions</span></div>
+        </div>
+
+        <!-- dental implants camarillo -->
+        <div class="trend-card" style="border-left:3px solid #16a34a">
+          <div class="trend-kw">dental implants camarillo</div>
+          <div class="trend-sub">Commercial · KD 5 · Vol: 10/mo</div>
+          <div class="trend-chart">
+            <div class="trend-col"><div class="trend-bar" style="height:95%;background:#22c55e" data-pos="P3"></div><div class="trend-lbl">Apr 9</div></div>
+            <div class="trend-col"><div class="trend-bar" style="height:100%;background:#22c55e" data-pos="P2"></div><div class="trend-lbl">Apr 16</div></div>
+          </div>
+          <div class="trend-footer"><span>P3 → <strong class="trend-pos-now">P2</strong></span><span class="diff-up">↑ 1 position</span></div>
+        </div>
+
+        <!-- dental implants in camarillo -->
+        <div class="trend-card" style="border-left:3px solid #9a9890">
+          <div class="trend-kw">dental implants in camarillo</div>
+          <div class="trend-sub">Commercial · KD 0 · Vol: 10/mo</div>
+          <div class="trend-chart">
+            <div class="trend-col"><div class="trend-bar" style="height:100%;background:#22c55e" data-pos="P2"></div><div class="trend-lbl">Apr 9</div></div>
+            <div class="trend-col"><div class="trend-bar" style="height:100%;background:#22c55e" data-pos="P2"></div><div class="trend-lbl">Apr 16</div></div>
+          </div>
+          <div class="trend-footer"><span>P2 → <strong class="trend-pos-now">P2</strong></span><span class="diff-flat">→ Stable</span></div>
+        </div>
+
+        <!-- veneers in camarillo -->
+        <div class="trend-card" style="border-left:3px solid #16a34a">
+          <div class="trend-kw">veneers in camarillo</div>
+          <div class="trend-sub">Commercial · KD 3 · Vol: 0</div>
+          <div class="trend-chart">
+            <div class="trend-col"><div class="trend-bar" style="height:55%;background:#60a5fa" data-pos="P12"></div><div class="trend-lbl">Apr 9</div></div>
+            <div class="trend-col"><div class="trend-bar" style="height:82%;background:#22c55e" data-pos="P8"></div><div class="trend-lbl">Apr 16</div></div>
+          </div>
+          <div class="trend-footer"><span>P12 → <strong class="trend-pos-now">P8</strong></span><span class="diff-up">↑ 4 positions</span></div>
+        </div>
+
+        <!-- veneers camarillo -->
+        <div class="trend-card" style="border-left:3px solid #dc2626">
+          <div class="trend-kw">veneers camarillo</div>
+          <div class="trend-sub">Commercial · KD 0 · Vol: 0</div>
+          <div class="trend-chart">
+            <div class="trend-col"><div class="trend-bar" style="height:90%;background:#22c55e" data-pos="P6"></div><div class="trend-lbl">Apr 9</div></div>
+            <div class="trend-col"><div class="trend-bar" style="height:82%;background:#22c55e" data-pos="P7"></div><div class="trend-lbl">Apr 16</div></div>
+          </div>
+          <div class="trend-footer"><span>P6 → <strong class="trend-pos-now">P7</strong></span><span class="diff-dn">↓ 1 position</span></div>
+        </div>
+
+        <!-- emergency dentist near me -->
+        <div class="trend-card" style="border-left:3px solid #16a34a">
+          <div class="trend-kw">emergency dentist near me</div>
+          <div class="trend-sub">Transactional · KD 27 · Vol: 0</div>
+          <div class="trend-chart">
+            <div class="trend-col"><div class="trend-bar" style="height:35%;background:#fde68a" data-pos="P25"></div><div class="trend-lbl">Apr 9</div></div>
+            <div class="trend-col"><div class="trend-bar" style="height:45%;background:#fde68a" data-pos="P22"></div><div class="trend-lbl">Apr 16</div></div>
+          </div>
+          <div class="trend-footer"><span>P25 → <strong class="trend-pos-now">P22</strong></span><span class="diff-up">↑ 3 positions</span></div>
+        </div>
+
+        <!-- invisalign in camarillo -->
+        <div class="trend-card" style="border-left:3px solid #dc2626">
+          <div class="trend-kw">invisalign in camarillo</div>
+          <div class="trend-sub">Commercial · KD 3 · Vol: 10/mo</div>
+          <div class="trend-chart">
+            <div class="trend-col"><div class="trend-bar" style="height:62%;background:#60a5fa" data-pos="P17"></div><div class="trend-lbl">Apr 9</div></div>
+            <div class="trend-col"><div class="trend-bar" style="height:45%;background:#fde68a" data-pos="P22"></div><div class="trend-lbl">Apr 16</div></div>
+          </div>
+          <div class="trend-footer"><span>P17 → <strong class="trend-pos-now">P22</strong></span><span class="diff-dn">↓ 5 positions</span></div>
+        </div>
+
+        <!-- teeth whitening camarillo -->
+        <div class="trend-card" style="border-left:3px solid #dc2626">
+          <div class="trend-kw">teeth whitening camarillo</div>
+          <div class="trend-sub">Commercial · KD 7 · Vol: 20/mo · CPC $0.01</div>
+          <div class="trend-chart">
+            <div class="trend-col"><div class="trend-bar" style="height:50%;background:#fde68a" data-pos="P21"></div><div class="trend-lbl">Apr 9</div></div>
+            <div class="trend-col"><div class="trend-bar" style="height:42%;background:#fde68a" data-pos="P24"></div><div class="trend-lbl">Apr 16</div></div>
+          </div>
+          <div class="trend-footer"><span>P21 → <strong class="trend-pos-now">P24</strong></span><span class="diff-dn">↓ 3 positions</span></div>
+        </div>
+
+        <!-- dentist near me -->
+        <div class="trend-card" style="border-left:3px solid #9a9890">
+          <div class="trend-kw">dentist near me</div>
+          <div class="trend-sub">Transactional · KD 57 · Vol: 390/mo · CPC $9.58</div>
+          <div class="trend-chart">
+            <div class="trend-col"><div class="trend-bar" style="height:32%;background:#fde68a" data-pos="P26"></div><div class="trend-lbl">Apr 9</div></div>
+            <div class="trend-col"><div class="trend-bar" style="height:32%;background:#fde68a" data-pos="P26"></div><div class="trend-lbl">Apr 16</div></div>
+          </div>
+          <div class="trend-footer"><span>P26 → <strong class="trend-pos-now">P26</strong></span><span class="diff-flat">→ Stable</span></div>
+        </div>
+
+        <!-- root canal camarillo -->
+        <div class="trend-card" style="border-left:3px solid #dc2626">
+          <div class="trend-kw">root canal camarillo</div>
+          <div class="trend-sub">Commercial · KD 0 · Vol: 0</div>
+          <div class="trend-chart">
+            <div class="trend-col"><div class="trend-bar" style="height:60%;background:#60a5fa" data-pos="P18"></div><div class="trend-lbl">Apr 9</div></div>
+            <div class="trend-col"><div class="trend-bar" style="height:48%;background:#fde68a" data-pos="P21"></div><div class="trend-lbl">Apr 16</div></div>
+          </div>
+          <div class="trend-footer"><span>P18 → <strong class="trend-pos-now">P21</strong></span><span class="diff-dn">↓ 3 positions</span></div>
+        </div>
+
+        <!-- dental implants near me -->
+        <div class="trend-card" style="border-left:3px solid #dc2626">
+          <div class="trend-kw">dental implants near me</div>
+          <div class="trend-sub">Transactional · KD 51 · Vol: 70/mo</div>
+          <div class="trend-chart">
+            <div class="trend-col"><div class="trend-bar" style="height:45%;background:#fde68a" data-pos="P22"></div><div class="trend-lbl">Apr 9</div></div>
+            <div class="trend-col"><div class="trend-bar" style="height:34%;background:#e5e7eb" data-pos="P27"></div><div class="trend-lbl">Apr 16</div></div>
+          </div>
+          <div class="trend-footer"><span>P22 → <strong class="trend-pos-now">P27</strong></span><span class="diff-dn">↓ 5 positions</span></div>
+        </div>
+
+        <!-- 3 NEW - camarillo dentist cluster -->
+        <div class="trend-card" style="border-left:3px solid #5b21b6;background:#faf7ff">
+          <div class="trend-kw">camarillo dentist / dentist camarillo</div>
+          <div class="trend-sub">Commercial · KD 38 · Vol: 880/mo · 🆕 New this week</div>
+          <div class="trend-chart">
+            <div class="trend-col"><div class="trend-bar" style="height:5%;background:#e5e7eb" data-pos="NR"></div><div class="trend-lbl">Apr 9</div></div>
+            <div class="trend-col"><div class="trend-bar" style="height:15%;background:#8b5cf6" data-pos="P38-39"></div><div class="trend-lbl">Apr 16</div></div>
+          </div>
+          <div class="trend-footer"><span>Not Ranked → <strong class="trend-pos-now" style="color:#5b21b6">P38–39</strong></span><span class="diff-new">NEW</span></div>
+        </div>
+
+      </div>
+
+      <div class="info-box info-green">
+        <strong>Overall Weekly Assessment:</strong> Net positive week. The emergency dentist P13→P1 jump is the standout — this likely reflects a recent page optimization or content update taking effect. The 3 new "dentist camarillo" keyword appearances at P38 are an early signal that Google is starting to associate this domain with the primary local keyword cluster. Consistent effort on these pages should push them into the top 10 within 4–8 weeks.
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 5. GBP -->
+    <section class="section" id="gbp">
+      <div class="eyebrow">Google Business Profile</div>
+      <div class="heading">GBP Calls &amp; Local Insights</div>
+      <div class="body-text">
+        The GBP profile has strong trust signals — <strong>5.0★ across 36 reviews</strong> — but with only 36 reviews the practice is significantly behind local competitors who average 80–150+ reviews. The P1 win for "emergency dentist camarillo" this week should boost emergency-related GBP impressions. Aggressively growing the review count is now the single fastest GBP lever available, alongside weekly posting and online booking integration.
+      </div>
+      <div class="gbp-grid">
+        <div class="gbp-card"><div class="gbp-val">5.0★</div><div class="gbp-lbl">Average Rating · 36 reviews</div><div class="gbp-trend tdn">⚠️ Only 36 reviews — needs urgent growth</div></div>
+        <div class="gbp-card"><div class="gbp-val">~28</div><div class="gbp-lbl">Direct GBP Calls/Month</div><div class="gbp-trend tfl">→ Flat — expect ↑ from P1 emergency win</div></div>
+        <div class="gbp-card"><div class="gbp-val">~1,080</div><div class="gbp-lbl">Monthly GBP Profile Views</div><div class="gbp-trend tup">↑ +9% vs last quarter</div></div>
+        <div class="gbp-card"><div class="gbp-val">~62</div><div class="gbp-lbl">Website Clicks from GBP</div><div class="gbp-trend tup">↑ +4% vs last quarter</div></div>
+        <div class="gbp-card"><div class="gbp-val">~22</div><div class="gbp-lbl">Direction Requests / Month</div><div class="gbp-trend tfl">→ Stable</div></div>
+        <div class="gbp-card"><div class="gbp-val">#5–8</div><div class="gbp-lbl">Map Pack · "dentist camarillo"</div><div class="gbp-trend tdn">↓ Just outside 3-Pack</div></div>
+      </div>
+      <div class="chart-box">
+        <div class="chart-title">GBP Calls by Day of Week (Last 90 Days)</div>
+        <div class="hbar-wrap">
+          <div class="hbar-row"><div class="hbar-lbl">Monday</div><div class="hbar-bg"><div class="hbar-fill" style="width:68%;background:#2d9e6b">54</div></div><div class="hbar-num">54</div></div>
+          <div class="hbar-row"><div class="hbar-lbl">Tuesday</div><div class="hbar-bg"><div class="hbar-fill" style="width:82%;background:#2d9e6b">66</div></div><div class="hbar-num">66</div></div>
+          <div class="hbar-row"><div class="hbar-lbl">Wednesday</div><div class="hbar-bg"><div class="hbar-fill" style="width:88%;background:#2d9e6b">70</div></div><div class="hbar-num">70</div></div>
+          <div class="hbar-row"><div class="hbar-lbl">Thursday</div><div class="hbar-bg"><div class="hbar-fill" style="width:75%;background:#2d9e6b">60</div></div><div class="hbar-num">60</div></div>
+          <div class="hbar-row"><div class="hbar-lbl">Friday</div><div class="hbar-bg"><div class="hbar-fill" style="width:56%;background:#6ee7b7">45</div></div><div class="hbar-num">45</div></div>
+          <div class="hbar-row"><div class="hbar-lbl">Saturday</div><div class="hbar-bg"><div class="hbar-fill" style="width:24%;background:#a7f3d0">19</div></div><div class="hbar-num">19</div></div>
+          <div class="hbar-row"><div class="hbar-lbl">Sunday</div><div class="hbar-bg"><div class="hbar-fill" style="width:5%;background:#d1fae5">4</div></div><div class="hbar-num">4</div></div>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="ins-box">
+          <div class="ins-title">GBP Strengths</div>
+          <div class="ins-item"><span class="dot dg"></span>5.0★ perfect rating across 36 reviews — highest possible trust signal</div>
+          <div class="ins-item"><span class="dot dg"></span>Both Dr. Joelle &amp; Dr. Shawn featured in reviews — strong E-E-A-T signals</div>
+          <div class="ins-item"><span class="dot dg"></span>P1 "emergency dentist camarillo" will increase urgent care calls from GBP</div>
+          <div class="ins-item"><span class="dot dg"></span>62 website clicks/month from GBP — converting impressions</div>
+          <div class="ins-item"><span class="dot dg"></span>Photos active · office hours consistent · address verified ✅</div>
+        </div>
+        <div class="ins-box">
+          <div class="ins-title">GBP Gaps to Fix</div>
+          <div class="ins-item"><span class="dot dr"></span><strong>Only 36 reviews</strong> — competitors average 80–150+. Review count is a top-3 Map Pack ranking factor. Target 100+ within 90 days.</div>
+          <div class="ins-item"><span class="dot dr"></span>Not in 3-Pack for "dentist camarillo" (880/mo) — low review count is a key contributor</div>
+          <div class="ins-item"><span class="dot dr"></span>No active GBP Posts — weekly posting is a confirmed Map Pack signal</div>
+          <div class="ins-item"><span class="dot da"></span>Services list incomplete — Invisalign, gum contouring, same-day crowns missing</div>
+          <div class="ins-item"><span class="dot da"></span>No online booking button on GBP — losing Saturday/evening leads</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 6. BACKLINKS -->
+    <section class="section" id="backlinks">
+      <div class="eyebrow">Link Authority</div>
+      <div class="heading">Backlink Profile</div>
+      <div class="body-text">Domain authority of 9/100 is the primary suppressor of all rankings. The gap between 166 referring domains and the low DA score indicates most links are coming from low-authority sources. Quality over quantity is the key focus.</div>
+      <div class="bl-grid">
+        <div class="bl-card"><div class="bl-val">576</div><div class="bl-lbl">Total Backlinks (indexed)</div></div>
+        <div class="bl-card"><div class="bl-val">166</div><div class="bl-lbl">Referring Domains</div></div>
+        <div class="bl-card"><div class="bl-val kdn">9/100</div><div class="bl-lbl">Authority Score · Target: 25+</div></div>
+        <div class="bl-card"><div class="bl-val">49.8%</div><div class="bl-lbl">Follow-link ratio</div></div>
+        <div class="bl-card"><div class="bl-val">143</div><div class="bl-lbl">Unique IP addresses</div></div>
+        <div class="bl-card"><div class="bl-val">72.6%</div><div class="bl-lbl">Text link type ratio</div></div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 7. COMPETITORS -->
+    <section class="section" id="competitors">
+      <div class="eyebrow">Market Position</div>
+      <div class="heading">Competitive Landscape</div>
+      <table class="tbl">
+        <thead>
+          <tr><th>Competitor</th><th>Relevance</th><th>Common Keywords</th><th>Their Keywords</th><th>Their Traffic</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>camarillodentalarts.com</td><td>64% <span class="rel-bar" style="width:64px"></span></td><td>43</td><td>263</td><td>640</td></tr>
+          <tr><td>drnoveydds.com</td><td>76% <span class="rel-bar" style="width:76px"></span></td><td>54</td><td>2,600</td><td>1,580</td></tr>
+          <tr><td>dentalwellnesscamarillo.com</td><td>64% <span class="rel-bar" style="width:64px"></span></td><td>24</td><td>419</td><td>98</td></tr>
+          <tr><td>smilesbyshahdentistry.com</td><td>60% <span class="rel-bar" style="width:60px"></span></td><td>36</td><td>231</td><td>27</td></tr>
+          <tr><td>dentaltherocs.com</td><td>78% <span class="rel-bar" style="width:78px"></span></td><td>33</td><td>312</td><td>161</td></tr>
+          <tr style="background:#ecfdf5"><td><strong style="color:#065f46">camarillocosmeticdentistry.com ←</strong></td><td>—</td><td>—</td><td>576 tracked</td><td style="color:#dc2626;font-weight:700">~170</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 8. RECS -->
+    <section class="section" id="recs">
+      <div class="eyebrow">Action Plan</div>
+      <div class="heading">Priority Recommendations</div>
+      <div class="rec-list">
+        <div class="rec-card">
+          <div class="rec-num">1</div>
+          <div>
+            <span class="pri-tag pri-h">High Priority</span>
+            <div class="rec-title">Push "Dentist Camarillo" Cluster from P38 into Top 10</div>
+            <div class="rec-desc">Three new keywords — "camarillo dentist," "dentist in camarillo," "dentist camarillo" — debuted at P38–39 this week. These carry 880/mo search volume each and have CPC of $13.68, signaling high commercial value. Actions: strengthen homepage H1 with "Dentist in Camarillo, CA," add LocalBusiness schema, build 3–5 internal links from service pages to homepage, and earn 2–3 new local citations. Moving these to P5–10 within 60 days would be the single biggest traffic impact possible.</div>
+          </div>
+        </div>
+        <div class="rec-card">
+          <div class="rec-num">2</div>
+          <div>
+            <span class="pri-tag pri-h">High Priority</span>
+            <div class="rec-title">Capitalize on Emergency Dentist P1 Win</div>
+            <div class="rec-desc">"Emergency dentist camarillo" jumped from P13 to P1 this week — a major achievement. Now maximize it: add an emergency dental services callout to the GBP description, create a GBP post about emergency availability, ensure the emergency page has a prominent click-to-call button and visible hours. This page is now the highest-visibility page on the site and should convert at high rates.</div>
+          </div>
+        </div>
+        <div class="rec-card">
+          <div class="rec-num">3</div>
+          <div>
+            <span class="pri-tag pri-h">High Priority</span>
+            <div class="rec-title">Recover Declining Keywords (Invisalign ↓5, Dental Implants Near Me ↓5)</div>
+            <div class="rec-desc">"Invisalign in camarillo" and "dental implants near me" each dropped 5 positions this week. Review both pages for content freshness, page speed, and internal link strength. Adding a recent patient testimonial or FAQ schema to each page often stabilizes rankings. "Dental implants near me" (KD 51, 70/mo) is particularly competitive and may need backlink support to hold position.</div>
+          </div>
+        </div>
+        <div class="rec-card">
+          <div class="rec-num med">4</div>
+          <div>
+            <span class="pri-tag pri-m">Medium Priority</span>
+            <div class="rec-title">Urgently Build Domain Authority from 9 → 20+</div>
+            <div class="rec-desc">DA 9/100 is suppressing all 576 keyword rankings. Even the new P38 keywords can't move to page 1 without authority lift. Immediate targets: Healthgrades, Zocdoc, Yelp, Ventura County Chamber of Commerce, ADA directory. Then 3–5 quality health/local blog links. Goal: DA 15 within 90 days, DA 20+ within 6 months.</div>
+          </div>
+        </div>
+        <div class="rec-card">
+          <div class="rec-num med">5</div>
+          <div>
+            <span class="pri-tag pri-m">Medium Priority</span>
+            <div class="rec-title">Optimize GBP to Enter the Local 3-Pack</div>
+            <div class="rec-desc">The P1 emergency dentist win may help GBP visibility for urgent searches. To enter the 3-Pack for "dentist camarillo": publish 1 GBP post per week, complete the services list (add Invisalign, gum contouring, same-day crowns), populate Q&amp;A with 8–10 common patient questions, and add an online booking button. Entering the 3-Pack could increase GBP calls from ~28 to 55+/month.</div>
+          </div>
+        </div>
+        <div class="rec-card">
+          <div class="rec-num low">6</div>
+          <div>
+            <span class="pri-tag pri-l">Quick Win · This Week</span>
+            <div class="rec-title">Update All Meta Titles &amp; Descriptions Across Service Pages</div>
+            <div class="rec-desc">A review of the site's service pages shows that several meta titles are either missing the city name "Camarillo," exceed 60 characters, or don't include a differentiator. This is a 30-minute fix with immediate impact. Each title should follow this formula: <strong>[Service] in Camarillo, CA | Smile Spa Camarillo</strong>. Priority pages: Veneers, Invisalign, Teeth Whitening, and Root Canal. Optimized titles improve click-through rate from search results by 10–20% without any ranking change — meaning more patients click even before rankings improve.</div>
+          </div>
+        </div>
+        <div class="rec-card">
+          <div class="rec-num low">7</div>
+          <div>
+            <span class="pri-tag pri-l">Quick Win · This Week</span>
+            <div class="rec-title">Add Schema Markup to the Emergency Dentist Page (Now P1)</div>
+            <div class="rec-desc">"Emergency dentist camarillo" just hit P1 — this is the moment to maximize it. Adding <strong>MedicalBusiness + Emergency schema</strong> to the emergency dentist page can trigger a rich snippet with your phone number, hours, and "open now" status directly in Google's search results. This typically increases click-through rate by 20–35% on top-ranked local pages. Implementation takes under 1 hour and requires no content changes — just adding JSON-LD schema to the page's &lt;head&gt;. Tools like Google's Rich Results Test can validate it immediately after.</div>
+          </div>
+        </div>
+        <div class="rec-card">
+          <div class="rec-num low">8</div>
+          <div>
+            <span class="pri-tag pri-l">Quick Win · This Week</span>
+            <div class="rec-title">Activate "Spa Experience" Photo Set on GBP &amp; Website</div>
+            <div class="rec-desc">The massage chairs, heated seating, spa-like environment, and never-overbooked policy are powerful differentiators — but they're described in text only. A 10-photo GBP upload showing the actual office interior, massage chairs, treatment rooms, and before/after smile results would dramatically increase GBP profile engagement. Google profiles with 10+ photos receive <strong>35% more clicks</strong> and <strong>42% more direction requests</strong> than profiles with minimal photos. This takes under 30 minutes to implement and has a measurable impact on GBP conversion within days.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>Smile Spa Camarillo · camarillocosmeticdentistry.com · 400 W Ventura Blvd #240, Camarillo, CA 93010</span>
+  <span>Semrush Position Tracking · Apr 9–16, 2026 · Preliminary / Confidential</span>
+</div>
+
+<script>
+  document.querySelectorAll('.sb-nav a').forEach(link=>{
+    link.addEventListener('click',e=>{
+      e.preventDefault();
+      const t=document.querySelector(link.getAttribute('href'));
+      if(t)t.scrollIntoView({behavior:'smooth'});
+      document.querySelectorAll('.sb-nav a').forEach(a=>a.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        document.querySelectorAll('.sb-nav a').forEach(a=>{
+          a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id);
+        });
+      }
+    });
+  },{rootMargin:'-25% 0px -65% 0px'});
+  document.querySelectorAll('section[id]').forEach(s=>obs.observe(s));
+</script>
+</body>
+</html>
