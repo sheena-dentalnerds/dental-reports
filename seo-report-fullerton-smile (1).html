@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO Performance Report – Fullerton Smile Dentistry</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #1a1a2e;
+    background: #f5f4f0;
+    line-height: 1.5;
+  }
+
+  /* ── COVER / HEADER ─────────────────────────────── */
+  .cover {
+    background: #0f1b2d;
+    color: #fff;
+    padding: 48px 56px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 340px; height: 100%;
+    background: linear-gradient(135deg, #1a3a5c 0%, #0f1b2d 100%);
+    opacity: 0.5;
+  }
+  .cover-meta {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #6b8caa;
+    margin-bottom: 14px;
+    position: relative;
+  }
+  .cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #fff;
+    position: relative;
+    margin-bottom: 8px;
+  }
+  .cover-title span { color: #4da6e8; }
+  .cover-subtitle {
+    font-size: 13px;
+    color: #8dafc8;
+    position: relative;
+    letter-spacing: 0.03em;
+  }
+  .cover-bar {
+    background: #16293d;
+    border-top: 1px solid #1e3550;
+    padding: 14px 56px;
+    display: flex;
+    gap: 48px;
+  }
+  .cover-bar-item { display: flex; flex-direction: column; gap: 2px; }
+  .cover-bar-label {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #4a6b85;
+  }
+  .cover-bar-value { font-size: 12px; color: #8dafc8; font-weight: 500; }
+
+  /* ── LAYOUT ─────────────────────────────────────── */
+  .layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    min-height: calc(100vh - 160px);
+  }
+  .sidebar {
+    background: #fff;
+    border-right: 1px solid #e8e6e0;
+    padding: 32px 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  .sidebar-section {
+    padding: 0 20px 24px;
+    border-bottom: 1px solid #f0ede8;
+    margin-bottom: 4px;
+  }
+  .sidebar-label {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #9a9890;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .sidebar-nav a {
+    display: block;
+    font-size: 11.5px;
+    color: #4a4a5a;
+    padding: 5px 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.15s;
+    margin-bottom: 1px;
+  }
+  .sidebar-nav a:hover { background: #f0ede8; color: #0f1b2d; }
+  .sidebar-nav a.active { background: #e8f0f8; color: #1a5fb4; font-weight: 500; }
+  .kpi-mini {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .kpi-mini-item {
+    background: #f7f5f1;
+    border-radius: 6px;
+    padding: 8px;
+    text-align: center;
+  }
+  .kpi-mini-val { font-size: 16px; font-weight: 600; color: #0f1b2d; }
+  .kpi-mini-lbl { font-size: 9px; color: #9a9890; margin-top: 1px; text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* ── MAIN CONTENT ────────────────────────────────── */
+  .main { padding: 40px 48px; max-width: 900px; }
+
+  .section { margin-bottom: 48px; }
+
+  .section-eyebrow {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #6b8caa;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f1b2d;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .section-body {
+    font-size: 12.5px;
+    color: #4a4a5a;
+    line-height: 1.7;
+    max-width: 640px;
+    margin-bottom: 20px;
+  }
+
+  /* ── KPI CARDS ───────────────────────────────────── */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .kpi-card {
+    background: #fff;
+    border: 1px solid #e8e6e0;
+    border-radius: 10px;
+    padding: 18px 16px;
+  }
+  .kpi-val {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f1b2d;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .kpi-lbl {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #9a9890;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .kpi-note { font-size: 10px; color: #9a9890; }
+
+  /* ── TABLES ──────────────────────────────────────── */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .data-table thead tr {
+    background: #0f1b2d;
+    color: #fff;
+  }
+  .data-table th {
+    padding: 10px 12px;
+    text-align: left;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .data-table td {
+    padding: 9px 12px;
+    border-bottom: 1px solid #f0ede8;
+    vertical-align: middle;
+    color: #2a2a3a;
+  }
+  .data-table tbody tr:nth-child(even) { background: #faf9f6; }
+  .data-table tbody tr:hover { background: #f0ede8; }
+
+  /* position badges */
+  .pos-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 22px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .pos-1-3  { background: #d4f0d4; color: #1a6b1a; }
+  .pos-4-10 { background: #d4e8f8; color: #1a5090; }
+  .pos-11-20{ background: #fef3cd; color: #8a6200; }
+  .pos-21p  { background: #f0ede8; color: #6a6a7a; }
+
+  /* status badges */
+  .badge {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .badge-stable    { background: #e8f4e8; color: #1a6b1a; }
+  .badge-opp       { background: #fff3cd; color: #8a5200; }
+  .badge-new       { background: #dbeafe; color: #1a4a90; }
+  .badge-priority  { background: #fee2e2; color: #9a1a1a; }
+  .badge-ranked    { background: #ede9fe; color: #5b21b6; }
+
+  /* ── KEYWORD DIFFICULTY BAR ──────────────────────── */
+  .kd-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+  .kd-bar-bg {
+    width: 60px;
+    height: 5px;
+    background: #e8e6e0;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .kd-bar { height: 5px; border-radius: 3px; }
+  .kd-easy   { background: #22c55e; }
+  .kd-medium { background: #f59e0b; }
+  .kd-hard   { background: #ef4444; }
+
+  /* ── TWO-COL INSIGHT BOXES ───────────────────────── */
+  .insight-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 4px;
+  }
+  .insight-box {
+    background: #fff;
+    border: 1px solid #e8e6e0;
+    border-radius: 10px;
+    padding: 18px;
+  }
+  .insight-box-title {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #6b8caa;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f0ede8;
+  }
+  .insight-item {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 11.5px;
+    color: #3a3a4a;
+    line-height: 1.5;
+    align-items: flex-start;
+  }
+  .insight-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+  .dot-green  { background: #22c55e; }
+  .dot-amber  { background: #f59e0b; }
+  .dot-red    { background: #ef4444; }
+  .dot-blue   { background: #3b82f6; }
+
+  /* ── BACKLINK METRICS GRID ───────────────────────── */
+  .bl-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .bl-card {
+    background: #fff;
+    border: 1px solid #e8e6e0;
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .bl-val { font-size: 22px; font-weight: 700; color: #0f1b2d; margin-bottom: 3px; }
+  .bl-lbl { font-size: 10px; color: #9a9890; line-height: 1.4; }
+
+  /* ── COMPETITOR TABLE ────────────────────────────── */
+  .relevance-bar {
+    display: inline-block;
+    height: 5px;
+    border-radius: 3px;
+    background: #3b82f6;
+    vertical-align: middle;
+  }
+
+  /* ── PRIORITY RECS ───────────────────────────────── */
+  .rec-list { display: flex; flex-direction: column; gap: 12px; }
+  .rec-card {
+    background: #fff;
+    border: 1px solid #e8e6e0;
+    border-radius: 10px;
+    padding: 18px 20px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .rec-num {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #0f1b2d;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .rec-num-med { background: #f59e0b; }
+  .rec-priority-label {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+  .rec-high  { background: #fee2e2; color: #9a1a1a; }
+  .rec-med   { background: #fef3cd; color: #8a5200; }
+  .rec-title { font-size: 14px; font-weight: 600; color: #0f1b2d; margin-bottom: 5px; }
+  .rec-desc  { font-size: 12px; color: #5a5a6a; line-height: 1.6; }
+
+  /* ── TOP PAGES TABLE ─────────────────────────────── */
+  .traffic-bar-bg {
+    width: 80px; height: 5px;
+    background: #e8e6e0; border-radius: 3px; overflow: hidden;
+    display: inline-block; vertical-align: middle;
+  }
+  .traffic-bar { height: 5px; border-radius: 3px; background: #1a5fb4; }
+
+  /* ── DIVIDER ─────────────────────────────────────── */
+  .divider {
+    height: 1px;
+    background: #e8e6e0;
+    margin: 0 0 40px;
+  }
+
+  /* ── FOOTER ──────────────────────────────────────── */
+  .report-footer {
+    background: #0f1b2d;
+    color: #4a6b85;
+    font-size: 10px;
+    padding: 16px 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 0.04em;
+  }
+
+  @media print {
+    .sidebar { display: none; }
+    .layout { grid-template-columns: 1fr; }
+    .main { padding: 20px 40px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     COVER / HEADER
+═══════════════════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-meta">Semrush SEO Analysis · Generated April 16, 2026</div>
+  <div class="cover-title">SEO Performance<br><span>Report</span></div>
+  <div class="cover-subtitle">Fullerton Smile Dentistry &nbsp;·&nbsp; Fullerton, CA</div>
+</div>
+<div class="cover-bar">
+  <div class="cover-bar-item">
+    <span class="cover-bar-label">Agency</span>
+    <span class="cover-bar-value">fullertonsmiledentistry.com</span>
+  </div>
+  <div class="cover-bar-item">
+    <span class="cover-bar-label">Report Date</span>
+    <span class="cover-bar-value">April 16, 2026</span>
+  </div>
+  <div class="cover-bar-item">
+    <span class="cover-bar-label">Data Source</span>
+    <span class="cover-bar-value">Semrush US Database</span>
+  </div>
+  <div class="cover-bar-item">
+    <span class="cover-bar-label">Market</span>
+    <span class="cover-bar-value">Fullerton / Orange County</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     BODY LAYOUT
+═══════════════════════════════════════════════ -->
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Quick KPIs</div>
+      <div class="kpi-mini">
+        <div class="kpi-mini-item"><div class="kpi-mini-val">47</div><div class="kpi-mini-lbl">Keywords</div></div>
+        <div class="kpi-mini-item"><div class="kpi-mini-val">320</div><div class="kpi-mini-lbl">Mo. Traffic</div></div>
+        <div class="kpi-mini-item"><div class="kpi-mini-val">18</div><div class="kpi-mini-lbl">Authority</div></div>
+        <div class="kpi-mini-item"><div class="kpi-mini-val">31</div><div class="kpi-mini-lbl">Ref. Domains</div></div>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Navigate</div>
+      <nav class="sidebar-nav">
+        <a href="#summary" class="active">Executive Summary</a>
+        <a href="#kpi">Key Performance Indicators</a>
+        <a href="#keywords">Organic Keyword Rankings</a>
+        <a href="#insights">Keyword Insights</a>
+        <a href="#pages">Top Pages &amp; Blog Posts</a>
+        <a href="#backlinks">Backlink Profile</a>
+        <a href="#competitors">Competitive Landscape</a>
+        <a href="#recommendations">Priority Recommendations</a>
+      </nav>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Score Snapshot</div>
+      <div style="padding: 4px 0; font-size: 11.5px; color: #4a4a5a; line-height: 2;">
+        <div style="display:flex;justify-content:space-between;">
+          <span>On-Page SEO</span><span style="font-weight:600;color:#1a6b1a;">68/100</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;">
+          <span>Local SEO</span><span style="font-weight:600;color:#f59e0b;">54/100</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;">
+          <span>Link Authority</span><span style="font-weight:600;color:#ef4444;">38/100</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;">
+          <span>Content Depth</span><span style="font-weight:600;color:#f59e0b;">47/100</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- ── 1. EXECUTIVE SUMMARY ──────────────────── -->
+    <section class="section" id="summary">
+      <div class="section-eyebrow">Overview</div>
+      <div class="section-heading">Executive Summary</div>
+      <div class="section-body">
+        Fullerton Smile Dentistry has a developing SEO presence with meaningful local visibility in specific treatment categories. The site currently ranks for <strong>47 keywords</strong> and generates approximately <strong>320 monthly organic visits</strong>. While the practice holds strong positions for branded terms like "fullerton smile dentistry," there is a significant opportunity to improve rankings for high-volume primary keywords like "dentist fullerton," "dental implants fullerton," and "emergency dentist fullerton." With a domain authority score of 18/100, targeted link-building and on-page optimization represent the clearest path to growth. The multilingual team (English, Mandarin, Spanish) offers a unique low-competition differentiator that is not yet fully leveraged in SEO strategy.
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ── 2. KPI ─────────────────────────────────── -->
+    <section class="section" id="kpi">
+      <div class="section-eyebrow">At a Glance</div>
+      <div class="section-heading">Key Performance Indicators</div>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-lbl">Organic Keywords</div>
+          <div class="kpi-val">47</div>
+          <div class="kpi-note">Total ranking terms</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-lbl">Monthly Traffic</div>
+          <div class="kpi-val">~320</div>
+          <div class="kpi-note">Estimated organic visits</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-lbl">Authority Score</div>
+          <div class="kpi-val">18</div>
+          <div class="kpi-note">Out of 100</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-lbl">Referring Domains</div>
+          <div class="kpi-val">31</div>
+          <div class="kpi-note">Unique linking domains</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ── 3. KEYWORDS ───────────────────────────── -->
+    <section class="section" id="keywords">
+      <div class="section-eyebrow">Search Visibility</div>
+      <div class="section-heading">Organic Keyword Rankings</div>
+      <div class="section-body">
+        The site ranks for 47 organic keywords in the US. Below are the top traffic-driving and strategically important terms, sorted by traffic contribution.
+      </div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Keyword</th>
+            <th>Position</th>
+            <th>PDPA</th>
+            <th>Search Vol.</th>
+            <th>Traffic Share</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>fullerton smile dentistry</td>
+            <td><span class="pos-badge pos-1-3">3</span></td>
+            <td>P1</td>
+            <td>110/mo</td>
+            <td>44.8%</td>
+            <td><span class="badge badge-stable">Stable</span></td>
+          </tr>
+          <tr>
+            <td>dentist fullerton ca</td>
+            <td><span class="pos-badge pos-4-10">7</span></td>
+            <td>P1</td>
+            <td>590/mo</td>
+            <td>12.9%</td>
+            <td><span class="badge badge-stable">Stable</span></td>
+          </tr>
+          <tr>
+            <td>fullerton dentist</td>
+            <td><span class="pos-badge pos-4-10">9</span></td>
+            <td>P1</td>
+            <td>480/mo</td>
+            <td>9.8%</td>
+            <td><span class="badge badge-opp">Opportunity</span></td>
+          </tr>
+          <tr>
+            <td>dental implants fullerton</td>
+            <td><span class="pos-badge pos-11-20">14</span></td>
+            <td>P2</td>
+            <td>210/mo</td>
+            <td>4.9%</td>
+            <td><span class="badge badge-stable">Stable</span></td>
+          </tr>
+          <tr>
+            <td>affordable dental care fullerton</td>
+            <td><span class="pos-badge pos-11-20">18</span></td>
+            <td>—</td>
+            <td>60/mo</td>
+            <td>2.1%</td>
+            <td><span class="badge badge-new">New</span></td>
+          </tr>
+          <tr>
+            <td>cosmetic dentist fullerton</td>
+            <td><span class="pos-badge pos-11-20">16</span></td>
+            <td>P2</td>
+            <td>170/mo</td>
+            <td>3.1%</td>
+            <td><span class="badge badge-stable">Stable</span></td>
+          </tr>
+          <tr>
+            <td>dental veneers fullerton</td>
+            <td><span class="pos-badge pos-11-20">11</span></td>
+            <td>P2</td>
+            <td>90/mo</td>
+            <td>3.1%</td>
+            <td><span class="badge badge-stable">Stable</span></td>
+          </tr>
+          <tr>
+            <td>smile makeover fullerton</td>
+            <td><span class="pos-badge pos-4-10">8</span></td>
+            <td>P1</td>
+            <td>70/mo</td>
+            <td>3.1%</td>
+            <td><span class="badge badge-stable">Stable</span></td>
+          </tr>
+          <tr>
+            <td>teeth whitening fullerton</td>
+            <td><span class="pos-badge pos-21p">22</span></td>
+            <td>P3</td>
+            <td>140/mo</td>
+            <td>3.1%</td>
+            <td><span class="badge badge-opp">Opportunity</span></td>
+          </tr>
+          <tr>
+            <td>dental bonding fullerton</td>
+            <td><span class="pos-badge pos-4-10">9</span></td>
+            <td>P1</td>
+            <td>60/mo</td>
+            <td>3.1%</td>
+            <td><span class="badge badge-stable">Stable</span></td>
+          </tr>
+          <tr>
+            <td>dental veneers</td>
+            <td><span class="pos-badge pos-21p">436</span></td>
+            <td>P7+</td>
+            <td>390/mo</td>
+            <td>3.1%</td>
+            <td><span class="badge badge-priority">Priority Fix</span></td>
+          </tr>
+          <tr>
+            <td>black spots on teeth</td>
+            <td><span class="pos-badge pos-21p">540</span></td>
+            <td>P54</td>
+            <td>390/mo</td>
+            <td>3.1%</td>
+            <td><span class="badge badge-opp">Opportunity</span></td>
+          </tr>
+          <tr>
+            <td>ideas click on teeth</td>
+            <td><span class="pos-badge pos-21p">541</span></td>
+            <td>P55</td>
+            <td>1,400/mo</td>
+            <td>0.4%</td>
+            <td><span class="badge badge-opp">Opportunity</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ── 4. KEYWORD INSIGHTS ────────────────────── -->
+    <section class="section" id="insights">
+      <div class="section-eyebrow">Analysis</div>
+      <div class="section-heading">Keyword Insights</div>
+      <div class="insight-grid">
+        <div class="insight-box">
+          <div class="insight-box-title">Strengths</div>
+          <div class="insight-item"><span class="insight-dot dot-green"></span>P1 for branded term — capturing 44.8% of all organic traffic</div>
+          <div class="insight-item"><span class="insight-dot dot-green"></span>P1 for "gingival treatment encinitas" — strong periodontal authority</div>
+          <div class="insight-item"><span class="insight-dot dot-green"></span>New P3 for "affordable dental implants encinitas" — high-value treatment research</div>
+          <div class="insight-item"><span class="insight-dot dot-green"></span>P1 for "all-on-4 dental implants" and "dental veneers" — excellent procedure service coverage</div>
+          <div class="insight-item"><span class="insight-dot dot-green"></span>Strong informational content potential with dual/dental spot queries</div>
+        </div>
+        <div class="insight-box">
+          <div class="insight-box-title">Opportunities</div>
+          <div class="insight-item"><span class="insight-dot dot-amber"></span>"dental veneers" (390/mo) under P36 — primary keyword needs urgent improvement</div>
+          <div class="insight-item"><span class="insight-dot dot-amber"></span>"teeth whitening fullerton" (140/mo) at P22 — just outside top 10 easily reachable</div>
+          <div class="insight-item"><span class="insight-dot dot-red"></span>"black spots on teeth" (390/mo) at P54 — strong featured snippet potential</div>
+          <div class="insight-item"><span class="insight-dot dot-blue"></span>"affordable dental implants encinitas" at P14 — HVC could complement organic gaps</div>
+          <div class="insight-item"><span class="insight-dot dot-red"></span>Traffic heavily skewed to branded — risky single point of failure</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ── 5. TOP PAGES & BLOG ─────────────────────── -->
+    <section class="section" id="pages">
+      <div class="section-eyebrow">Content Performance</div>
+      <div class="section-heading">Top Pages &amp; Blog Posts</div>
+      <div class="section-body">
+        These pages and posts receive the most organic clicks and impressions. Pages marked <strong>Blog</strong> represent content marketing assets — optimizing these drives informational traffic and builds topical authority.
+      </div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Page / URL</th>
+            <th>Type</th>
+            <th>Est. Clicks/mo</th>
+            <th>Traffic Share</th>
+            <th>Top Keyword</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>/ (Homepage)</strong><br><span style="font-size:10px;color:#9a9890;">fullertonsmiledentistry.com/</span></td>
+            <td><span class="badge badge-stable">Service</span></td>
+            <td>
+              <div class="kd-wrap">
+                128
+                <div class="traffic-bar-bg"><div class="traffic-bar" style="width:100%"></div></div>
+              </div>
+            </td>
+            <td>40.0%</td>
+            <td>fullerton smile dentistry</td>
+            <td><span class="badge badge-stable">Stable</span></td>
+          </tr>
+          <tr>
+            <td><strong>Dental Implants</strong><br><span style="font-size:10px;color:#9a9890;">/fullerton-ca/dental-implants/</span></td>
+            <td><span class="badge badge-new">Service</span></td>
+            <td>
+              <div class="kd-wrap">
+                48
+                <div class="traffic-bar-bg"><div class="traffic-bar" style="width:38%"></div></div>
+              </div>
+            </td>
+            <td>15.0%</td>
+            <td>dental implants fullerton</td>
+            <td><span class="badge badge-opp">Opportunity</span></td>
+          </tr>
+          <tr>
+            <td><strong>General Dentistry</strong><br><span style="font-size:10px;color:#9a9890;">/fullerton-ca/general-dentistry/</span></td>
+            <td><span class="badge badge-new">Service</span></td>
+            <td>
+              <div class="kd-wrap">
+                36
+                <div class="traffic-bar-bg"><div class="traffic-bar" style="width:28%"></div></div>
+              </div>
+            </td>
+            <td>11.3%</td>
+            <td>dentist fullerton ca</td>
+            <td><span class="badge badge-stable">Stable</span></td>
+          </tr>
+          <tr>
+            <td><strong>Cosmetic Dentistry</strong><br><span style="font-size:10px;color:#9a9890;">/fullerton-ca/cosmetic-dentistry/</span></td>
+            <td><span class="badge badge-new">Service</span></td>
+            <td>
+              <div class="kd-wrap">
+                26
+                <div class="traffic-bar-bg"><div class="traffic-bar" style="width:20%"></div></div>
+              </div>
+            </td>
+            <td>8.1%</td>
+            <td>cosmetic dentist fullerton</td>
+            <td><span class="badge badge-stable">Stable</span></td>
+          </tr>
+          <tr>
+            <td><strong>Teeth Cleaning / Hygiene</strong><br><span style="font-size:10px;color:#9a9890;">/fullerton-ca/teeth-cleaning/</span></td>
+            <td><span class="badge badge-new">Service</span></td>
+            <td>
+              <div class="kd-wrap">
+                18
+                <div class="traffic-bar-bg"><div class="traffic-bar" style="width:14%"></div></div>
+              </div>
+            </td>
+            <td>5.6%</td>
+            <td>teeth cleaning fullerton</td>
+            <td><span class="badge badge-opp">Opportunity</span></td>
+          </tr>
+          <tr>
+            <td><strong>Dentures</strong><br><span style="font-size:10px;color:#9a9890;">/fullerton-ca/dentures/</span></td>
+            <td><span class="badge badge-new">Service</span></td>
+            <td>
+              <div class="kd-wrap">
+                14
+                <div class="traffic-bar-bg"><div class="traffic-bar" style="width:11%"></div></div>
+              </div>
+            </td>
+            <td>4.4%</td>
+            <td>dentures fullerton ca</td>
+            <td><span class="badge badge-stable">Stable</span></td>
+          </tr>
+          <tr>
+            <td><strong>Restorative Dentistry</strong><br><span style="font-size:10px;color:#9a9890;">/fullerton-ca/restorative-dentistry/</span></td>
+            <td><span class="badge badge-new">Service</span></td>
+            <td>
+              <div class="kd-wrap">
+                10
+                <div class="traffic-bar-bg"><div class="traffic-bar" style="width:8%"></div></div>
+              </div>
+            </td>
+            <td>3.1%</td>
+            <td>restorative dentist fullerton</td>
+            <td><span class="badge badge-stable">Stable</span></td>
+          </tr>
+          <tr style="background:#fff8f0;">
+            <td>
+              <strong>Blog: How Long Do Dental Implants Last?</strong><br>
+              <span style="font-size:10px;color:#9a9890;">/blog/how-long-do-dental-implants-last/</span><br>
+              <span style="font-size:10px;color:#ef4444;">⚠ Page does not exist yet — recommended</span>
+            </td>
+            <td><span class="badge badge-opp">Blog</span></td>
+            <td><em style="color:#9a9890;">~80 potential</em></td>
+            <td>—</td>
+            <td>how long do implants last</td>
+            <td><span class="badge badge-priority">Create Now</span></td>
+          </tr>
+          <tr style="background:#fff8f0;">
+            <td>
+              <strong>Blog: What to Expect: Root Canal Treatment</strong><br>
+              <span style="font-size:10px;color:#9a9890;">/blog/what-to-expect-root-canal/</span><br>
+              <span style="font-size:10px;color:#ef4444;">⚠ Page does not exist yet — recommended</span>
+            </td>
+            <td><span class="badge badge-opp">Blog</span></td>
+            <td><em style="color:#9a9890;">~55 potential</em></td>
+            <td>—</td>
+            <td>what to expect root canal</td>
+            <td><span class="badge badge-priority">Create Now</span></td>
+          </tr>
+          <tr style="background:#fff8f0;">
+            <td>
+              <strong>Blog: Teeth Whitening: In-Office vs At-Home</strong><br>
+              <span style="font-size:10px;color:#9a9890;">/blog/teeth-whitening-options/</span><br>
+              <span style="font-size:10px;color:#ef4444;">⚠ Page does not exist yet — recommended</span>
+            </td>
+            <td><span class="badge badge-opp">Blog</span></td>
+            <td><em style="color:#9a9890;">~40 potential</em></td>
+            <td>—</td>
+            <td>teeth whitening options fullerton</td>
+            <td><span class="badge badge-priority">Create Now</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;padding:12px 14px;background:#f0f7ff;border:1px solid #bdd7f5;border-radius:8px;font-size:11.5px;color:#1a4a90;line-height:1.6;">
+        <strong>Note:</strong> Currently the site has no blog section. Creating 3–5 educational blog posts per month targeting informational queries (e.g. "how long do implants last," "black spots on teeth") could add an estimated <strong>200–400 additional monthly visits</strong> within 6 months, while simultaneously building topical authority for core service pages.
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ── 6. BACKLINK PROFILE ────────────────────── -->
+    <section class="section" id="backlinks">
+      <div class="section-eyebrow">Link Authority</div>
+      <div class="section-heading">Backlink Profile</div>
+      <div class="section-body">
+        The backlink profile shows early-stage authority typical of a newer local practice. The link diversity is healthy — 31 unique referring domains across 143 IP addresses indicates a natural profile.
+      </div>
+      <div class="bl-grid">
+        <div class="bl-card"><div class="bl-val">196</div><div class="bl-lbl">Total Backlinks / All indexed links</div></div>
+        <div class="bl-card"><div class="bl-val">31</div><div class="bl-lbl">Referring Domains (Linking sites)</div></div>
+        <div class="bl-card"><div class="bl-val">143</div><div class="bl-lbl">Unique IP Addresses / diversity signal</div></div>
+        <div class="bl-card"><div class="bl-val">18/100</div><div class="bl-lbl">Authority Score (Semrush target: 30+)</div></div>
+        <div class="bl-card"><div class="bl-val">62.3%</div><div class="bl-lbl">Follow-Link % (above 55% is healthy)</div></div>
+        <div class="bl-card"><div class="bl-val">71.4%</div><div class="bl-lbl">Text Link Breakdown / natural ratio</div></div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ── 7. COMPETITIVE LANDSCAPE ──────────────── -->
+    <section class="section" id="competitors">
+      <div class="section-eyebrow">Market Position</div>
+      <div class="section-heading">Competitive Landscape</div>
+      <div class="section-body">
+        The following Fullerton-area dental practices are Fullerton Smile Dentistry's primary organic competitors, ranked by keyword overlap. The top competitor shares 62 common keywords and generates 5× more traffic.
+      </div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Competitor Domain</th>
+            <th>Relevance</th>
+            <th>Common Keywords</th>
+            <th>Their Keywords</th>
+            <th>Their Traffic</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>villagedentistry-fullerton.com</td>
+            <td>64%<br><span class="relevance-bar" style="width:64px"></span></td>
+            <td>62</td>
+            <td>263</td>
+            <td>1,630</td>
+          </tr>
+          <tr>
+            <td>fullertonfamilydental.com</td>
+            <td>60%<br><span class="relevance-bar" style="width:60px"></span></td>
+            <td>48</td>
+            <td>231</td>
+            <td>27</td>
+          </tr>
+          <tr>
+            <td>drreesedds.com</td>
+            <td>76%<br><span class="relevance-bar" style="width:76px"></span></td>
+            <td>54</td>
+            <td>2,600</td>
+            <td>1,580</td>
+          </tr>
+          <tr>
+            <td>dkwrightdds.com</td>
+            <td>64%<br><span class="relevance-bar" style="width:64px"></span></td>
+            <td>24</td>
+            <td>419</td>
+            <td>90</td>
+          </tr>
+          <tr>
+            <td>smilesbackanderdentistry.com</td>
+            <td>70%<br><span class="relevance-bar" style="width:70px"></span></td>
+            <td>26</td>
+            <td>980</td>
+            <td>1,026</td>
+          </tr>
+          <tr>
+            <td>dentaltherocsasca.com</td>
+            <td>78%<br><span class="relevance-bar" style="width:78px"></span></td>
+            <td>33</td>
+            <td>312</td>
+            <td>161</td>
+          </tr>
+          <tr>
+            <td>smilesbackanderdesign.co</td>
+            <td>68%<br><span class="relevance-bar" style="width:68px"></span></td>
+            <td>17</td>
+            <td>276</td>
+            <td>606</td>
+          </tr>
+          <tr>
+            <td>dentalvackerdefrontbar.com</td>
+            <td>68%<br><span class="relevance-bar" style="width:68px"></span></td>
+            <td>26</td>
+            <td>686</td>
+            <td>914</td>
+          </tr>
+          <tr>
+            <td>smilesbackandelgroup.com</td>
+            <td>60%<br><span class="relevance-bar" style="width:60px"></span></td>
+            <td>25</td>
+            <td>267</td>
+            <td>98</td>
+          </tr>
+          <tr>
+            <td>mybrowndentistfamilydental.ca</td>
+            <td>64%<br><span class="relevance-bar" style="width:64px"></span></td>
+            <td>24</td>
+            <td>208</td>
+            <td>722</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ── 8. PRIORITY RECOMMENDATIONS ──────────── -->
+    <section class="section" id="recommendations">
+      <div class="section-eyebrow">Action Plan</div>
+      <div class="section-heading">Priority Recommendations</div>
+      <div class="rec-list">
+
+        <div class="rec-card">
+          <div class="rec-num">1</div>
+          <div>
+            <span class="rec-priority-label rec-high">High Priority</span>
+            <div class="rec-title">Optimize Core "Dentist" Pages</div>
+            <div class="rec-desc">The homepage ranks P9 for "dentist fullerton" and P7 for "fullerton dentist ca." Improve on-page H1/H2 update title tags, add LocalBusiness schema markup, and strengthen internal linking to push into the top 3 for these primary keywords.</div>
+          </div>
+        </div>
+
+        <div class="rec-card">
+          <div class="rec-num">2</div>
+          <div>
+            <span class="rec-priority-label rec-high">High Priority</span>
+            <div class="rec-title">Build Domain Authority Through Link Acquisition</div>
+            <div class="rec-desc">An authority score of 18/100 limits ranking potential across all keywords. Target local citations (Yelp, Healthgrades, Google Business), dental directories, local chamber of commerce, and encinitas new/blog backlinks to reach a score of 30+ within 6 months.</div>
+          </div>
+        </div>
+
+        <div class="rec-card">
+          <div class="rec-num rec-num-med">3</div>
+          <div>
+            <span class="rec-priority-label rec-med">Medium Priority</span>
+            <div class="rec-title">Capitalize on Informational Content Rankings</div>
+            <div class="rec-desc">Blog posts targeting "black spots on teeth" (390/mo) and "ideas click on teeth" (1,400/mo) rank at positions 41–55. Add internal links, deploy content with search intent clarity, and add detail links from service pages to unlock low-hanging organic traffic.</div>
+          </div>
+        </div>
+
+        <div class="rec-card">
+          <div class="rec-num rec-num-med">4</div>
+          <div>
+            <span class="rec-priority-label rec-med">Medium Priority</span>
+            <div class="rec-title">Expand Service Page Coverage</div>
+            <div class="rec-desc">Create dedicated, fully optimized pages for teeth whitening, emergency dentistry, family dentistry, and pediatrics so that each page can target specific local keywords. Currently 60.6% of traffic relies on branded keywords — diversifying keyword coverage reduces risk and increases total addressable traffic.</div>
+          </div>
+        </div>
+
+        <div class="rec-card">
+          <div class="rec-num rec-num-med">5</div>
+          <div>
+            <span class="rec-priority-label rec-med">Medium Priority</span>
+            <div class="rec-title">Launch Blog &amp; Educational Content Program</div>
+            <div class="rec-desc">No blog currently exists. Publish 3–5 educational posts per month targeting high-intent informational queries (e.g., "how long do dental implants last," "what to expect during a root canal," "teeth whitening options"). This builds topical authority, captures mid-funnel patients, and supplements service page rankings.</div>
+          </div>
+        </div>
+
+        <div class="rec-card">
+          <div class="rec-num rec-num-med">6</div>
+          <div>
+            <span class="rec-priority-label rec-med">Medium Priority</span>
+            <div class="rec-title">Leverage Multilingual Advantage (Mandarin &amp; Spanish)</div>
+            <div class="rec-desc">The team communicates in English, Mandarin Chinese, and Spanish. Creating a dedicated page targeting "Chinese dentist Fullerton" (low KD ~14) and optimizing for Spanish-speaking patients in Orange County represents a nearly uncontested traffic opportunity unique to this practice.</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<div class="report-footer">
+  <span>Fullerton Smile Dentistry &nbsp;·&nbsp; fullertonsmiledentistry.com &nbsp;·&nbsp; Orange County, CA</span>
+  <span>Data: Semrush US Database &nbsp;·&nbsp; Report Date: April 16, 2026 &nbsp;·&nbsp; Confidential</span>
+</div>
+
+<script>
+  // Smooth scroll for sidebar nav
+  document.querySelectorAll('.sidebar-nav a').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+      document.querySelectorAll('.sidebar-nav a').forEach(a => a.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+
+  // Intersection observer to highlight active nav item
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.sidebar-nav a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
