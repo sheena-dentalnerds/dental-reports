@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Torrance Dental Spa — SEMrush Monthly Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-dark: #1a1a1a;
+  --bg-cream: #f5f1eb;
+  --bg-card: #ffffff;
+  --text-dark: #1a1a1a;
+  --text-light: #f5f1eb;
+  --text-muted: #6b6b6b;
+  --gold: #c9a961;
+  --green: #2d8e5c;
+  --red: #c53030;
+  --orange: #d97706;
+  --blue: #2c6fb3;
+  --purple: #7c3aed;
+  --border: #e5e1da;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg-cream);
+  color: var(--text-dark);
+  line-height: 1.6;
+  font-size: 14px;
+}
+h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+
+.label {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+
+/* ===== HERO (dark) ===== */
+.hero {
+  background: var(--bg-dark);
+  color: var(--text-light);
+  padding: 70px 0 60px;
+}
+.hero h1 {
+  font-size: 64px;
+  margin-bottom: 22px;
+  color: #fff;
+}
+.hero-desc {
+  max-width: 620px;
+  color: #b8b3a8;
+  font-size: 15px;
+  margin-bottom: 44px;
+  line-height: 1.65;
+}
+.hero-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.hero-kpi {
+  background: rgba(255,255,255,0.03);
+  border-top: 2px solid var(--gold);
+  padding: 24px 20px;
+  text-align: center;
+}
+.hero-kpi-num {
+  font-family: 'Fraunces', serif;
+  font-size: 42px;
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.hero-kpi-label {
+  font-size: 11px;
+  color: #b8b3a8;
+  letter-spacing: 0.04em;
+}
+.hero-meta {
+  font-size: 12px;
+  color: #8a8478;
+  letter-spacing: 0.06em;
+}
+
+/* ===== SECTIONS (cream) ===== */
+.section { padding: 60px 0; }
+.section h2 { font-size: 40px; margin-bottom: 6px; color: var(--text-dark); }
+
+/* multi-color underline */
+.divider {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  margin: 14px 0 36px;
+  max-width: 600px;
+}
+.divider span { height: 2px; }
+.div-purple { background: var(--purple); }
+.div-green { background: var(--green); }
+.div-gold { background: var(--gold); }
+.div-blue { background: var(--blue); }
+.div-red { background: var(--red); }
+
+/* ===== KEY FINDINGS ===== */
+.findings { display: flex; flex-direction: column; gap: 12px; }
+.finding {
+  background: var(--bg-card);
+  padding: 20px 26px;
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 18px;
+  align-items: center;
+  border-radius: 4px;
+}
+.finding-icon { font-size: 20px; }
+.finding-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 17px;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+.finding-desc { font-size: 13.5px; color: var(--text-muted); line-height: 1.55; }
+
+/* ===== METRIC ROW (big numbers like 143/114/17) ===== */
+.metric-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.metric-row.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.metric-num {
+  font-family: 'Fraunces', serif;
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.metric-num.purple { color: var(--purple); }
+.metric-num.green { color: var(--green); }
+.metric-num.gold { color: var(--gold); }
+.metric-num.blue { color: var(--blue); }
+.metric-num.red { color: var(--red); }
+.metric-num.orange { color: var(--orange); }
+.metric-label { font-size: 13px; font-weight: 500; color: var(--text-dark); }
+.metric-sub { font-size: 11.5px; color: var(--text-muted); margin-top: 4px; }
+
+/* dividers above/below big-number rows */
+.metric-row-bordered {
+  border-top: 2px solid var(--border);
+  padding-top: 28px;
+}
+
+/* ===== SUBSECTION LABEL ===== */
+.sub-label {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin: 36px 0 18px;
+}
+
+/* ===== DONUT + CARDS (mirrors SEO Potential) ===== */
+.split-2col { display: grid; grid-template-columns: 280px 1fr; gap: 50px; align-items: center; }
+.donut-wrap { display: flex; flex-direction: column; align-items: center; }
+.donut-svg { width: 240px; height: 240px; }
+.donut-legend { margin-top: 16px; display: flex; gap: 18px; font-size: 12px; }
+.donut-legend span { display: flex; align-items: center; gap: 6px; }
+.donut-legend i { width: 12px; height: 12px; display: inline-block; }
+.opp-cards { display: flex; flex-direction: column; gap: 10px; }
+.opp-card { background: var(--bg-card); padding: 16px 22px; border-radius: 4px; }
+.opp-title { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+.opp-desc { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+.opp-title.green { color: var(--green); }
+.opp-title.gold { color: var(--gold); }
+.opp-title.red { color: var(--red); }
+
+/* ===== TABLES ===== */
+.data-table {
+  background: transparent;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+.data-table thead { background: var(--bg-dark); color: #fff; }
+.data-table th {
+  text-align: left;
+  padding: 14px 18px;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+.data-table th.num, .data-table td.num { text-align: right; }
+.data-table td { padding: 12px 18px; border-bottom: 1px solid var(--border); }
+.data-table tbody tr:last-child td { border-bottom: none; }
+.cell-green { color: var(--green); font-weight: 600; }
+.cell-red { color: var(--red); font-weight: 600; }
+.cell-gold { color: var(--gold); font-weight: 600; }
+.cell-blue { color: var(--blue); font-weight: 600; }
+tr.highlight-row td { font-weight: 700; }
+
+/* ===== ISSUES (left bordered, like Core Directory Listings) ===== */
+.issues { display: flex; flex-direction: column; gap: 8px; }
+.issue {
+  background: var(--bg-card);
+  padding: 14px 22px;
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 22px;
+  align-items: center;
+  border-left: 3px solid var(--gold);
+  border-radius: 4px;
+}
+.issue.red-border { border-left-color: var(--red); }
+.issue.gold-border { border-left-color: var(--gold); }
+.issue.purple-border { border-left-color: var(--purple); }
+.issue.green-border { border-left-color: var(--green); }
+.issue.blue-border { border-left-color: var(--blue); }
+.issue-key { font-weight: 700; font-size: 14px; }
+.issue-key.red { color: var(--red); }
+.issue-key.gold { color: var(--gold); }
+.issue-key.purple { color: var(--purple); }
+.issue-key.green { color: var(--green); }
+.issue-key.blue { color: var(--blue); }
+.issue-text { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+.issue-text strong { color: var(--text-dark); font-weight: 600; }
+
+/* ===== TRIAGE NUMBERED ITEM (like 9 / 97 / 44 / 266 in Technical Issues) ===== */
+.triage { display: flex; flex-direction: column; gap: 10px; }
+.triage-item {
+  background: var(--bg-card);
+  padding: 18px 26px;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 20px;
+  align-items: center;
+  border-left: 3px solid var(--gold);
+  border-radius: 4px;
+}
+.triage-item.red { border-left-color: var(--red); }
+.triage-item.gold { border-left-color: var(--gold); }
+.triage-item.purple { border-left-color: var(--purple); }
+.triage-item.green { border-left-color: var(--green); }
+.triage-num {
+  font-family: 'Fraunces', serif;
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+}
+.triage-num.red { color: var(--red); }
+.triage-num.gold { color: var(--gold); }
+.triage-num.purple { color: var(--purple); }
+.triage-num.green { color: var(--green); }
+.triage-num.blue { color: var(--blue); }
+.triage-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+.triage-desc { font-size: 12.5px; color: var(--text-muted); line-height: 1.55; }
+
+/* ===== DARK CALLOUT ===== */
+.callout-dark {
+  background: var(--bg-dark);
+  color: #d8d4c8;
+  padding: 18px 26px;
+  border-radius: 4px;
+  margin-top: 22px;
+  font-size: 13px;
+  line-height: 1.65;
+}
+.callout-dark strong { color: #fff; font-weight: 600; }
+
+/* ===== LIGHT GREEN CALLOUT ===== */
+.callout-green {
+  background: #eaf5ee;
+  color: var(--green);
+  padding: 14px 22px;
+  border-radius: 4px;
+  font-size: 12.5px;
+  font-weight: 500;
+  margin-top: 16px;
+}
+
+/* ===== SPLIT INFO (dark cards side by side, like Person Schema) ===== */
+.split-info { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+.split-info-card {
+  background: var(--bg-dark);
+  color: #d8d4c8;
+  padding: 22px 26px;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 1.65;
+}
+.split-info-card strong { color: #fff; display: block; margin-bottom: 10px; font-size: 13px; }
+.split-info-card.warn strong { color: var(--red); }
+.split-info-card.info strong { color: var(--gold); }
+.code-list { font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.9; color: #c9c5b8; }
+
+/* ===== PERCENT BLOCKS (Branded/Unbranded section style) ===== */
+.percent-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 30px;
+}
+.percent-card {
+  background: var(--bg-card);
+  padding: 20px 24px;
+  border-radius: 4px;
+  border-left: 4px solid var(--blue);
+}
+.percent-card.purple { border-left-color: var(--purple); }
+.percent-card.gold { border-left-color: var(--gold); }
+.percent-card.green { border-left-color: var(--green); }
+.percent-num {
+  font-family: 'Fraunces', serif;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  line-height: 1;
+}
+.percent-card.blue .percent-num { color: var(--blue); }
+.percent-card.purple .percent-num { color: var(--purple); }
+.percent-card.gold .percent-num { color: var(--gold); }
+.percent-card.green .percent-num { color: var(--green); }
+.percent-label { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+.percent-sub { font-size: 12px; color: var(--text-muted); }
+
+.footer {
+  padding: 30px 0;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+}
+
+@media print {
+  body { font-size: 11px; }
+  .section { padding: 30px 0; page-break-inside: avoid; }
+  .hero { padding: 30px 0 25px; }
+  .hero h1 { font-size: 38px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="container">
+    <div class="label">SEMRUSH MONTHLY REPORT</div>
+    <h1>Torrance Dental Spa</h1>
+    <p class="hero-desc">
+      Comprehensive SEO performance analysis of torrancedentalspa.com — covering 6-month traffic trends,
+      keyword movements, competitive benchmarking, page-level performance, backlink profile, and growth
+      opportunities across the South Bay dental market.
+    </p>
+    <div class="hero-kpis">
+      <div class="hero-kpi"><div class="hero-kpi-num">576</div><div class="hero-kpi-label">Ranking Keywords</div></div>
+      <div class="hero-kpi"><div class="hero-kpi-num">414</div><div class="hero-kpi-label">Monthly Organic Visits</div></div>
+      <div class="hero-kpi"><div class="hero-kpi-num">$1,218</div><div class="hero-kpi-label">Traffic Value</div></div>
+      <div class="hero-kpi"><div class="hero-kpi-num">10</div><div class="hero-kpi-label">Authority Score</div></div>
+    </div>
+    <div class="hero-meta">Prepared April 2026 · Data source: SEMrush US Database</div>
+  </div>
+</section>
+
+<!-- ========== KEY FINDINGS ========== -->
+<section class="section">
+  <div class="container">
+    <div class="label">EXECUTIVE SUMMARY</div>
+    <h2>Key Findings</h2>
+    <div class="divider"><span class="div-gold"></span><span class="div-green"></span><span class="div-blue"></span></div>
+
+    <div class="findings">
+      <div class="finding">
+        <div class="finding-icon">📈</div>
+        <div>
+          <div class="finding-title">Traffic Up +136% Over 6 Months</div>
+          <div class="finding-desc">Organic visits grew from 175/mo (Oct 2025) to 414/mo (Apr 2026). Traffic value climbed +86% from $655 to $1,218 — strong, sustained momentum.</div>
+        </div>
+      </div>
+      <div class="finding">
+        <div class="finding-icon">🔑</div>
+        <div>
+          <div class="finding-title">244 New Keywords Added in 6 Months</div>
+          <div class="finding-desc">Keyword footprint expanded from 332 to 576 (+74%). Most new entries are geographic terms targeting Redondo Beach, Fullerton, Alhambra, and LA.</div>
+        </div>
+      </div>
+      <div class="finding">
+        <div class="finding-icon">🏆</div>
+        <div>
+          <div class="finding-title">#1 in Keyword Breadth Among Local Competitors</div>
+          <div class="finding-desc">576 keywords vs. nearest competitor's 421. Also leads on traffic value at $1,218/mo. The site dominates "torrance dental spa", "torrance dentist", and "cosmetic dentist torrance" rankings.</div>
+        </div>
+      </div>
+      <div class="finding">
+        <div class="finding-icon">⚠️</div>
+        <div>
+          <div class="finding-title">Authority Score Lags Top Competitor by 6 Points</div>
+          <div class="finding-desc">South Bay Dental Smiles has 705 backlinks and AS 16 vs. our 283 / AS 10. The biggest long-term ceiling on growth.</div>
+        </div>
+      </div>
+      <div class="finding">
+        <div class="finding-icon">🎯</div>
+        <div>
+          <div class="finding-title">"Dental Spa" at Position #11 — One Spot from Page 1</div>
+          <div class="finding-desc">2,400 monthly searches, the highest-volume keyword in the entire portfolio. Moving to page 1 could add 200–400 visits/month from a single term.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== KEYWORD PORTFOLIO ========== -->
+<section class="section">
+  <div class="container">
+    <div class="label">KEYWORD PORTFOLIO</div>
+    <h2>576 Keywords Across the Site</h2>
+    <div class="divider"><span class="div-purple"></span><span class="div-green"></span><span class="div-gold"></span></div>
+
+    <div class="metric-row">
+      <div>
+        <div class="metric-num purple">39</div>
+        <div class="metric-label">In Top 3</div>
+      </div>
+      <div>
+        <div class="metric-num green">87</div>
+        <div class="metric-label">Page 1 (Pos 4–10)</div>
+      </div>
+      <div>
+        <div class="metric-num gold">450</div>
+        <div class="metric-label">Page 2+ Opportunity</div>
+      </div>
+    </div>
+
+    <div class="sub-label">SEO POTENTIAL</div>
+    <div class="split-2col">
+      <div class="donut-wrap">
+        <svg class="donut-svg" viewBox="0 0 120 120">
+          <!-- High 78 = 13.5%, Medium 243 = 42.2%, Low 255 = 44.3%, circumference=301.6 -->
+          <circle cx="60" cy="60" r="48" fill="none" stroke="#c53030" stroke-width="22" stroke-dasharray="133.6 301.6" transform="rotate(-90 60 60)"/>
+          <circle cx="60" cy="60" r="48" fill="none" stroke="#c9a961" stroke-width="22" stroke-dasharray="127.3 301.6" stroke-dashoffset="-133.6" transform="rotate(-90 60 60)"/>
+          <circle cx="60" cy="60" r="48" fill="none" stroke="#2d8e5c" stroke-width="22" stroke-dasharray="40.7 301.6" stroke-dashoffset="-260.9" transform="rotate(-90 60 60)"/>
+        </svg>
+        <div class="donut-legend">
+          <span><i style="background:#2d8e5c;"></i> High</span>
+          <span><i style="background:#c9a961;"></i> Medium</span>
+          <span><i style="background:#c53030;"></i> Low</span>
+        </div>
+      </div>
+      <div class="opp-cards">
+        <div class="opp-card">
+          <div class="opp-title green">High (78 keywords)</div>
+          <div class="opp-desc">Position 11–20 with 50+ monthly searches. Quick wins: optimize on-page, push to page 1.</div>
+        </div>
+        <div class="opp-card">
+          <div class="opp-title gold">Medium (243 keywords)</div>
+          <div class="opp-desc">Position 21–50 or low-volume page-1 terms. Steady content and link work over 2–3 months.</div>
+        </div>
+        <div class="opp-card">
+          <div class="opp-title red">Low (255 keywords)</div>
+          <div class="opp-desc">Position 51–100, very small search volume, or already at ranking ceiling. Monitor only.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PERFORMANCE BY MONTH ========== -->
+<section class="section">
+  <div class="container">
+    <div class="label">MONTHLY ANALYSIS</div>
+    <h2>Performance by Month</h2>
+    <div class="divider"><span class="div-blue"></span><span class="div-purple"></span><span class="div-gold"></span></div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th class="num">Traffic</th>
+          <th class="num">Keywords</th>
+          <th class="num">Traffic $</th>
+          <th class="num">Backlinks</th>
+          <th class="num">Ref. Domains</th>
+          <th class="num">Auth. Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Oct 2025</td><td class="num">175</td><td class="num">332</td><td class="num">$655</td><td class="num">248</td><td class="num">126</td><td class="num">9</td></tr>
+        <tr><td>Nov 2025</td><td class="num cell-red">148</td><td class="num">318</td><td class="num">$560</td><td class="num">259</td><td class="num">141</td><td class="num">9</td></tr>
+        <tr><td>Dec 2025</td><td class="num">178</td><td class="num">343</td><td class="num">$477</td><td class="num">240</td><td class="num">150</td><td class="num">9</td></tr>
+        <tr><td>Jan 2026</td><td class="num">249</td><td class="num">473</td><td class="num">$746</td><td class="num">205</td><td class="num">123</td><td class="num">9</td></tr>
+        <tr><td>Feb 2026</td><td class="num cell-green">471</td><td class="num">540</td><td class="num cell-green">$1,579</td><td class="num">243</td><td class="num">140</td><td class="num">10</td></tr>
+        <tr><td>Mar 2026</td><td class="num">355</td><td class="num cell-green">581</td><td class="num">$1,145</td><td class="num cell-green">283</td><td class="num cell-green">157</td><td class="num">10</td></tr>
+        <tr class="highlight-row"><td>Apr 2026</td><td class="num">414</td><td class="num">576</td><td class="num">$1,218</td><td class="num">283</td><td class="num">157</td><td class="num">10</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout-dark">
+      <strong>The February Peak:</strong> 471 visits / $1,579 traffic value remains the high-water mark. March consolidated as new keywords matured into stable rankings. April is recovering strongly (+17% over March) — momentum is intact, not stalled. Expect May to test a new high if the rebound holds.
+    </div>
+  </div>
+</section>
+
+<!-- ========== COMPETITIVE BENCHMARK ========== -->
+<section class="section">
+  <div class="container">
+    <div class="label">COMPETITIVE BENCHMARK</div>
+    <h2>Performance by Competitor</h2>
+    <div class="divider"><span class="div-blue"></span><span class="div-red"></span><span class="div-gold"></span></div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Domain</th>
+          <th class="num">Keywords</th>
+          <th class="num">Traffic</th>
+          <th class="num">Traffic $</th>
+          <th class="num">Backlinks</th>
+          <th class="num">Ref. Domains</th>
+          <th class="num">Authority</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="highlight-row"><td>torrancedentalspa.com (You)</td><td class="num cell-green">576</td><td class="num">414</td><td class="num cell-green">$1,218</td><td class="num">283</td><td class="num">157</td><td class="num">10</td></tr>
+        <tr><td>stevekimdds.com</td><td class="num">219</td><td class="num cell-green">581</td><td class="num">$967</td><td class="num">467</td><td class="num">187</td><td class="num">10</td></tr>
+        <tr><td>southbaydentalsmiles.com</td><td class="num">421</td><td class="num cell-red">188</td><td class="num cell-red">$107</td><td class="num cell-green">705</td><td class="num">173</td><td class="num cell-green">16</td></tr>
+        <tr><td>socalmoderndentistry.com</td><td class="num">273</td><td class="num">247</td><td class="num">$468</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+        <tr><td>torrance-dentalcare.com</td><td class="num">271</td><td class="num">292</td><td class="num">$993</td><td class="num">364</td><td class="num">148</td><td class="num">9</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout-dark">
+      <strong>The Stevekimdds Paradox:</strong> They drive 40% more traffic (581 vs. 414) despite ranking for 62% fewer keywords (219 vs. 576). Their pages convert page-2 rankings into page-1 rankings more efficiently — likely stronger on-page optimization, internal linking, and a tighter keyword strategy. Worth modeling their approach for your highest-value pages.
+    </div>
+  </div>
+</section>
+
+<!-- ========== DIRECTORIES (mirrors Core Directory Listings) — but adapted to backlinks ========== -->
+<section class="section">
+  <div class="container">
+    <div class="label">AUTHORITY & LINKS</div>
+    <h2>Backlink Profile</h2>
+    <div class="divider"><span class="div-blue"></span><span class="div-green"></span><span class="div-red"></span><span class="div-gold"></span></div>
+
+    <div class="metric-row cols-4">
+      <div>
+        <div class="metric-num blue">283</div>
+        <div class="metric-label">Total Backlinks</div>
+      </div>
+      <div>
+        <div class="metric-num green">157</div>
+        <div class="metric-label">Referring Domains</div>
+      </div>
+      <div>
+        <div class="metric-num red">−6</div>
+        <div class="metric-label">vs Top Competitor</div>
+      </div>
+      <div>
+        <div class="metric-num gold">10</div>
+        <div class="metric-label">Authority Score</div>
+      </div>
+    </div>
+
+    <div class="sub-label">ISSUES REQUIRING ACTION</div>
+    <div class="issues">
+      <div class="issue red-border">
+        <div class="issue-key red">Authority Gap</div>
+        <div class="issue-text">South Bay Dental Smiles has 2.5× your backlinks (705 vs. 283) and Authority Score 16 vs. your 10. This is the single biggest predictor of long-term ranking ability — without closing this gap, growth will eventually plateau.</div>
+      </div>
+      <div class="issue gold-border">
+        <div class="issue-key gold">Stevekimdds</div>
+        <div class="issue-text">467 backlinks (65% more than yours) and Authority Score 10 — they convert their backlink profile into more traffic per keyword than any other competitor. Audit their referring domains for replicable opportunities.</div>
+      </div>
+      <div class="issue purple-border">
+        <div class="issue-key purple">Anchor Diversity</div>
+        <div class="issue-text">157 referring domains supporting 283 backlinks = healthy ratio (1.8 links/domain). Continue focus on quality unique sources rather than mass-link tactics.</div>
+      </div>
+      <div class="issue green-border">
+        <div class="issue-key green">12-Mo Growth</div>
+        <div class="issue-text">Referring domains grew from 94 → 157 (+67%) and Authority Score from 8 → 10 (+2 pts) over the last 12 months. Trajectory is healthy — needs acceleration to close the competitor gap.</div>
+      </div>
+    </div>
+
+    <div class="callout-green">📍 Performing well: Avvo, Yelp, Google Business Profile, Healthgrades, ZocDoc, dental marketplace listings — these consistent sources should be defended and expanded.</div>
+  </div>
+</section>
+
+<!-- ========== TOP PAGES (mirrors Performance by Location) ========== -->
+<section class="section">
+  <div class="container">
+    <div class="label">PAGE PERFORMANCE</div>
+    <h2>Top Traffic-Driving Pages</h2>
+    <div class="divider"><span class="div-purple"></span><span class="div-green"></span><span class="div-gold"></span></div>
+
+    <div class="metric-row">
+      <div>
+        <div class="metric-num blue">109</div>
+        <div class="metric-label">Keywords on Homepage</div>
+        <div class="metric-sub">58% of all site traffic</div>
+      </div>
+      <div>
+        <div class="metric-num green">15</div>
+        <div class="metric-label">Pages Driving Traffic</div>
+        <div class="metric-sub">Out of 100+ indexed</div>
+      </div>
+      <div>
+        <div class="metric-num gold">86%</div>
+        <div class="metric-label">Traffic from Top 10 Pages</div>
+        <div class="metric-sub">Heavily concentrated</div>
+      </div>
+    </div>
+
+    <table class="data-table" style="margin-top:32px;">
+      <thead>
+        <tr><th>Page</th><th class="num">Keywords</th><th class="num">Traffic</th><th class="num">Share</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>/ (homepage)</td><td class="num">109</td><td class="num">241</td><td class="num cell-blue">58.2%</td></tr>
+        <tr><td>/periodontal-probe/</td><td class="num">52</td><td class="num">42</td><td class="num">10.1%</td></tr>
+        <tr><td>/torrance-ca/emergency-dentist/</td><td class="num">12</td><td class="num">25</td><td class="num">6.0%</td></tr>
+        <tr><td>/torrance-ca/teeth-whitening/</td><td class="num">23</td><td class="num">14</td><td class="num">3.4%</td></tr>
+        <tr><td>/torrance-ca/dental-bridge/</td><td class="num">11</td><td class="num">14</td><td class="num">3.4%</td></tr>
+        <tr><td>/common-complications-of-dental-implants/</td><td class="num">25</td><td class="num">13</td><td class="num">3.1%</td></tr>
+        <tr><td>/how-long-does-it-take-to-finish-invisalign-treatment/</td><td class="num">32</td><td class="num">11</td><td class="num">2.7%</td></tr>
+        <tr><td>/torrance-ca/teeth-cleaning-and-dental-hygiene/</td><td class="num">17</td><td class="num">11</td><td class="num">2.7%</td></tr>
+        <tr><td>/dental-implant-guide-cost-in-torrance-ca/</td><td class="num">13</td><td class="num">10</td><td class="num">2.4%</td></tr>
+        <tr><td>/torrance-ca/all-on-4-dental-implants/</td><td class="num">31</td><td class="num">9</td><td class="num">2.2%</td></tr>
+      </tbody>
+    </table>
+
+    <div class="split-info">
+      <div class="split-info-card warn">
+        <strong>Concentration Risk</strong>
+        58% of organic traffic depends on the homepage alone. Any homepage ranking loss = severe revenue impact. Diversify by strengthening service-area pages.
+      </div>
+      <div class="split-info-card info">
+        <strong>Hidden Gem</strong>
+        /periodontal-probe/ ranks for 52 keywords and drives 10% of site traffic — an info page outperforming most service pages. Replicate this content pattern for other procedures (root canal, crowns, implants).
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== KEYWORD INTENT MIX (mirrors Branded/Unbranded section) ========== -->
+<section class="section">
+  <div class="container">
+    <div class="label">SEARCH INTENT</div>
+    <h2>Branded vs. Service vs. Geographic Keywords</h2>
+    <div class="divider"><span class="div-blue"></span><span class="div-purple"></span><span class="div-gold"></span><span class="div-green"></span></div>
+
+    <div class="percent-grid">
+      <div class="percent-card blue">
+        <div class="percent-num">41%</div>
+        <div class="percent-label">Service Keywords</div>
+        <div class="percent-sub">"dentist torrance", "dental implants" — high commercial intent</div>
+      </div>
+      <div class="percent-card purple">
+        <div class="percent-num">29%</div>
+        <div class="percent-label">Geographic</div>
+        <div class="percent-sub">"torrance ca", "redondo beach", "fullerton" — local search</div>
+      </div>
+      <div class="percent-card gold">
+        <div class="percent-num">22%</div>
+        <div class="percent-label">Branded</div>
+        <div class="percent-sub">"torrance dental spa" alone = 21% of all traffic</div>
+      </div>
+      <div class="percent-card green">
+        <div class="percent-num">8%</div>
+        <div class="percent-label">Informational</div>
+        <div class="percent-sub">"perio probe", "complications of implants"</div>
+      </div>
+    </div>
+
+    <div class="callout-dark" style="margin-top:30px;">
+      <strong>Healthy intent mix:</strong> 41% of keywords carry direct service intent (highest commercial value), 29% are geographic (local lead capture), 22% are brand-aware searches (returning patients/word-of-mouth), and 8% are informational/educational. This balance shows brand strength while still capturing top-of-funnel discovery — unlike competitors who skew heavily toward generic high-volume terms.
+    </div>
+  </div>
+</section>
+
+<!-- ========== BIG WINS: top keywords ========== -->
+<section class="section">
+  <div class="container">
+    <div class="label">BIG WINS</div>
+    <h2>Top Keywords & Position Gains</h2>
+    <div class="divider"><span class="div-green"></span><span class="div-gold"></span><span class="div-blue"></span></div>
+
+    <div class="sub-label">TOP 10 TRAFFIC KEYWORDS — CURRENTLY RANKING</div>
+    <table class="data-table">
+      <thead>
+        <tr><th>Keyword</th><th class="num">Position</th><th class="num">Volume</th><th class="num">% of Traffic</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>torrance dental spa</td><td class="num cell-green">#1</td><td class="num">110/mo</td><td class="num cell-blue">21.3%</td></tr>
+        <tr><td>dentist torrance</td><td class="num cell-green">#4</td><td class="num">480/mo</td><td class="num">5.1%</td></tr>
+        <tr><td>dental spa</td><td class="num cell-gold">#11</td><td class="num cell-blue">2,400/mo</td><td class="num">5.1%</td></tr>
+        <tr><td>torrance dental</td><td class="num cell-green">#5</td><td class="num">480/mo</td><td class="num">3.9%</td></tr>
+        <tr><td>dentist of torrance</td><td class="num cell-green">#7</td><td class="num">390/mo</td><td class="num">2.7%</td></tr>
+        <tr><td>torrance dentist</td><td class="num cell-green">#5</td><td class="num">320/mo</td><td class="num">2.7%</td></tr>
+        <tr><td>dental bridges torrance ca</td><td class="num cell-green">#2</td><td class="num">90/mo</td><td class="num">2.7%</td></tr>
+        <tr><td>dental in torrance ca</td><td class="num cell-green">#9</td><td class="num">480/mo</td><td class="num">2.4%</td></tr>
+        <tr><td>cosmetic dentist torrance</td><td class="num cell-green">#3</td><td class="num">140/mo</td><td class="num">2.2%</td></tr>
+        <tr><td>dental implants torrance</td><td class="num cell-green">#6</td><td class="num">390/mo</td><td class="num">2.2%</td></tr>
+      </tbody>
+    </table>
+
+    <div class="sub-label">POSITION CLIMBERS THIS MONTH</div>
+    <div class="issues">
+      <div class="issue green-border">
+        <div class="issue-key green">▲ +2 Positions</div>
+        <div class="issue-text"><strong>dental bridges torrance ca</strong> — Was #4, now #2 · 90/mo searches · landing on /torrance-ca/dental-bridge/</div>
+      </div>
+      <div class="issue green-border">
+        <div class="issue-key green">▲ +3 Positions</div>
+        <div class="issue-text"><strong>cosmetic dentistry torrance ca</strong> — Was #7, now #4 · 110/mo searches · ranks on homepage</div>
+      </div>
+      <div class="issue green-border">
+        <div class="issue-key green">▲ +3 Positions</div>
+        <div class="issue-text"><strong>perio probe measurements</strong> — Was #11, now #8 · 260/mo searches · landing on /periodontal-probe/</div>
+      </div>
+    </div>
+
+    <div class="sub-label">NEW GEOGRAPHIC RANKINGS — EXPANSION OPPORTUNITY</div>
+    <table class="data-table">
+      <thead>
+        <tr><th>Keyword</th><th>Target Page</th><th class="num">Position</th><th class="num">Volume</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>dental crowns torrance ca</td><td>/ (homepage)</td><td class="num cell-green">#9</td><td class="num">50/mo</td></tr>
+        <tr><td>alhambra teeth whitening</td><td>/torrance-ca/teeth-whitening/</td><td class="num cell-gold">#52</td><td class="num">40/mo</td></tr>
+        <tr><td>alhambra teeth extractions</td><td>/torrance-ca/tooth-extraction/</td><td class="num cell-gold">#53</td><td class="num">40/mo</td></tr>
+        <tr><td>all-on-4 dental implants fullerton</td><td>/torrance-ca/all-on-4-dental-implants/</td><td class="num cell-gold">#74</td><td class="num">40/mo</td></tr>
+        <tr><td>emergency dentist redondo beach</td><td>/torrance-ca/emergency-dentist/</td><td class="num cell-red">#96</td><td class="num">50/mo</td></tr>
+        <tr><td>biocompatible dental implants los angeles</td><td>/torrance-ca/dental-implants/</td><td class="num cell-red">#99</td><td class="num">40/mo</td></tr>
+      </tbody>
+    </table>
+    <div class="callout-green">✅ Low-hanging fruit: Build dedicated location landing pages (e.g. /redondo-beach/emergency-dentist) to consolidate authority and push these into the top 20.</div>
+  </div>
+</section>
+
+<!-- ========== TRIAGE / ISSUES TO WATCH (mirrors Technical Issues) ========== -->
+<section class="section">
+  <div class="container">
+    <div class="label">TRIAGE CENTER</div>
+    <h2>Issues to Watch</h2>
+    <div class="divider"><span class="div-red"></span><span class="div-gold"></span><span class="div-blue"></span></div>
+
+    <div class="triage">
+      <div class="triage-item red">
+        <div class="triage-num red">58%</div>
+        <div>
+          <div class="triage-title">Traffic Concentration on Homepage</div>
+          <div class="triage-desc">More than half of all organic traffic depends on a single page. Any homepage ranking loss would severely impact lead flow. Diversify by strengthening service-area pages.</div>
+        </div>
+      </div>
+      <div class="triage-item gold">
+        <div class="triage-num gold">5</div>
+        <div>
+          <div class="triage-title">Lost Keyword Rankings</div>
+          <div class="triage-desc">Spanish landing page + 2 service pages dropped from top 100. "orally mas cercano", "odontólogos cerca de mí", and 2 variants of "dental crowns/bridges torrance ca" lost rankings. The Spanish page (/dentista-cerca-de-mi-en-torrance/) needs review.</div>
+        </div>
+      </div>
+      <div class="triage-item purple">
+        <div class="triage-num purple">11</div>
+        <div>
+          <div class="triage-title">Highest-Value Keyword Stuck on Page 2</div>
+          <div class="triage-desc">"Dental spa" — the highest-volume keyword (2,400/mo) — sits at position #11. One spot from page 1. With on-page work and 2–3 quality backlinks, this is the single most impactful ranking move available.</div>
+        </div>
+      </div>
+      <div class="triage-item gold">
+        <div class="triage-num gold">62%</div>
+        <div>
+          <div class="triage-title">Conversion Gap vs. Stevekimdds</div>
+          <div class="triage-desc">Stevekimdds gets 40% more traffic with 62% fewer keywords. Their on-page structure converts page-2 rankings into page-1 more effectively. Worth a competitive teardown of their top pages.</div>
+        </div>
+      </div>
+      <div class="triage-item green">
+        <div class="triage-num green">6</div>
+        <div>
+          <div class="triage-title">New Geographic Rankings Below Top 50</div>
+          <div class="triage-desc">6 new keywords ranking in adjacent cities — Redondo Beach, Fullerton, Alhambra, LA — all at positions 50–100. Real opportunity to expand the catchment area with dedicated location pages.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout-dark">
+      <strong>Note on Spanish content:</strong> The Spanish landing page (/dentista-cerca-de-mi-en-torrance/) lost 2 rankings in the last update. Either invest in maintaining bilingual SEO or sunset the page to consolidate authority on the English site.
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== POSITION TRACKING ========== -->
+<section class="section">
+  <div class="container">
+    <div class="label">POSITION TRACKING</div>
+    <h2>Top 3 Ranking Keywords</h2>
+    <div class="divider"><span class="div-green"></span><span class="div-blue"></span><span class="div-gold"></span></div>
+
+    <div class="metric-row">
+      <div>
+        <div class="metric-num green">3</div>
+        <div class="metric-label">Position #1</div>
+      </div>
+      <div>
+        <div class="metric-num green">5</div>
+        <div class="metric-label">Position #2</div>
+      </div>
+      <div>
+        <div class="metric-num green">8</div>
+        <div class="metric-label">Position #3</div>
+      </div>
+    </div>
+
+    <table class="data-table" style="margin-top:32px;">
+      <thead>
+        <tr>
+          <th>Keyword</th>
+          <th class="num">Current Rank</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr><td>torrance dental spa</td><td class="num cell-green">#1</td></tr>
+      <tr><td>emergency dentistry torrance ca</td><td class="num cell-green">#1</td></tr>
+      <tr><td>torrance cosmetic dentistry</td><td class="num cell-green">#1</td></tr>
+      <tr><td>types of periodontal probes</td><td class="num cell-green">#2</td></tr>
+      <tr><td>emergency dentist torrance ca</td><td class="num cell-green">#2</td></tr>
+      <tr><td>dental bridges torrance ca</td><td class="num cell-green">#2</td></tr>
+      <tr><td>affordable dental implants torrance</td><td class="num cell-green">#2</td></tr>
+      <tr><td>veneers torrance ca</td><td class="num cell-green">#2</td></tr>
+      <tr><td>cosmetic dentist torrance</td><td class="num cell-green">#3</td></tr>
+      <tr><td>torrance teeth whitening</td><td class="num cell-green">#3</td></tr>
+      <tr><td>teeth whitening torrance</td><td class="num cell-green">#3</td></tr>
+      <tr><td>cosmetic dentist in torrance</td><td class="num cell-green">#3</td></tr>
+      <tr><td>torrance dental leasing co</td><td class="num cell-green">#3</td></tr>
+      <tr><td>perio probe types</td><td class="num cell-green">#3</td></tr>
+      <tr><td>deep teeth cleaning torrance ca</td><td class="num cell-green">#3</td></tr>
+      <tr><td>teeth whitening torrance ca</td><td class="num cell-green">#3</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout-green">
+      🏆 16 keywords ranking in Google's Top 3 results — these are your strongest organic positions and the foundation of current traffic.
+    </div>
+  </div>
+</section>
+
+<div class="footer">
+  Generated April 28, 2026 · Data: SEMrush US Database · Estimates based on keyword position × search volume
+</div>
+
+</body>
+</html>
